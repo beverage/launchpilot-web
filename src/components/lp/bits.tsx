@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { ComponentStatus, LaunchEvent, RunMode } from "@/lib/api";
+import { SEVERITY } from "@/lib/alerts";
 import { cn } from "@/lib/utils";
 
 export function Tag({ children, className }: { children: React.ReactNode; className?: string }) {
@@ -41,7 +42,11 @@ const sevStyle: Record<ComponentStatus, string> = {
 };
 
 export function SeverityBadge({ status, className }: { status: ComponentStatus; className?: string }) {
-  return <Tag className={cn(sevStyle[status], className)}>{status}</Tag>;
+  return (
+    <Tag className={cn(sevStyle[status], className)}>
+      <span title={SEVERITY[status].rule}>{SEVERITY[status].label}</span>
+    </Tag>
+  );
 }
 
 export function Markdown({ children }: { children: string }) {
@@ -52,19 +57,33 @@ export function Markdown({ children }: { children: string }) {
   );
 }
 
-export function StatTile({ label, value, sub }: { label: string; value: React.ReactNode; sub?: React.ReactNode }) {
-  return (
-    <div className="rounded-lg border bg-card p-4">
+export function StatTile({
+  label, value, sub, onClick, title,
+}: { label: string; value: React.ReactNode; sub?: React.ReactNode; onClick?: (() => void) | undefined; title?: string | undefined }) {
+  const body = (
+    <>
       <p className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">{label}</p>
       <p className="mt-1 text-2xl font-semibold tracking-tight tabular-nums">{value}</p>
       {sub && <p className="mt-0.5 text-xs text-muted-foreground">{sub}</p>}
-    </div>
+    </>
+  );
+  return onClick ? (
+    <button
+      type="button"
+      onClick={onClick}
+      title={title}
+      className="rounded-lg border bg-card p-4 text-left transition-colors hover:border-foreground/30 hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      {body}
+    </button>
+  ) : (
+    <div className="rounded-lg border bg-card p-4" title={title}>{body}</div>
   );
 }
 
-export function Section({ title, children, aside }: { title: string; children: React.ReactNode; aside?: React.ReactNode }) {
+export function Section({ title, children, aside, id }: { title: string; children: React.ReactNode; aside?: React.ReactNode; id?: string }) {
   return (
-    <section className="space-y-3">
+    <section id={id} className="scroll-mt-4 space-y-3">
       <div className="flex items-center justify-between gap-2">
         <h2 className="font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground">{title}</h2>
         {aside}

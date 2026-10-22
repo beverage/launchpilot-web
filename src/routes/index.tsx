@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Loader2, SlidersHorizontal } from "lucide-react";
 import { toast } from "sonner";
 import { API_MODE, api } from "@/lib/api";
+import { alertAnchor, SEVERITY } from "@/lib/alerts";
 import { agentName, date, eur, pct, week } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -60,13 +61,30 @@ function LaunchPage() {
   const pastEv019 = (events.data ?? []).some((e) => e.event_id === "EV-019");
   const ffDisabled = busy || s.events_processed >= s.events_total || !nextId || pastEv019;
   const decidedBy = new Map((decisions.data ?? []).map((d) => [d.alert_id, d.scenario_id]));
+  const supplierOf = new Map(s.components.map((c) => [c.component_id, c.supplier_name]));
+  // api.py lists alerts critical first, earliest stockout first, so the first one is the most urgent.
+  const critical = (alerts.data ?? []).filter((a) => a.severity === "high");
+  const top = critical[0];
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    el?.focus({ preventScroll: true });
+  };
 
   return (
     <Page>
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <StatTile label="Simulated date" value={date(s.sim_date)} sub={`Launch ${week(s.launch_week)}`} />
         <StatTile label="Events processed" value={`${s.events_processed} / ${s.events_total}`} sub={nextId ? `Next ${nextId}` : "All processed"} />
-        <StatTile label="Critical alerts" value={<span className={cn(s.kpis.critical_alerts > 0 && "text-sev-high")}>{s.kpis.critical_alerts}</span>} />
+        <StatTile
+          label="Critical alerts"
+          value={<span className={cn(s.kpis.critical_alerts > 0 && "text-sev-high")}>{s.kpis.critical_alerts}</span>}
+          sub={top
+            ? <>{top.component_name}{critical.length > 1 && ` +${critical.length - 1}`} · out {week(top.predicted_stockout_week)} →</>
+            : "None at risk by launch + 1 wk"}
+          title={`Critical: ${SEVERITY.high.rule.toLowerCase()}`}
+          onClick={top ? () => scrollTo(alertAnchor(top.alert_id)) : undefined}
+        />
         <StatTile label="Revenue at risk" value={eur(s.kpis.revenue_at_risk_eur)} sub={s.launch_product.name} />
       </div>
 
@@ -125,6 +143,7 @@ function LaunchPage() {
             </div>
           </Section>
           <Section
+            id="projection"
             title="Stock projection"
             aside={
               <Select value={component} onValueChange={setComponent}>
@@ -140,6 +159,28 @@ function LaunchPage() {
         </div>
 
         <div className="space-y-8">
+          <Section title="Alerts">
+            <p className="text-xs text-muted-foreground">
+              <span className="font-semibold text-sev-high">Critical</span>: {SEVERITY.high.rule.toLowerCase()}.{" "}
+              <span className="font-semibold text-sev-medium">Watch</span>: likely before year end, not by launch.
+            </p>
+            {alerts.data?.length === 0 && <p className="text-sm text-muted-foreground">No alerts yet. Try “Fast-forward to EV-019”.</p>}
+            <div className="space-y-3">
+              {[...(alerts.data ?? [])].sort((a, b) => (a.severity === "high" ? -1 : 0) - (b.severity === "high" ? -1 : 0)).map((a) => (
+                <AlertCard
+                  key={a.alert_id}
+                  alert={a}
+                  busy={busy}
+                  decidedScenario={decidedBy.get(a.alert_id)}
+                  launchWeek={s.launch_week}
+                  supplierName={supplierOf.get(a.component_id)}
+                  onShowProjection={() => { setComponent(a.component_id); scrollTo("projection"); }}
+                  onArbitrate={() => action.mutate({ fn: () => api.arbitrate(a.alert_id, live), agent: agentName("arbitration") })}
+                  onDecide={(sid) => action.mutate({ fn: () => api.decide(a.alert_id, sid), agent: "Saving decision" })}
+                />
+              ))}
+            </div>
+          </Section>
           <Section title="Event feed">
             {events.data && events.data.length === 0 && <p className="text-sm text-muted-foreground">No events processed yet.</p>}
             <ul className="divide-y rounded-lg border bg-card">
@@ -156,21 +197,6 @@ function LaunchPage() {
                 </li>
               ))}
             </ul>
-          </Section>
-          <Section title="Alerts">
-            {alerts.data?.length === 0 && <p className="text-sm text-muted-foreground">No alerts yet. Try “Fast-forward to EV-019”.</p>}
-            <div className="space-y-3">
-              {[...(alerts.data ?? [])].sort((a, b) => (a.severity === "high" ? -1 : 0) - (b.severity === "high" ? -1 : 0)).map((a) => (
-                <AlertCard
-                  key={a.alert_id}
-                  alert={a}
-                  busy={busy}
-                  decidedScenario={decidedBy.get(a.alert_id)}
-                  onArbitrate={() => action.mutate({ fn: () => api.arbitrate(a.alert_id, live), agent: agentName("arbitration") })}
-                  onDecide={(sid) => action.mutate({ fn: () => api.decide(a.alert_id, sid), agent: "Saving decision" })}
-                />
-              ))}
-            </div>
           </Section>
           <Section title="Decision log">
             {decisions.data?.length === 0 ? (
