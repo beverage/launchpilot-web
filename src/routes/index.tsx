@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 function LaunchPage() {
   const qc = useQueryClient();
   const state = useQuery({ queryKey: ["state"], queryFn: () => api.state() });
-  const events = useQuery({ queryKey: ["events"], queryFn: () => api.events(6) });
+  const events = useQuery({ queryKey: ["events"], queryFn: () => api.events(50) });
   const alerts = useQuery({ queryKey: ["alerts"], queryFn: () => api.alerts() });
   const decisions = useQuery({ queryKey: ["decisions"], queryFn: () => api.decisions() });
   const [liveWanted, setLiveWanted] = useState(true);
@@ -55,7 +55,8 @@ function LaunchPage() {
   const s = state.data;
   const busy = action.isPending;
   const nextId = s.next_event?.event_id;
-  const ffDisabled = busy || s.events_processed >= s.events_total || !nextId || nextId > "EV-019";
+  const pastEv019 = (events.data ?? []).some((e) => e.event_id === "EV-019");
+  const ffDisabled = busy || s.events_processed >= s.events_total || !nextId || pastEv019;
   const decidedBy = new Map((decisions.data ?? []).map((d) => [d.alert_id, d.scenario_id]));
 
   return (
