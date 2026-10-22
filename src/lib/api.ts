@@ -174,6 +174,61 @@ export interface Proof {
   component_names: Record<string, string>;
 }
 
+/** Registry card for a company in a BODACC notice (API Recherche d'entreprises). No named people, by design. */
+export interface CompanyCard {
+  legal_name: string;
+  siren: string;
+  activity_code: string;
+  activity_label: string;
+  size: string | null; // "SME" | "Mid-size" | "Large"
+  headcount: string | null; // band, e.g. "20-49"
+  headcount_year: string | null;
+  founded: string | null;
+  status: string; // "active" | "ceased"
+  head_office_city: string | null;
+  head_office_postcode: string | null;
+  head_office_department: string | null;
+  open_sites: number | null;
+  revenue_eur: number | null;
+  net_result_eur: number | null;
+  accounts_year: string | null;
+  registry_url: string; // annuaire-entreprises.data.gouv.fr
+  source: string;
+}
+
+/** One real BODACC notice from the supplier_health view in Aiven for PostgreSQL. Real public data. */
+export interface SupplierHealthNotice {
+  event_id: string;
+  published_at: string;
+  reached_by_demo: boolean; // the demo clock has processed it
+  siren: string;
+  company_name: string;
+  activity_code: string;
+  activity_label: string | null;
+  procedure: string; // judgment type only, in French
+  procedure_family: string | null;
+  court: string;
+  judgment_date: string;
+  city: string | null;
+  region: string | null;
+  notice_url: string;
+  company: CompanyCard | null;
+  matched_supplier_id: string | null;
+  matched_supplier_name: string | null;
+  exposed: boolean;
+  mapping_note: string | null; // show verbatim wherever present
+  alert_id: number | null;
+  alert_severity: Severity | null;
+  alert_explanation: string | null;
+  agent_verdict: string | null; // markdown
+}
+
+export interface SupplierHealthResponse {
+  source: "sql_view" | "unavailable";
+  error: string | null;
+  notices: SupplierHealthNotice[];
+}
+
 export interface StepResult {
   event: LaunchEvent;
   run: AgentRun;
@@ -194,6 +249,8 @@ export interface LaunchPilotApi {
   suppliers(): Promise<SuppliersResponse>;
   proof(): Promise<Proof>;
   runs(): Promise<AgentRun[]>;
+  /** Real BODACC notices and our exposure. By default only those the demo clock has reached. */
+  supplierHealth(includeUnreached?: boolean): Promise<SupplierHealthResponse>;
   /** Process the next recorded event. `live` defaults to true when the backend has a Claude key. */
   nextEvent(live?: boolean): Promise<StepResult>;
   /** Replay in rules mode up to `until`, then process `until` itself live when possible. */
@@ -237,6 +294,7 @@ const httpApi: LaunchPilotApi = {
   suppliers: () => http("/suppliers"),
   proof: () => http("/proof"),
   runs: () => http("/runs"),
+  supplierHealth: (includeUnreached = false) => http(`/supplier-health${includeUnreached ? "?include_unreached=true" : ""}`),
   nextEvent: (live) => post("/events/next", { live }),
   fastForward: (until = "EV-019", live) => post("/fast-forward", { until, live }),
   reset: () => post("/reset"),

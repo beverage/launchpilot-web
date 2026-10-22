@@ -3,7 +3,7 @@
 // Used when VITE_API_URL is empty; see src/lib/api.ts.
 import type {
   Alert, AgentRun, ArbitrateResult, Decision, LaunchEvent, LaunchPilotApi, LaunchState, Projection, Proof,
-  StepResult, SuppliersResponse,
+  StepResult, SupplierHealthResponse, SuppliersResponse,
 } from "@/lib/api";
 import { ApiError } from "@/lib/apiError";
 import recordedJson from "./recorded.json";
@@ -24,6 +24,7 @@ interface Recorded {
   decided: { decisions: Decision[] };
   suppliers: SuppliersResponse;
   proof: Proof;
+  supplier_health?: SupplierHealthResponse; // recorded from the live view; absent until a snapshot is taken
 }
 
 const rec = recordedJson as unknown as Recorded;
@@ -53,6 +54,10 @@ export const mockApi: LaunchPilotApi = {
   suppliers: () => wait(rec.suppliers),
   proof: () => wait(rec.proof),
   runs: () => wait(stage === "start" ? [] : stage === "ev019" ? rec.ev019.runs : rec.arbitrated.runs),
+  supplierHealth: (includeUnreached = false) => {
+    const sh = rec.supplier_health ?? { source: "unavailable" as const, error: "not recorded yet", notices: [] };
+    return wait({ ...sh, notices: sh.notices.filter((n) => includeUnreached || n.reached_by_demo) });
+  },
   nextEvent: () => mockApi.fastForward(),
   fastForward: () => {
     if (stage !== "start") return Promise.reject(new ApiError(409, "EV-019 is already processed"));
