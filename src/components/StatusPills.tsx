@@ -8,10 +8,15 @@ export function StatusPills() {
     <div className="hidden flex-wrap items-center justify-end gap-1.5 md:flex">
       {s && (
         <>
-          <Tag>Data · {s.data.label}</Tag>
-          <Tag className={s.agents.live_available ? "border-primary/40 text-primary" : ""}>
-            {s.agents.live_available ? `Claude live · ${s.agents.model}` : "Rules only"}
-          </Tag>
+          {/* A recorded snapshot's store and agents are those of the API it was recorded from, not of this page */}
+          {API_MODE === "live" && (
+            <>
+              <Tag>Data · {s.data.label}</Tag>
+              <Tag className={s.agents.live_available ? "border-primary/40 text-primary" : ""}>
+                {s.agents.live_available ? `Claude live · ${s.agents.model}` : "Rules only"}
+              </Tag>
+            </>
+          )}
           <Tag>{s.data.dataset}</Tag>
         </>
       )}

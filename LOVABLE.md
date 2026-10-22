@@ -15,7 +15,7 @@ Rules:
 - Load API data in the browser only: useQuery and useMutation inside components. No route loaders, no server functions (createServerFn) and no server-side fetching of API data; the recorded mode keeps its state in the browser.
 - After any action (nextEvent, fastForward, reset, arbitrate, decide) invalidate every query.
 - English UI. Brand, product and supplier names, supplier emails and BODACC notices stay French by design; display them as they come.
-- Every agent result shows whether it came from live Claude ("Live", mode === "live") or the deterministic fallback ("Rules"). Every event shows whether it is recorded or live (origin). When API_MODE === "mock", show a "Recorded data" pill in the header.
+- Every agent result shows whether it came from live Claude ("Live", mode === "live") or the deterministic fallback ("Rules"). Every event shows whether it is recorded or live (origin). When API_MODE === "mock", show a "Recorded data" pill in the header and hide the Data and Agents pills, which would describe the API the snapshot was recorded from.
 - Agent outputs and recommendations are markdown, often with tables: render with react-markdown and remark-gfm.
 - Agent names from the API: "watch" is the Watch agent, "arbitration" the Arbitration agent.
 - Probabilities arrive as 0 to 1: show them as percentages ("82%").
@@ -58,8 +58,9 @@ npm run dev
 
 Lovable keeps `bun.lock`; install with Bun so no `package-lock.json` appears.
 
-- Which data you see depends on the build mode:
-  - `npm run dev` and Lovable's preview: recorded data (`API_MODE` is `mock`), unless `VITE_API_URL` is set in `.env.local`.
-  - Production builds (Aiven Runtime and Lovable's publish): the live API, from `VITE_API_URL` in the committed `.env.production`.
-- To run against a local backend: in the backend repo run `uvicorn api:app --reload --port 8000`, then put `VITE_API_URL=http://localhost:8000` in `.env.local` here. To try the live API in dev, put the URL from `.env.production` there instead.
-- `.env.production` holds a public URL, not a secret. Never put a key in a `VITE_` variable: it ends up in the browser.
+- Every build calls the live API on Aiven Runtime: `npm run dev` and Lovable's preview read `VITE_API_URL` from the committed `.env.development`, production builds (Aiven Runtime and Lovable's publish) from `.env.production`.
+- The preview's buttons (Reset, Next event, Fast-forward, choosing a scenario) change the shared demo in Aiven for PostgreSQL, the one the deployed apps show.
+- To override in dev, use `.env.development.local` (gitignored): Vite ranks `.env.development` above `.env.local`.
+  - Recorded data (`API_MODE` is `mock`): `VITE_API_URL=` with no value.
+  - A local backend: in the backend repo run `uvicorn api:app --reload --port 8000`, then `VITE_API_URL=http://localhost:8000`.
+- `.env.development` and `.env.production` hold a public URL, not a secret. Never put a key in a `VITE_` variable: it ends up in the browser.
