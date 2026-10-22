@@ -1,7 +1,7 @@
 export const helpSteps = {
   "/": [
     ["main .grid", "Launch at a glance", "Track the simulated date, processed events, critical alerts and revenue at risk."],
-    ["main #live", "Replay the launch", "Next event advances the scenario. Fast-forward jumps to EV-019; Reset starts over. Live agent is available only when the service supports it."],
+    ["main #live", "Demo control panel", "These are demo-only controls, not part of the customer workflow. Next event advances the scenario. Fast-forward jumps to EV-019; Reset starts over. Live agent is available only when the service supports it."],
     ["main table", "Compare component risks", "Compare stockout weeks with and without supplier memory. Select a component row to update its stock projection."],
     ["main .recharts-responsive-container", "Read the stock projection", "The LaunchPilot median uses actual lead times; the shaded range shows uncertainty. Stock below zero signals a stockout."],
     ["main section:last-child", "Follow the decision trail", "The event feed and alerts explain what changed. Propose solutions on eligible alerts, choose a scenario and review the decision log."],

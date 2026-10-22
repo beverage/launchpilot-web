@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { Loader2 } from "lucide-react";
+import { Loader2, SlidersHorizontal } from "lucide-react";
 import { toast } from "sonner";
 import { API_MODE, api } from "@/lib/api";
 import { agentName, date, eur, pct, week } from "@/lib/format";
@@ -70,7 +70,13 @@ function LaunchPage() {
         <StatTile label="Revenue at risk" value={eur(s.kpis.revenue_at_risk_eur)} sub={s.launch_product.name} />
       </div>
 
-      <div className="flex flex-wrap items-center gap-3 rounded-lg border bg-card p-3">
+      <section aria-labelledby="demo-controls-title" className="border-y border-dashed border-muted-foreground/40 bg-muted/50 px-4 py-3">
+        <div className="mb-3 flex flex-wrap items-center gap-2">
+          <SlidersHorizontal className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <h2 id="demo-controls-title" className="font-mono text-xs font-semibold uppercase tracking-wider">Demo control panel</h2>
+          <span className="border-l pl-2 text-xs text-muted-foreground">Demo only · not customer controls</span>
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
         <div className="flex items-center gap-2">
           <Switch id="live" checked={live} onCheckedChange={setLiveWanted} disabled={!liveAvailable || busy} />
           <Label htmlFor="live" className="text-sm">Live agent</Label>
@@ -85,7 +91,8 @@ function LaunchPage() {
             {running === "Reset" ? "Resetting…" : `${running} is working…${live ? " (live calls take 10–15 s)" : ""}`}
           </span>
         )}
-      </div>
+        </div>
+      </section>
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <div className="space-y-8">
