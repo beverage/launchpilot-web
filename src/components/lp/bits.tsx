@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import type { ComponentStatus, EventOrigin, RunMode } from "@/lib/api";
+import type { ComponentStatus, LaunchEvent, RunMode } from "@/lib/api";
 import { cn } from "@/lib/utils";
 
 export function Tag({ children, className }: { children: React.ReactNode; className?: string }) {
@@ -24,8 +24,13 @@ export function ModeTag({ mode }: { mode: RunMode }) {
   );
 }
 
-export function OriginTag({ origin }: { origin: EventOrigin }) {
-  return origin === "live" ? <Tag className="border-primary/40 text-primary">Live</Tag> : <Tag>Recorded</Tag>;
+export function OriginTag({ event }: { event: Pick<LaunchEvent, "origin" | "real_data"> }) {
+  const label = event.origin === "live" ? (event.real_data ? "Live · real data" : "Live · synthetic") : "Recorded";
+  return (
+    <Tag className={cn("normal-case tracking-normal", event.origin === "live" && "border-primary/40 text-primary")}>
+      {label}
+    </Tag>
+  );
 }
 
 const sevStyle: Record<ComponentStatus, string> = {
@@ -35,8 +40,8 @@ const sevStyle: Record<ComponentStatus, string> = {
   covered: "border-sev-ok/40 text-sev-ok",
 };
 
-export function SeverityBadge({ status }: { status: ComponentStatus }) {
-  return <Tag className={sevStyle[status]}>{status}</Tag>;
+export function SeverityBadge({ status, className }: { status: ComponentStatus; className?: string }) {
+  return <Tag className={cn(sevStyle[status], className)}>{status}</Tag>;
 }
 
 export function Markdown({ children }: { children: string }) {
