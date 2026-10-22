@@ -11,9 +11,10 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ErrorNote, Loading, OriginTag, Page, Section, SeverityBadge, StatTile } from "@/components/lp/bits";
+import { ErrorNote, Loading, Page, Section, SeverityBadge, StatTile } from "@/components/lp/bits";
 import { ProjectionChart } from "@/components/lp/ProjectionChart";
 import { AlertCard } from "@/components/lp/AlertCard";
+import { EventFeed } from "@/components/lp/EventFeed";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
@@ -182,21 +183,11 @@ function LaunchPage() {
             </div>
           </Section>
           <Section title="Event feed">
-            {events.data && events.data.length === 0 && <p className="text-sm text-muted-foreground">No events processed yet.</p>}
-            <ul className="divide-y rounded-lg border bg-card">
-              {[...(events.data ?? [])].sort((a, b) => b.ts.localeCompare(a.ts) || b.event_id.localeCompare(a.event_id)).slice(0, 6).map((e) => (
-                <li key={e.event_id} className="flex gap-3 p-3">
-                  <span className="flex shrink-0 items-center gap-1.5 pt-0.5">
-                    <span className="font-mono text-[11px] text-muted-foreground">{e.event_id}</span>
-                    <OriginTag event={e} />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm font-medium">{e.kind_label}</p>
-                    <p className="text-sm text-muted-foreground">{e.summary}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            {events.data?.length === 0 ? (
+              <p className="text-sm text-muted-foreground">No events processed yet.</p>
+            ) : (
+              <EventFeed events={[...(events.data ?? [])].sort((a, b) => b.ts.localeCompare(a.ts) || b.event_id.localeCompare(a.event_id)).slice(0, 6)} />
+            )}
           </Section>
           <Section title="Decision log">
             {decisions.data?.length === 0 ? (
