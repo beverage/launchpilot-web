@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/supplier-health")({
   validateSearch: (search: Record<string, unknown>) => ({
-    includeUnreached: search.includeUnreached === true || search.includeUnreached === "true",
+    includeUnreached: search["includeUnreached"] === true || search["includeUnreached"] === "true",
   }),
   head: () => ({
     meta: [
