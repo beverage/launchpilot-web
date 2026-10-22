@@ -57,6 +57,8 @@ const notice = (over: Partial<SupplierHealthNotice> = {}): SupplierHealthNotice 
   matched_supplier_name: null,
   exposed: false,
   mapping_note: null,
+  alert_id: null,
+  alert_severity: null,
   ...over,
 });
 
