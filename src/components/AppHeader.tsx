@@ -1,7 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { ThemeToggle } from "./ThemeToggle";
 import { StatusPills, DataErrorBanner } from "./StatusPills";
-import { PageHelp } from "@/components/lp/SupplierHealthHelp";
+import { PageHelp } from "@/components/lp/PageHelp";
 
 const tabs = [
   { to: "/", label: "Launch" },
