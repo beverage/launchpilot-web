@@ -11,6 +11,13 @@ import { Markdown, ModeTag, SeverityBadge } from "./bits";
 
 const border = { high: "border-l-sev-high", medium: "border-l-sev-medium", low: "border-l-border" } as const;
 
+/** What the alert is about: a component running out, a product the contract manufacturer can't fill, a supplier in trouble. */
+const KIND: Record<string, { badge: string; date: string }> = {
+  capacity: { badge: "Capacity", date: "Short from" },
+  supplier_continuity: { badge: "Supplier continuity", date: "Exposed from" },
+};
+const kindOf = (riskType: string | undefined) => KIND[riskType ?? ""] ?? { badge: "Stockout", date: "Stockout" };
+
 /** Where the stockout week falls against the launch week: "launch week", "1 wk after launch", "2 wk before launch". */
 function fromLaunch(stockoutWeek: string | null, launchWeek: string): string | null {
   if (!stockoutWeek) return null;
@@ -33,6 +40,7 @@ export function AlertCard({
   const [open, setOpen] = useState(false);
   const high = alert.severity === "high";
   const rel = fromLaunch(alert.predicted_stockout_week, launchWeek);
+  const kind = kindOf(alert.risk_type);
   return (
     <article
       id={alertAnchor(alert.alert_id)}
@@ -42,6 +50,7 @@ export function AlertCard({
       <header className="flex flex-wrap items-center gap-2">
         <SeverityBadge status={alert.severity} />
         <ModeTag mode={alert.mode} />
+        <span className="rounded border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">{kind.badge}</span>
         <span className="ml-auto font-mono text-[11px] text-muted-foreground">
           {alert.trigger_event_id ? `trigger ${alert.trigger_event_id}` : ""}
         </span>
@@ -49,7 +58,7 @@ export function AlertCard({
       <div>
         <h3 className={cn("font-semibold", high && "text-lg")}>{alert.component_name}</h3>
         <p className="text-sm text-muted-foreground">
-          Stockout <span className={cn("font-semibold text-foreground", high && "text-sev-high")}>{week(alert.predicted_stockout_week)}</span>
+          {kind.date} <span className={cn("font-semibold text-foreground", high && "text-sev-high")}>{week(alert.predicted_stockout_week)}</span>
           {rel && `, ${rel}`}
           {" · "}<span className="font-semibold text-foreground">{pct(alert.confidence)}</span> chance {high ? "by launch + 1 wk" : "before year end"}
         </p>

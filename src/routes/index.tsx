@@ -47,6 +47,10 @@ function LaunchPage() {
   const action = useMutation({
     mutationFn: async ({ fn }: { fn: () => Promise<unknown>; agent: string }) => fn(),
     onMutate: ({ agent }) => setRunning(agent),
+    onSuccess: (res) => {
+      const n = (res as { live_runs?: unknown[] } | undefined)?.live_runs?.length ?? 0;
+      if (n > 0) toast.success(`${n} live event${n > 1 ? "s" : ""} analysed (emails, goods receipts, notices, order books)`);
+    },
     onError: (e) => toast.error(e instanceof Error ? e.message : String(e)),
     onSettled: () => {
       setRunning(null);
@@ -103,11 +107,13 @@ function LaunchPage() {
         <div className="mx-1 h-6 w-px bg-border" />
         <Button size="sm" disabled={busy || !nextId || (API_MODE === "mock" && pastEv019)} onClick={() => action.mutate({ fn: () => api.nextEvent(live), agent: "Watch agent" })}>Next event</Button>
         <Button size="sm" variant="outline" disabled={ffDisabled} onClick={() => action.mutate({ fn: () => api.fastForward("EV-019", live), agent: "Watch agent" })}>Fast-forward to EV-019</Button>
+        <Button size="sm" variant="outline" disabled={busy || s.events_processed >= s.events_total || API_MODE === "mock"} onClick={() => action.mutate({ fn: () => api.fastForwardToday(live), agent: "Fast-forward to today" })}>Fast-forward to today</Button>
+        <Button size="sm" variant="outline" disabled={busy || !s.live_due} onClick={() => action.mutate({ fn: () => api.drainLive(live), agent: "Watch agent" })}>Analyse live events due ({s.live_due ?? 0})</Button>
         <Button size="sm" variant="ghost" disabled={busy} onClick={() => action.mutate({ fn: () => api.reset(), agent: "Reset" })}>Reset</Button>
         {running && (
           <span className="ml-auto flex items-center gap-2 text-sm text-muted-foreground">
             <Loader2 className="h-4 w-4 animate-spin" />
-            {running === "Reset" ? "Resetting…" : `${running} is working…${live ? " (live calls take 10–15 s)" : ""}`}
+            {running === "Reset" ? "Resetting…" : running === "Fast-forward to today" ? `Playing the rest of the story; the agent reads supplier emails and matching notices on the way${live ? " (can take a minute)" : ""}…` : `${running} is working…${live ? " (live calls take 10–15 s)" : ""}`}
           </span>
         )}
         </div>
