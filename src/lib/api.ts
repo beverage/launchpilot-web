@@ -42,6 +42,8 @@ export interface ComponentRisk {
 
 export interface LaunchState {
   sim_date: string;
+  clock: string; // the demo clock: latest processed timestamp, recorded or live
+  live_due: number; // live rows (emails, goods receipts, notices) dated on or before the clock, not analysed yet
   launch_week: string;
   window_end: string;
   launch_product: { product_id: string; name: string };
@@ -243,6 +245,13 @@ export interface SupplierHealthResponse {
 export interface StepResult {
   event: LaunchEvent;
   run: AgentRun;
+  live_runs: AgentRun[]; // live rows analysed on the way, before the recorded event
+  state: LaunchState;
+}
+
+export interface DrainResult {
+  runs?: number; // recorded events played (fast-forward to today)
+  live_runs: AgentRun[];
   state: LaunchState;
 }
 
@@ -266,6 +275,10 @@ export interface LaunchPilotApi {
   nextEvent(live?: boolean): Promise<StepResult>;
   /** Replay in rules mode up to `until`, then process `until` itself live when possible. */
   fastForward(until?: string, live?: boolean): Promise<StepResult>;
+  /** The rest of the recorded story in rules mode; live rows selectively live (supplier emails, notices naming a supplier). */
+  fastForwardToday(live?: boolean): Promise<DrainResult>;
+  /** Analyse the live rows dated on or before the demo clock. */
+  drainLive(live?: boolean): Promise<DrainResult>;
   reset(): Promise<LaunchState>;
   arbitrate(alertId: number, live?: boolean): Promise<ArbitrateResult>;
   decide(alertId: number, scenarioId: number, decidedBy?: string): Promise<Decision[]>;
@@ -308,6 +321,8 @@ const httpApi: LaunchPilotApi = {
   supplierHealth: (includeUnreached = false) => http(`/supplier-health${includeUnreached ? "?include_unreached=true" : ""}`),
   nextEvent: (live) => post("/events/next", { live }),
   fastForward: (until = "EV-019", live) => post("/fast-forward", { until, live }),
+  fastForwardToday: (live) => post("/fast-forward-today", { live }),
+  drainLive: (live) => post("/live/drain", { live }),
   reset: () => post("/reset"),
   arbitrate: (alertId, live) => post(`/alerts/${alertId}/arbitrate`, { live }),
   decide: (alertId, scenarioId, decidedBy) =>

@@ -40,10 +40,12 @@ function first<T>(xs: T[]): T {
   return x;
 }
 
-const step = (): StepResult => ({ event: first(rec.ev019.events), run: first(rec.ev019.runs), state: rec.ev019.state });
+const withLive = (st: LaunchState): LaunchState => ({ ...st, clock: st.clock ?? `${st.sim_date}T09:00:00`, live_due: st.live_due ?? 0 });
+
+const step = (): StepResult => ({ event: first(rec.ev019.events), run: first(rec.ev019.runs), live_runs: [], state: withLive(rec.ev019.state) });
 
 export const mockApi: LaunchPilotApi = {
-  state: () => wait(stage === "start" ? rec.start.state : rec.ev019.state),
+  state: () => wait(withLive(stage === "start" ? rec.start.state : rec.ev019.state)),
   projection: (componentId) => {
     const p = (stage === "start" ? rec.start : rec.ev019).projections[componentId];
     return p ? wait(p) : Promise.reject(new ApiError(404, `unknown component ${componentId}`));
@@ -63,9 +65,12 @@ export const mockApi: LaunchPilotApi = {
     stage = "ev019";
     return wait(step(), 1500);
   },
+  // The recording has no live rows and stops after EV-019, so these two are no-ops in recorded mode
+  fastForwardToday: () => Promise.reject(new ApiError(409, "the recording stops after EV-019")),
+  drainLive: () => wait({ live_runs: [], state: withLive(stage === "start" ? rec.start.state : rec.ev019.state) }),
   reset: () => {
     stage = "start";
-    return wait(rec.start.state);
+    return wait(withLive(rec.start.state));
   },
   arbitrate: (alertId): Promise<ArbitrateResult> => {
     const alert = rec.arbitrated.alerts.find((a) => a.alert_id === alertId);
