@@ -7,6 +7,14 @@ beforeEach(() => localStorage.clear());
 afterEach(cleanup);
 
 describe("First-visit page help", () => {
+  it("keeps first-visit dismissal separate for each tab", () => {
+    localStorage.setItem("launchpilot:/:walkthrough:v3", "seen");
+    const launch = renderHook(() => usePageHelp("launchpilot:/:walkthrough:v3"));
+    expect(launch.result.current.open).toBe(false);
+    launch.unmount();
+    const proof = renderHook(() => usePageHelp("launchpilot:/proof:walkthrough:v3"));
+    expect(proof.result.current.open).toBe(true);
+  });
   it("opens on the first visit and stays dismissed on subsequent visits", async () => {
     const first = renderHook(() => usePageHelp(key));
     await waitFor(() => expect(first.result.current.open).toBe(true));

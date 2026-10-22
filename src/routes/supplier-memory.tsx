@@ -12,6 +12,8 @@ export const Route = createFileRoute("/supplier-memory")({
       { name: "description", content: "What LaunchPilot remembers about each supplier's track record." },
       { property: "og:title", content: "Supplier memory — LaunchPilot" },
       { property: "og:description", content: "What LaunchPilot remembers about each supplier's track record." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: SupplierMemoryPage,

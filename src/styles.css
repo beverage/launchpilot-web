@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "driver.js/dist/driver.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -113,3 +114,22 @@
 .lp-md th, .lp-md td { border-bottom: 1px solid var(--border); padding: 0.35em 0.5em; text-align: left; }
 .lp-md th { font-weight: 600; color: var(--muted-foreground); }
 .lp-md h1, .lp-md h2, .lp-md h3 { font-weight: 600; margin: 0.75em 0 0.25em; }
+
+.driver-popover.lp-help-popover {
+  background: var(--popover);
+  color: var(--popover-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: min(340px, calc(100vw - 24px));
+  padding: 20px;
+  box-shadow: none;
+}
+.lp-help-popover .driver-popover-title,
+.lp-help-popover .driver-popover-description { font-family: var(--font-sans); letter-spacing: 0; }
+.lp-help-popover .driver-popover-title { font-size: 16px; line-height: 1.4; }
+.lp-help-popover .driver-popover-description { color: var(--muted-foreground); font-size: 13px; line-height: 1.6; }
+.lp-help-popover .driver-popover-arrow-side-left { border-left-color: var(--popover); }
+.lp-help-popover .driver-popover-arrow-side-right { border-right-color: var(--popover); }
+.lp-help-popover .driver-popover-arrow-side-top { border-top-color: var(--popover); }
+.lp-help-popover .driver-popover-arrow-side-bottom { border-bottom-color: var(--popover); }
+.lp-help-popover button { text-shadow: none; font-family: var(--font-sans); }

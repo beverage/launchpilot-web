@@ -6,7 +6,6 @@ import { SupplierHealthCard } from "@/components/lp/SupplierHealthCard";
 import { ErrorNote, Loading, Page } from "@/components/lp/bits";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { SupplierHealthHelp } from "@/components/lp/SupplierHealthHelp";
 
 export const Route = createFileRoute("/supplier-health")({
   validateSearch: (search: Record<string, unknown>) => ({
@@ -34,7 +33,6 @@ function SupplierHealthPage() {
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <h1 className="text-xl font-semibold">Supplier health</h1>
-          <SupplierHealthHelp />
         </div>
         <div className="flex items-center gap-2">
           <Switch id="include-unreached" checked={includeUnreached} onCheckedChange={(checked) => navigate({ search: { includeUnreached: checked } })} />

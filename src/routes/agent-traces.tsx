@@ -12,6 +12,8 @@ export const Route = createFileRoute("/agent-traces")({
       { name: "description", content: "Step-by-step traces of LaunchPilot's agent reasoning." },
       { property: "og:title", content: "Agent traces — LaunchPilot" },
       { property: "og:description", content: "Step-by-step traces of LaunchPilot's agent reasoning." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: AgentTracesPage,

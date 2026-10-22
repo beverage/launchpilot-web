@@ -1,6 +1,7 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { ThemeToggle } from "./ThemeToggle";
 import { StatusPills, DataErrorBanner } from "./StatusPills";
+import { PageHelp } from "@/components/lp/PageHelp";
 
 const tabs = [
   { to: "/", label: "Launch" },
@@ -11,6 +12,7 @@ const tabs = [
 ] as const;
 
 export function AppHeader() {
+  const location = useLocation();
   return (
     <header className="border-b bg-card">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
@@ -33,7 +35,8 @@ export function AppHeader() {
           <ThemeToggle />
         </div>
       </div>
-      <nav className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-6" role="tablist">
+      <div className="mx-auto flex max-w-6xl items-center gap-2 px-6">
+      <nav className="flex min-w-0 flex-1 gap-1 overflow-x-auto" role="tablist">
         {tabs.map((t) => (
           <Link
             key={t.to}
@@ -47,6 +50,8 @@ export function AppHeader() {
           </Link>
         ))}
       </nav>
+      <PageHelp key={location.pathname} pathname={location.pathname} />
+      </div>
       <DataErrorBanner />
     </header>
   );

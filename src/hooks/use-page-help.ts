@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 /** Local, browser-only dismissal preference; never stores API or company data. */
 export function usePageHelp(storageKey: string) {
@@ -19,15 +19,20 @@ export function usePageHelp(storageKey: string) {
       setOpen(true);
     };
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    const openHelp = () => setOpen(true);
+    window.addEventListener("launchpilot:open-help", openHelp);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("launchpilot:open-help", openHelp);
+    };
   }, [storageKey]);
 
-  const onOpenChange = (next: boolean) => {
+  const onOpenChange = useCallback((next: boolean) => {
     setOpen(next);
     if (!next) {
       try { localStorage.setItem(storageKey, "seen"); } catch { /* Help still works without browser storage. */ }
     }
-  };
+  }, [storageKey]);
 
   return { open, onOpenChange };
 }
