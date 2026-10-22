@@ -69,8 +69,9 @@ export interface Scenario {
 
 export interface Alert {
   alert_id: number;
-  component_id: string;
+  component_id: string; // a product id (PRD-...) when risk_type is "capacity"
   component_name: string;
+  risk_type: string; // "stockout_component", or "capacity" for a contract-manufacturer capacity alert on a product
   severity: Severity;
   predicted_stockout_week: string | null;
   confidence: number | null; // a probability, 0 to 1
