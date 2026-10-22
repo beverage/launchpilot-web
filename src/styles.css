@@ -32,6 +32,10 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
   --color-signal: var(--signal);
+  --color-sev-high: var(--sev-high);
+  --color-sev-medium: var(--sev-medium);
+  --color-sev-ok: var(--sev-ok);
+  --color-chart-lp: var(--chart-lp);
 }
 
 :root {
@@ -56,6 +60,10 @@
   --input: oklch(0.9 0.012 75);
   --ring: oklch(0.42 0.08 195);
   --signal: oklch(0.68 0.16 40);
+  --sev-high: oklch(0.56 0.2 27);
+  --sev-medium: oklch(0.72 0.15 75);
+  --sev-ok: oklch(0.58 0.12 155);
+  --chart-lp: oklch(0.55 0.16 250);
 }
 
 .dark {
@@ -79,6 +87,10 @@
   --input: oklch(1 0 0 / 14%);
   --ring: oklch(0.78 0.1 190);
   --signal: oklch(0.75 0.15 45);
+  --sev-high: oklch(0.68 0.2 25);
+  --sev-medium: oklch(0.8 0.14 80);
+  --sev-ok: oklch(0.72 0.13 155);
+  --chart-lp: oklch(0.72 0.14 250);
 }
 
 @layer base {
