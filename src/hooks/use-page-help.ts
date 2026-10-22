@@ -19,7 +19,12 @@ export function usePageHelp(storageKey: string) {
       setOpen(true);
     };
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    const openHelp = () => setOpen(true);
+    window.addEventListener("launchpilot:open-help", openHelp);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("launchpilot:open-help", openHelp);
+    };
   }, [storageKey]);
 
   const onOpenChange = useCallback((next: boolean) => {
