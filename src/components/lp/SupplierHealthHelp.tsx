@@ -17,15 +17,15 @@ export function PageHelp({ pathname }: { pathname: string }) {
     void import("driver.js").then(({ driver }) => {
       if (cancelled) return;
       const pageSteps = Object.entries(helpSteps).find(([path]) => path === pathname)?.[1] ?? [];
-      const candidates = pageSteps.map(([element, title, description]) => ({ element, popover: { title, description } }));
+      const candidates: { element: string; popover: { title: string; description: string } }[] = pageSteps.map(([element, title, description]) => ({ element, popover: { title, description } }));
       candidates.push({ element: "#page-help", popover: { title: "Help for this tab", description: "This button restarts the walkthrough for the current tab. Press ? to reopen it, or Escape to close." } });
       const tour = driver({
-        animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+        animate: false,
         overlayColor: "var(--foreground)", overlayOpacity: 0.55,
         popoverClass: "lp-help-popover", showButtons: [], stagePadding: 6,
         onDestroyed: () => {
           roots.splice(0).forEach((root) => queueMicrotask(() => root.unmount()));
-          if (!cancelled) onOpenChange(false);
+          if (!cancelled) window.setTimeout(() => onOpenChange(false), 0);
         },
         onPopoverRender: (popover) => {
           popover.wrapper.setAttribute("role", "dialog");
