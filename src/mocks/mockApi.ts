@@ -1,4 +1,4 @@
-// Recorded snapshots of the real API, captured from api.py on 22 October 2026 (seed 42, live Claude runs).
+// Recorded snapshots of the real API, captured from api.py on 22 October 2026 (seed 42, after B1 and A5, live Claude runs).
 // The mock walks the demo journey: start -> fast-forward to EV-019 -> propose solutions -> choose a scenario.
 // Used when VITE_API_URL is empty; see src/lib/api.ts.
 import type {

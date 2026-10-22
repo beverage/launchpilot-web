@@ -14,20 +14,21 @@
     "event_id": "EV-032",
     "ts": "2026-09-08T13:00:00",
     "event_type": "noise",
-    "summary": "inventaire tournant OK",
+    "kind_label": "· Info",
+    "summary": "cycle count OK",
     "payload": {
-     "note": "inventaire tournant OK"
+     "note": "cycle count OK"
     },
     "origin": "recorded"
    },
    "data": {
     "store": "memory",
-    "label": "mémoire (sans base)",
+    "label": "in memory (no database)",
     "error": null,
     "dataset": "synthetic, recorded scenario"
    },
    "agents": {
-    "live_available": false,
+    "live_available": true,
     "model": "claude-sonnet-5-5"
    },
    "kpis": {
@@ -37,94 +38,112 @@
    "components": [
     {
      "component_id": "CMP-FLA-30",
-     "name": "Flacon verre 30 ml",
+     "name": "30 ml glass bottle",
      "supplier_id": "SUP-FLA",
      "supplier_name": "Verrerie Lumière",
      "stockout_week_launchpilot": null,
-     "stockout_week_baseline": null,
-     "min_projected_stock": 2225,
+     "stockout_week_without_memory": null,
+     "p_stockout_by_launch_plus_1wk": 0.0,
+     "p_stockout_before_end_of_year": 0.0,
+     "confidence": 0.0,
+     "min_projected_stock_p50": 2225,
      "severity": "covered",
      "evidence": [
       "inventory:CMP-FLA-30",
       "purchase_orders:PO-0065",
-      "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+      "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
      ]
     },
     {
      "component_id": "CMP-FLA-50",
-     "name": "Pot verre 50 ml",
+     "name": "50 ml glass jar",
      "supplier_id": "SUP-FLA",
      "supplier_name": "Verrerie Lumière",
      "stockout_week_launchpilot": "2026-12-21",
-     "stockout_week_baseline": "2026-12-21",
-     "min_projected_stock": -5700,
+     "stockout_week_without_memory": "2026-12-21",
+     "p_stockout_by_launch_plus_1wk": 0.0,
+     "p_stockout_before_end_of_year": 1.0,
+     "confidence": 1.0,
+     "min_projected_stock_p50": -5700,
      "severity": "medium",
      "evidence": [
       "inventory:CMP-FLA-50",
       "purchase_orders:PO-0066",
-      "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+      "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
      ]
     },
     {
      "component_id": "CMP-POM-01",
-     "name": "Pompe airless 30 ml",
+     "name": "30 ml airless pump",
      "supplier_id": "SUP-POM",
      "supplier_name": "Pompes Atlas",
      "stockout_week_launchpilot": null,
-     "stockout_week_baseline": null,
-     "min_projected_stock": 1225,
+     "stockout_week_without_memory": null,
+     "p_stockout_by_launch_plus_1wk": 0.0,
+     "p_stockout_before_end_of_year": 0.0,
+     "confidence": 0.0,
+     "min_projected_stock_p50": 6500,
      "severity": "covered",
      "evidence": [
       "inventory:CMP-POM-01",
       "purchase_orders:PO-0063",
       "purchase_orders:PO-0064",
-      "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)"
+      "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)"
      ]
     },
     {
      "component_id": "CMP-ETU-01",
-     "name": "Étui carton sérum",
+     "name": "Serum folding carton",
      "supplier_id": "SUP-ETU",
      "supplier_name": "Cartonnages de Seine",
      "stockout_week_launchpilot": null,
-     "stockout_week_baseline": null,
-     "min_projected_stock": 5125,
+     "stockout_week_without_memory": null,
+     "p_stockout_by_launch_plus_1wk": 0.0,
+     "p_stockout_before_end_of_year": 0.0,
+     "confidence": 0.0,
+     "min_projected_stock_p50": 5125,
      "severity": "covered",
      "evidence": [
       "inventory:CMP-ETU-01",
       "purchase_orders:PO-0069",
-      "supplier_reliability:SUP-ETU (annoncé 28 j, réel 29.1 ± 3.1 j sur 14 livraisons, délai prudent 32 j)"
+      "supplier_reliability:SUP-ETU (announced 28 d, actual 29.1 ± 3.1 d over 14 deliveries, lead time used 30 d)"
      ]
     },
     {
      "component_id": "CMP-ETU-02",
-     "name": "Étui carton crème",
+     "name": "Cream folding carton",
      "supplier_id": "SUP-ETU",
      "supplier_name": "Cartonnages de Seine",
      "stockout_week_launchpilot": null,
-     "stockout_week_baseline": null,
-     "min_projected_stock": 1200,
+     "stockout_week_without_memory": null,
+     "p_stockout_by_launch_plus_1wk": 0.0,
+     "p_stockout_before_end_of_year": 0.0,
+     "confidence": 0.0,
+     "min_projected_stock_p50": 1200,
      "severity": "covered",
      "evidence": [
       "inventory:CMP-ETU-02",
       "purchase_orders:PO-0070",
-      "supplier_reliability:SUP-ETU (annoncé 28 j, réel 29.1 ± 3.1 j sur 14 livraisons, délai prudent 32 j)"
+      "supplier_reliability:SUP-ETU (announced 28 d, actual 29.1 ± 3.1 d over 14 deliveries, lead time used 30 d)"
      ]
     },
     {
      "component_id": "CMP-COF-NOEL",
-     "name": "Coffret Noël 2026",
+     "name": "Christmas 2026 gift box",
      "supplier_id": "SUP-COF",
      "supplier_name": "Coffrets Prestige",
      "stockout_week_launchpilot": null,
-     "stockout_week_baseline": null,
-     "min_projected_stock": 0,
+     "stockout_week_without_memory": null,
+     "p_stockout_by_launch_plus_1wk": 0.0,
+     "p_stockout_before_end_of_year": 0.0,
+     "confidence": 0.0,
+     "min_projected_stock_p50": 0,
      "severity": "covered",
      "evidence": [
       "inventory:CMP-COF-NOEL",
       "purchase_orders:PO-0067",
       "purchase_orders:PO-0068",
-      "supplier_reliability:SUP-COF (annoncé 35 j, réel 47.0 ± 4.2 j sur 14 livraisons, délai prudent 51 j)"
+      "supplier_reliability:SUP-COF (announced 35 d, actual 47.0 ± 4.2 d over 14 deliveries, lead time used 47 d)"
      ]
     }
    ]
@@ -136,553 +155,757 @@
   "projections": {
    "CMP-FLA-30": {
     "component_id": "CMP-FLA-30",
-    "name": "Flacon verre 30 ml",
+    "name": "30 ml glass bottle",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 30500,
-      "baseline": 30500
+      "p10": 30500,
+      "p50": 30500,
+      "p90": 30500,
+      "without_memory": 30500
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 29000,
-      "baseline": 29000
+      "p10": 29000,
+      "p50": 29000,
+      "p90": 49000,
+      "without_memory": 29000
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 27500,
-      "baseline": 47500
+      "p10": 27500,
+      "p50": 47500,
+      "p90": 47500,
+      "without_memory": 47500
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 46000,
-      "baseline": 46000
+      "p10": 46000,
+      "p50": 46000,
+      "p90": 46000,
+      "without_memory": 46000
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 44500,
-      "baseline": 44500
+      "p10": 44500,
+      "p50": 44500,
+      "p90": 44500,
+      "without_memory": 44500
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 43000,
-      "baseline": 43000
+      "p10": 43000,
+      "p50": 43000,
+      "p90": 43000,
+      "without_memory": 43000
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 41500,
-      "baseline": 41500
+      "p10": 41500,
+      "p50": 41500,
+      "p90": 41500,
+      "without_memory": 41500
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 37000,
-      "baseline": 37000
+      "p10": 37000,
+      "p50": 37000,
+      "p90": 37000,
+      "without_memory": 37000
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 32925,
-      "baseline": 32925
+      "p10": 32925,
+      "p50": 32925,
+      "p90": 32925,
+      "without_memory": 32925
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 28850,
-      "baseline": 28850
+      "p10": 28850,
+      "p50": 28850,
+      "p90": 28850,
+      "without_memory": 28850
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 24775,
-      "baseline": 24775
+      "p10": 24775,
+      "p50": 24775,
+      "p90": 24775,
+      "without_memory": 24775
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 20700,
-      "baseline": 20700
+      "p10": 20700,
+      "p50": 20700,
+      "p90": 20700,
+      "without_memory": 20700
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 16625,
-      "baseline": 16625
+      "p10": 16625,
+      "p50": 16625,
+      "p90": 16625,
+      "without_memory": 16625
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 12550,
-      "baseline": 12550
+      "p10": 12550,
+      "p50": 12550,
+      "p90": 12550,
+      "without_memory": 12550
      },
      {
       "week": "2026-12-14",
-      "launchpilot": 8475,
-      "baseline": 8475
+      "p10": 8475,
+      "p50": 8475,
+      "p90": 8475,
+      "without_memory": 8475
      },
      {
       "week": "2026-12-21",
-      "launchpilot": 4400,
-      "baseline": 4400
+      "p10": 4400,
+      "p50": 4400,
+      "p90": 4400,
+      "without_memory": 4400
      },
      {
       "week": "2026-12-28",
-      "launchpilot": 2225,
-      "baseline": 2225
+      "p10": 2225,
+      "p50": 2225,
+      "p90": 2225,
+      "without_memory": 2225
      }
     ]
    },
    "CMP-FLA-50": {
     "component_id": "CMP-FLA-50",
-    "name": "Pot verre 50 ml",
+    "name": "50 ml glass jar",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 24400,
-      "baseline": 24400
+      "p10": 24400,
+      "p50": 24400,
+      "p90": 24400,
+      "without_memory": 24400
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 22800,
-      "baseline": 22800
+      "p10": 22800,
+      "p50": 22800,
+      "p90": 22800,
+      "without_memory": 22800
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 21200,
-      "baseline": 21200
+      "p10": 21200,
+      "p50": 21200,
+      "p90": 41200,
+      "without_memory": 21200
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 19600,
-      "baseline": 39600
+      "p10": 19600,
+      "p50": 39600,
+      "p90": 39600,
+      "without_memory": 39600
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 38000,
-      "baseline": 38000
+      "p10": 38000,
+      "p50": 38000,
+      "p90": 38000,
+      "without_memory": 38000
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 36400,
-      "baseline": 36400
+      "p10": 36400,
+      "p50": 36400,
+      "p90": 36400,
+      "without_memory": 36400
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 34800,
-      "baseline": 34800
+      "p10": 34800,
+      "p50": 34800,
+      "p90": 34800,
+      "without_memory": 34800
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 30200,
-      "baseline": 30200
+      "p10": 30200,
+      "p50": 30200,
+      "p90": 30200,
+      "without_memory": 30200
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 26000,
-      "baseline": 26000
+      "p10": 26000,
+      "p50": 26000,
+      "p90": 26000,
+      "without_memory": 26000
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 21800,
-      "baseline": 21800
+      "p10": 21800,
+      "p50": 21800,
+      "p90": 21800,
+      "without_memory": 21800
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 17600,
-      "baseline": 17600
+      "p10": 17600,
+      "p50": 17600,
+      "p90": 17600,
+      "without_memory": 17600
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 13400,
-      "baseline": 13400
+      "p10": 13400,
+      "p50": 13400,
+      "p90": 13400,
+      "without_memory": 13400
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 9200,
-      "baseline": 9200
+      "p10": 9200,
+      "p50": 9200,
+      "p90": 9200,
+      "without_memory": 9200
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 5000,
-      "baseline": 5000
+      "p10": 5000,
+      "p50": 5000,
+      "p90": 5000,
+      "without_memory": 5000
      },
      {
       "week": "2026-12-14",
-      "launchpilot": 800,
-      "baseline": 800
+      "p10": 800,
+      "p50": 800,
+      "p90": 800,
+      "without_memory": 800
      },
      {
       "week": "2026-12-21",
-      "launchpilot": -3400,
-      "baseline": -3400
+      "p10": -3400,
+      "p50": -3400,
+      "p90": -3400,
+      "without_memory": -3400
      },
      {
       "week": "2026-12-28",
-      "launchpilot": -5700,
-      "baseline": -5700
+      "p10": -5700,
+      "p50": -5700,
+      "p90": -5700,
+      "without_memory": -5700
      }
     ]
    },
    "CMP-POM-01": {
     "component_id": "CMP-POM-01",
-    "name": "Pompe airless 30 ml",
+    "name": "30 ml airless pump",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 9500,
-      "baseline": 9500
+      "p10": 9500,
+      "p50": 9500,
+      "p90": 9500,
+      "without_memory": 9500
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 8000,
-      "baseline": 28000
+      "p10": 8000,
+      "p50": 8000,
+      "p90": 8000,
+      "without_memory": 28000
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 6500,
-      "baseline": 26500
+      "p10": 6500,
+      "p50": 6500,
+      "p90": 26500,
+      "without_memory": 26500
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 5000,
-      "baseline": 25000
+      "p10": 5000,
+      "p50": 25000,
+      "p90": 25000,
+      "without_memory": 25000
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 23500,
-      "baseline": 23500
+      "p10": 23500,
+      "p50": 23500,
+      "p90": 23500,
+      "without_memory": 23500
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 22000,
-      "baseline": 42000
+      "p10": 22000,
+      "p50": 22000,
+      "p90": 22000,
+      "without_memory": 52000
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 20500,
-      "baseline": 40500
+      "p10": 20500,
+      "p50": 20500,
+      "p90": 50500,
+      "without_memory": 50500
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 16000,
-      "baseline": 36000
+      "p10": 16000,
+      "p50": 46000,
+      "p90": 46000,
+      "without_memory": 46000
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 31925,
-      "baseline": 31925
+      "p10": 11925,
+      "p50": 41925,
+      "p90": 41925,
+      "without_memory": 41925
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 27850,
-      "baseline": 27850
+      "p10": 37850,
+      "p50": 37850,
+      "p90": 37850,
+      "without_memory": 37850
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 23775,
-      "baseline": 23775
+      "p10": 33775,
+      "p50": 33775,
+      "p90": 33775,
+      "without_memory": 33775
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 19700,
-      "baseline": 19700
+      "p10": 29700,
+      "p50": 29700,
+      "p90": 29700,
+      "without_memory": 29700
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 15625,
-      "baseline": 15625
+      "p10": 25625,
+      "p50": 25625,
+      "p90": 25625,
+      "without_memory": 25625
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 11550,
-      "baseline": 11550
+      "p10": 21550,
+      "p50": 21550,
+      "p90": 21550,
+      "without_memory": 21550
      },
      {
       "week": "2026-12-14",
-      "launchpilot": 7475,
-      "baseline": 7475
+      "p10": 17475,
+      "p50": 17475,
+      "p90": 17475,
+      "without_memory": 17475
      },
      {
       "week": "2026-12-21",
-      "launchpilot": 3400,
-      "baseline": 3400
+      "p10": 13400,
+      "p50": 13400,
+      "p90": 13400,
+      "without_memory": 13400
      },
      {
       "week": "2026-12-28",
-      "launchpilot": 1225,
-      "baseline": 1225
+      "p10": 11225,
+      "p50": 11225,
+      "p90": 11225,
+      "without_memory": 11225
      }
     ]
    },
    "CMP-ETU-01": {
     "component_id": "CMP-ETU-01",
-    "name": "Étui carton sérum",
+    "name": "Serum folding carton",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 22500,
-      "baseline": 22500
+      "p10": 22500,
+      "p50": 22500,
+      "p90": 22500,
+      "without_memory": 22500
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 21000,
-      "baseline": 21000
+      "p10": 21000,
+      "p50": 21000,
+      "p90": 31000,
+      "without_memory": 21000
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 29500,
-      "baseline": 29500
+      "p10": 29500,
+      "p50": 29500,
+      "p90": 29500,
+      "without_memory": 29500
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 28000,
-      "baseline": 28000
+      "p10": 28000,
+      "p50": 28000,
+      "p90": 28000,
+      "without_memory": 28000
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 26500,
-      "baseline": 26500
+      "p10": 26500,
+      "p50": 26500,
+      "p90": 26500,
+      "without_memory": 26500
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 25000,
-      "baseline": 25000
+      "p10": 25000,
+      "p50": 25000,
+      "p90": 25000,
+      "without_memory": 25000
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 23500,
-      "baseline": 23500
+      "p10": 23500,
+      "p50": 23500,
+      "p90": 23500,
+      "without_memory": 23500
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 22000,
-      "baseline": 22000
+      "p10": 22000,
+      "p50": 22000,
+      "p90": 22000,
+      "without_memory": 22000
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 20125,
-      "baseline": 20125
+      "p10": 20125,
+      "p50": 20125,
+      "p90": 20125,
+      "without_memory": 20125
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 18250,
-      "baseline": 18250
+      "p10": 18250,
+      "p50": 18250,
+      "p90": 18250,
+      "without_memory": 18250
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 16375,
-      "baseline": 16375
+      "p10": 16375,
+      "p50": 16375,
+      "p90": 16375,
+      "without_memory": 16375
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 14500,
-      "baseline": 14500
+      "p10": 14500,
+      "p50": 14500,
+      "p90": 14500,
+      "without_memory": 14500
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 12625,
-      "baseline": 12625
+      "p10": 12625,
+      "p50": 12625,
+      "p90": 12625,
+      "without_memory": 12625
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 10750,
-      "baseline": 10750
+      "p10": 10750,
+      "p50": 10750,
+      "p90": 10750,
+      "without_memory": 10750
      },
      {
       "week": "2026-12-14",
-      "launchpilot": 8875,
-      "baseline": 8875
+      "p10": 8875,
+      "p50": 8875,
+      "p90": 8875,
+      "without_memory": 8875
      },
      {
       "week": "2026-12-21",
-      "launchpilot": 7000,
-      "baseline": 7000
+      "p10": 7000,
+      "p50": 7000,
+      "p90": 7000,
+      "without_memory": 7000
      },
      {
       "week": "2026-12-28",
-      "launchpilot": 5125,
-      "baseline": 5125
+      "p10": 5125,
+      "p50": 5125,
+      "p90": 5125,
+      "without_memory": 5125
      }
     ]
    },
    "CMP-ETU-02": {
     "component_id": "CMP-ETU-02",
-    "name": "Étui carton crème",
+    "name": "Cream folding carton",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 20400,
-      "baseline": 20400
+      "p10": 20400,
+      "p50": 20400,
+      "p90": 20400,
+      "without_memory": 20400
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 18800,
-      "baseline": 18800
+      "p10": 18800,
+      "p50": 18800,
+      "p90": 28800,
+      "without_memory": 18800
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 27200,
-      "baseline": 27200
+      "p10": 27200,
+      "p50": 27200,
+      "p90": 27200,
+      "without_memory": 27200
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 25600,
-      "baseline": 25600
+      "p10": 25600,
+      "p50": 25600,
+      "p90": 25600,
+      "without_memory": 25600
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 24000,
-      "baseline": 24000
+      "p10": 24000,
+      "p50": 24000,
+      "p90": 24000,
+      "without_memory": 24000
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 22400,
-      "baseline": 22400
+      "p10": 22400,
+      "p50": 22400,
+      "p90": 22400,
+      "without_memory": 22400
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 20800,
-      "baseline": 20800
+      "p10": 20800,
+      "p50": 20800,
+      "p90": 20800,
+      "without_memory": 20800
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 19200,
-      "baseline": 19200
+      "p10": 19200,
+      "p50": 19200,
+      "p90": 19200,
+      "without_memory": 19200
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 17200,
-      "baseline": 17200
+      "p10": 17200,
+      "p50": 17200,
+      "p90": 17200,
+      "without_memory": 17200
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 15200,
-      "baseline": 15200
+      "p10": 15200,
+      "p50": 15200,
+      "p90": 15200,
+      "without_memory": 15200
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 13200,
-      "baseline": 13200
+      "p10": 13200,
+      "p50": 13200,
+      "p90": 13200,
+      "without_memory": 13200
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 11200,
-      "baseline": 11200
+      "p10": 11200,
+      "p50": 11200,
+      "p90": 11200,
+      "without_memory": 11200
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 9200,
-      "baseline": 9200
+      "p10": 9200,
+      "p50": 9200,
+      "p90": 9200,
+      "without_memory": 9200
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 7200,
-      "baseline": 7200
+      "p10": 7200,
+      "p50": 7200,
+      "p90": 7200,
+      "without_memory": 7200
      },
      {
       "week": "2026-12-14",
-      "launchpilot": 5200,
-      "baseline": 5200
+      "p10": 5200,
+      "p50": 5200,
+      "p90": 5200,
+      "without_memory": 5200
      },
      {
       "week": "2026-12-21",
-      "launchpilot": 3200,
-      "baseline": 3200
+      "p10": 3200,
+      "p50": 3200,
+      "p90": 3200,
+      "without_memory": 3200
      },
      {
       "week": "2026-12-28",
-      "launchpilot": 1200,
-      "baseline": 1200
+      "p10": 1200,
+      "p50": 1200,
+      "p90": 1200,
+      "without_memory": 1200
      }
     ]
    },
    "CMP-COF-NOEL": {
     "component_id": "CMP-COF-NOEL",
-    "name": "Coffret Noël 2026",
+    "name": "Christmas 2026 gift box",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 0,
-      "baseline": 0
+      "p10": 0,
+      "p50": 0,
+      "p90": 0,
+      "without_memory": 0
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 0,
-      "baseline": 0
+      "p10": 0,
+      "p50": 0,
+      "p90": 0,
+      "without_memory": 0
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 0,
-      "baseline": 0
+      "p10": 0,
+      "p50": 0,
+      "p90": 0,
+      "without_memory": 0
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 0,
-      "baseline": 12000
+      "p10": 0,
+      "p50": 0,
+      "p90": 12000,
+      "without_memory": 12000
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 0,
-      "baseline": 21000
+      "p10": 0,
+      "p50": 12000,
+      "p90": 12000,
+      "without_memory": 21000
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 12000,
-      "baseline": 21000
+      "p10": 12000,
+      "p50": 21000,
+      "p90": 21000,
+      "without_memory": 21000
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 21000,
-      "baseline": 21000
+      "p10": 21000,
+      "p50": 21000,
+      "p90": 21000,
+      "without_memory": 21000
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 18000,
-      "baseline": 18000
+      "p10": 18000,
+      "p50": 18000,
+      "p90": 18000,
+      "without_memory": 18000
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 15800,
-      "baseline": 15800
+      "p10": 15800,
+      "p50": 15800,
+      "p90": 15800,
+      "without_memory": 15800
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 13600,
-      "baseline": 13600
+      "p10": 13600,
+      "p50": 13600,
+      "p90": 13600,
+      "without_memory": 13600
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 11400,
-      "baseline": 11400
+      "p10": 11400,
+      "p50": 11400,
+      "p90": 11400,
+      "without_memory": 11400
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 9200,
-      "baseline": 9200
+      "p10": 9200,
+      "p50": 9200,
+      "p90": 9200,
+      "without_memory": 9200
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 7000,
-      "baseline": 7000
+      "p10": 7000,
+      "p50": 7000,
+      "p90": 7000,
+      "without_memory": 7000
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 4800,
-      "baseline": 4800
+      "p10": 4800,
+      "p50": 4800,
+      "p90": 4800,
+      "without_memory": 4800
      },
      {
       "week": "2026-12-14",
-      "launchpilot": 2600,
-      "baseline": 2600
+      "p10": 2600,
+      "p50": 2600,
+      "p90": 2600,
+      "without_memory": 2600
      },
      {
       "week": "2026-12-21",
-      "launchpilot": 400,
-      "baseline": 400
+      "p10": 400,
+      "p50": 400,
+      "p90": 400,
+      "without_memory": 400
      },
      {
       "week": "2026-12-28",
-      "launchpilot": 100,
-      "baseline": 100
+      "p10": 100,
+      "p50": 100,
+      "p90": 100,
+      "without_memory": 100
      }
     ]
    }
@@ -703,15 +926,16 @@
     "event_id": "EV-022",
     "ts": "2026-10-03T09:00:00",
     "event_type": "noise",
-    "summary": "inventaire tournant OK",
+    "kind_label": "· Info",
+    "summary": "cycle count OK",
     "payload": {
-     "note": "inventaire tournant OK"
+     "note": "cycle count OK"
     },
     "origin": "recorded"
    },
    "data": {
     "store": "memory",
-    "label": "mémoire (sans base)",
+    "label": "in memory (no database)",
     "error": null,
     "dataset": "synthetic, recorded scenario"
    },
@@ -721,17 +945,20 @@
    },
    "kpis": {
     "critical_alerts": 1,
-    "revenue_at_risk_eur": 742426
+    "revenue_at_risk_eur": 571097
    },
    "components": [
     {
      "component_id": "CMP-FLA-30",
-     "name": "Flacon verre 30 ml",
+     "name": "30 ml glass bottle",
      "supplier_id": "SUP-FLA",
      "supplier_name": "Verrerie Lumière",
      "stockout_week_launchpilot": "2026-12-28",
-     "stockout_week_baseline": null,
-     "min_projected_stock": -2050,
+     "stockout_week_without_memory": "2026-12-28",
+     "p_stockout_by_launch_plus_1wk": 0.0,
+     "p_stockout_before_end_of_year": 1.0,
+     "confidence": 1.0,
+     "min_projected_stock_p50": -2050,
      "severity": "medium",
      "evidence": [
       "events:EV-004",
@@ -740,17 +967,20 @@
       "events:sellout_spike PRD-SER-NUI x1.50",
       "inventory:CMP-FLA-30",
       "purchase_orders:PO-0065",
-      "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+      "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
      ]
     },
     {
      "component_id": "CMP-FLA-50",
-     "name": "Pot verre 50 ml",
+     "name": "50 ml glass jar",
      "supplier_id": "SUP-FLA",
      "supplier_name": "Verrerie Lumière",
      "stockout_week_launchpilot": "2026-12-14",
-     "stockout_week_baseline": "2026-12-21",
-     "min_projected_stock": -8440,
+     "stockout_week_without_memory": "2026-12-14",
+     "p_stockout_by_launch_plus_1wk": 0.0,
+     "p_stockout_before_end_of_year": 1.0,
+     "confidence": 1.0,
+     "min_projected_stock_p50": -8440,
      "severity": "medium",
      "evidence": [
       "events:sellout_spike PRD-COF-NOEL x1.30",
@@ -758,39 +988,45 @@
       "events:sellout_spike PRD-CRE-RIC x1.10",
       "inventory:CMP-FLA-50",
       "purchase_orders:PO-0066",
-      "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+      "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
      ]
     },
     {
      "component_id": "CMP-POM-01",
-     "name": "Pompe airless 30 ml",
+     "name": "30 ml airless pump",
      "supplier_id": "SUP-POM",
      "supplier_name": "Pompes Atlas",
      "stockout_week_launchpilot": "2026-11-09",
-     "stockout_week_baseline": null,
-     "min_projected_stock": -11050,
+     "stockout_week_without_memory": "2026-12-28",
+     "p_stockout_by_launch_plus_1wk": 0.82,
+     "p_stockout_before_end_of_year": 1.0,
+     "confidence": 0.82,
+     "min_projected_stock_p50": -3765,
      "severity": "high",
      "evidence": [
       "events:EV-001",
       "events:EV-002",
-      "events:EV-019 (livraison partielle 12000/20000)",
+      "events:EV-019 (partial delivery 12000/20000)",
       "events:sellout_spike PRD-COF-NOEL x1.30",
       "events:sellout_spike PRD-SER-ECL x1.40",
       "events:sellout_spike PRD-SER-NUI x1.50",
       "inventory:CMP-POM-01",
       "purchase_orders:PO-0063",
       "purchase_orders:PO-0064",
-      "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)"
+      "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)"
      ]
     },
     {
      "component_id": "CMP-ETU-01",
-     "name": "Étui carton sérum",
+     "name": "Serum folding carton",
      "supplier_id": "SUP-ETU",
      "supplier_name": "Cartonnages de Seine",
      "stockout_week_launchpilot": null,
-     "stockout_week_baseline": null,
-     "min_projected_stock": 2830,
+     "stockout_week_without_memory": null,
+     "p_stockout_by_launch_plus_1wk": 0.0,
+     "p_stockout_before_end_of_year": 0.0,
+     "confidence": 0.0,
+     "min_projected_stock_p50": 2830,
      "severity": "covered",
      "evidence": [
       "events:EV-005",
@@ -798,34 +1034,40 @@
       "events:sellout_spike PRD-SER-NUI x1.50",
       "inventory:CMP-ETU-01",
       "purchase_orders:PO-0069",
-      "supplier_reliability:SUP-ETU (annoncé 28 j, réel 29.1 ± 3.1 j sur 14 livraisons, délai prudent 32 j)"
+      "supplier_reliability:SUP-ETU (announced 28 d, actual 29.1 ± 3.1 d over 14 deliveries, lead time used 30 d)"
      ]
     },
     {
      "component_id": "CMP-ETU-02",
-     "name": "Étui carton crème",
+     "name": "Cream folding carton",
      "supplier_id": "SUP-ETU",
      "supplier_name": "Cartonnages de Seine",
      "stockout_week_launchpilot": null,
-     "stockout_week_baseline": null,
-     "min_projected_stock": 440,
+     "stockout_week_without_memory": null,
+     "p_stockout_by_launch_plus_1wk": 0.0,
+     "p_stockout_before_end_of_year": 0.0,
+     "confidence": 0.0,
+     "min_projected_stock_p50": 440,
      "severity": "covered",
      "evidence": [
       "events:sellout_spike PRD-CRE-HYD x1.20",
       "events:sellout_spike PRD-CRE-RIC x1.10",
       "inventory:CMP-ETU-02",
       "purchase_orders:PO-0070",
-      "supplier_reliability:SUP-ETU (annoncé 28 j, réel 29.1 ± 3.1 j sur 14 livraisons, délai prudent 32 j)"
+      "supplier_reliability:SUP-ETU (announced 28 d, actual 29.1 ± 3.1 d over 14 deliveries, lead time used 30 d)"
      ]
     },
     {
      "component_id": "CMP-COF-NOEL",
-     "name": "Coffret Noël 2026",
+     "name": "Christmas 2026 gift box",
      "supplier_id": "SUP-COF",
      "supplier_name": "Coffrets Prestige",
      "stockout_week_launchpilot": "2026-12-21",
-     "stockout_week_baseline": null,
-     "min_projected_stock": -1880,
+     "stockout_week_without_memory": "2026-12-21",
+     "p_stockout_by_launch_plus_1wk": 0.1,
+     "p_stockout_before_end_of_year": 1.0,
+     "confidence": 1.0,
+     "min_projected_stock_p50": -1880,
      "severity": "medium",
      "evidence": [
       "events:EV-003",
@@ -834,20 +1076,20 @@
       "inventory:CMP-COF-NOEL",
       "purchase_orders:PO-0067",
       "purchase_orders:PO-0068",
-      "supplier_reliability:SUP-COF (annoncé 35 j, réel 47.0 ± 4.2 j sur 14 livraisons, délai prudent 51 j)"
+      "supplier_reliability:SUP-COF (announced 35 d, actual 47.0 ± 4.2 d over 14 deliveries, lead time used 47 d)"
      ]
     }
    ]
   },
   "alerts": [
    {
-    "alert_id": 7,
+    "alert_id": 5,
     "component_id": "CMP-POM-01",
-    "component_name": "Pompe airless 30 ml",
+    "component_name": "30 ml airless pump",
     "severity": "high",
     "predicted_stockout_week": "2026-11-09",
-    "confidence": 0.85,
-    "explanation": "La livraison confirmée de PO-0063 est partielle (12000 sur 20000), et SUP-POM livre en réel 60,3 j en moyenne contre 42 j annoncés, donc PO-0064 (promise le 2026-10-12) arrivera plus tard que prévu. LaunchPilot projette une rupture la semaine du 2026-11-09, soit une semaine après le lancement, alors que la vue Excel naïve ne voit aucune rupture.",
+    "confidence": 0.82,
+    "explanation": "PO-0063 was only partially confirmed (12,000 of 20,000), and SUP-POM actually delivers in 60.3 ± 7.1 days against 42 announced, so PO-0064 is likely to arrive too late. This gives an 82% probability of a stockout by launch + 1 week, with a median in the week of 2026-11-09. A planner who believes the announced lead times would see 2026-12-28.",
     "evidence": [
      "events:EV-019",
      "purchase_orders:PO-0063",
@@ -856,76 +1098,76 @@
      "inventory:CMP-POM-01"
     ],
     "trigger_event_id": "EV-019",
-    "created_at": "2026-10-22T10:47:54",
-    "source": "agent Claude (live)",
+    "created_at": "2026-10-22T11:48:57",
+    "source": "Claude agent (live)",
     "mode": "live",
     "can_arbitrate": true,
     "recommendation": null,
     "scenarios": []
    },
    {
-    "alert_id": 4,
+    "alert_id": 3,
     "component_id": "CMP-FLA-50",
-    "component_name": "Pot verre 50 ml",
+    "component_name": "50 ml glass jar",
     "severity": "medium",
     "predicted_stockout_week": "2026-12-14",
-    "confidence": 0.7,
-    "explanation": "Rupture de Pot verre 50 ml prévue semaine du 2026-12-14 (l'Excel naïf la voit le 2026-12-21). Verrerie Lumière annonce 42 j mais livre en 45.9 j en moyenne sur 14 livraisons.",
+    "confidence": 1.0,
+    "explanation": "50 ml glass jar is likely to run out in the week of 2026-12-14 (0% probability by launch + 1 week, 100% before year end); a planner without memory sees it too, memory changes nothing here. Verrerie Lumière announces 42 days but delivers in 45.9 days on average over 14 deliveries (lead time used: 46 days).",
     "evidence": [
      "events:sellout_spike PRD-COF-NOEL x1.30",
      "inventory:CMP-FLA-50",
      "purchase_orders:PO-0066",
-     "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+     "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
     ],
     "trigger_event_id": "EV-008",
-    "created_at": "2026-10-22T10:47:45",
-    "source": "règles (avance rapide)",
+    "created_at": "2026-10-22T11:48:49",
+    "source": "rules (fast-forward)",
     "mode": "rules",
     "can_arbitrate": false,
     "recommendation": null,
     "scenarios": []
    },
    {
-    "alert_id": 6,
+    "alert_id": 4,
     "component_id": "CMP-COF-NOEL",
-    "component_name": "Coffret Noël 2026",
+    "component_name": "Christmas 2026 gift box",
     "severity": "medium",
     "predicted_stockout_week": "2026-12-21",
-    "confidence": 0.7,
-    "explanation": "Rupture de Coffret Noël 2026 prévue semaine du 2026-12-21 (l'Excel naïf ne la voit pas). Coffrets Prestige annonce 35 j mais livre en 47.0 j en moyenne sur 14 livraisons.",
+    "confidence": 1.0,
+    "explanation": "Christmas 2026 gift box is likely to run out in the week of 2026-12-21 (0% probability by launch + 1 week, 100% before year end); a planner without memory sees it too, memory changes nothing here. Coffrets Prestige announces 35 days but delivers in 47.0 days on average over 14 deliveries (lead time used: 47 days).",
     "evidence": [
      "events:sellout_spike PRD-COF-NOEL x1.30",
      "inventory:CMP-COF-NOEL",
      "purchase_orders:PO-0067",
      "purchase_orders:PO-0068",
-     "supplier_reliability:SUP-COF (annoncé 35 j, réel 47.0 ± 4.2 j sur 14 livraisons, délai prudent 51 j)"
+     "supplier_reliability:SUP-COF (announced 35 d, actual 47.0 ± 4.2 d over 14 deliveries, lead time used 47 d)"
     ],
     "trigger_event_id": "EV-008",
-    "created_at": "2026-10-22T10:47:45",
-    "source": "règles (avance rapide)",
+    "created_at": "2026-10-22T11:48:49",
+    "source": "rules (fast-forward)",
     "mode": "rules",
     "can_arbitrate": false,
     "recommendation": null,
     "scenarios": []
    },
    {
-    "alert_id": 3,
+    "alert_id": 2,
     "component_id": "CMP-FLA-30",
-    "component_name": "Flacon verre 30 ml",
+    "component_name": "30 ml glass bottle",
     "severity": "medium",
     "predicted_stockout_week": "2026-12-28",
-    "confidence": 0.7,
-    "explanation": "Rupture de Flacon verre 30 ml prévue semaine du 2026-12-28 (l'Excel naïf ne la voit pas). Verrerie Lumière annonce 42 j mais livre en 45.9 j en moyenne sur 14 livraisons.",
+    "confidence": 1.0,
+    "explanation": "30 ml glass bottle is likely to run out in the week of 2026-12-28 (0% probability by launch + 1 week, 100% before year end); a planner without memory sees it too, memory changes nothing here. Verrerie Lumière announces 42 days but delivers in 45.9 days on average over 14 deliveries (lead time used: 46 days).",
     "evidence": [
      "events:sellout_spike PRD-COF-NOEL x1.30",
      "events:sellout_spike PRD-SER-ECL x1.40",
      "inventory:CMP-FLA-30",
      "purchase_orders:PO-0065",
-     "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+     "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
     ],
     "trigger_event_id": "EV-008",
-    "created_at": "2026-10-22T10:47:45",
-    "source": "règles (avance rapide)",
+    "created_at": "2026-10-22T11:48:49",
+    "source": "rules (fast-forward)",
     "mode": "rules",
     "can_arbitrate": false,
     "recommendation": null,
@@ -937,6 +1179,7 @@
     "event_id": "EV-019",
     "ts": "2026-10-01T09:00:00",
     "event_type": "po_confirmed",
+    "kind_label": "✅ Order confirmation",
     "summary": "PO-0063 confirmed: 12000 units",
     "payload": {
      "po_id": "PO-0063",
@@ -950,7 +1193,8 @@
     "event_id": "EV-016",
     "ts": "2026-09-30T16:00:00",
     "event_type": "capacity_drop",
-    "summary": "FAC-01: capacity -30%",
+    "kind_label": "🏭 Contract-manufacturer capacity",
+    "summary": "FAC-01: capacity −30%",
     "payload": {
      "subcontractor_id": "FAC-01",
      "capacity_drop_rate": 0.3,
@@ -964,7 +1208,8 @@
     "event_id": "EV-006",
     "ts": "2026-09-30T09:00:00",
     "event_type": "supplier_delay",
-    "summary": "Coffrets Prestige pushes PO-0068 back 6 days",
+    "kind_label": "🚚 Supplier delay",
+    "summary": "Coffrets Prestige pushes PO-0068 back by 6 d",
     "payload": {
      "po_id": "PO-0068",
      "supplier_id": "SUP-COF",
@@ -978,10 +1223,11 @@
     "event_id": "EV-011",
     "ts": "2026-09-29T17:00:00",
     "event_type": "sellout_spike",
-    "summary": "Crème Riche 50 ml: sales x1.1 vs forecast",
+    "kind_label": "📈 Sell-out spike",
+    "summary": "Crème Riche 50 ml: sales ×1.1",
     "payload": {
      "product_id": "PRD-CRE-RIC",
-     "channel": "distributeur_selectif",
+     "channel": "selective_retail",
      "observed_vs_forecast": 1.1,
      "weeks_affected": [
       "2026-10-05",
@@ -994,9 +1240,10 @@
     "event_id": "EV-034",
     "ts": "2026-09-29T13:00:00",
     "event_type": "noise",
-    "summary": "relance qualité",
+    "kind_label": "· Info",
+    "summary": "quality follow-up",
     "payload": {
-     "note": "relance qualité"
+     "note": "quality follow-up"
     },
     "origin": "recorded"
    },
@@ -1004,7 +1251,8 @@
     "event_id": "EV-005",
     "ts": "2026-09-26T11:00:00",
     "event_type": "supplier_delay",
-    "summary": "Cartonnages de Seine pushes PO-0069 back 3 days",
+    "kind_label": "🚚 Supplier delay",
+    "summary": "Cartonnages de Seine pushes PO-0069 back by 3 d",
     "payload": {
      "po_id": "PO-0069",
      "supplier_id": "SUP-ETU",
@@ -1018,6 +1266,7 @@
     "event_id": "EV-018",
     "ts": "2026-09-24T13:00:00",
     "event_type": "po_confirmed",
+    "kind_label": "✅ Order confirmation",
     "summary": "PO-0070 confirmed: 10000 units",
     "payload": {
      "po_id": "PO-0070",
@@ -1031,7 +1280,8 @@
     "event_id": "EV-015",
     "ts": "2026-09-24T13:00:00",
     "event_type": "capacity_drop",
-    "summary": "FAC-01: capacity -15%",
+    "kind_label": "🏭 Contract-manufacturer capacity",
+    "summary": "FAC-01: capacity −15%",
     "payload": {
      "subcontractor_id": "FAC-01",
      "capacity_drop_rate": 0.15,
@@ -1045,9 +1295,10 @@
     "event_id": "EV-035",
     "ts": "2026-09-24T12:00:00",
     "event_type": "noise",
-    "summary": "visite façonnier",
+    "kind_label": "· Info",
+    "summary": "contract manufacturer visit",
     "payload": {
-     "note": "visite façonnier"
+     "note": "contract manufacturer visit"
     },
     "origin": "recorded"
    },
@@ -1055,10 +1306,11 @@
     "event_id": "EV-010",
     "ts": "2026-09-24T12:00:00",
     "event_type": "sellout_spike",
-    "summary": "Sérum Nuit 30 ml: sales x1.5 vs forecast",
+    "kind_label": "📈 Sell-out spike",
+    "summary": "Sérum Nuit 30 ml: sales ×1.5",
     "payload": {
      "product_id": "PRD-SER-NUI",
-     "channel": "distributeur_selectif",
+     "channel": "selective_retail",
      "observed_vs_forecast": 1.5,
      "weeks_affected": [
       "2026-10-26",
@@ -1071,9 +1323,10 @@
     "event_id": "EV-028",
     "ts": "2026-09-24T11:00:00",
     "event_type": "noise",
-    "summary": "relance qualité",
+    "kind_label": "· Info",
+    "summary": "quality follow-up",
     "payload": {
-     "note": "relance qualité"
+     "note": "quality follow-up"
     },
     "origin": "recorded"
    },
@@ -1081,9 +1334,10 @@
     "event_id": "EV-030",
     "ts": "2026-09-22T17:00:00",
     "event_type": "noise",
-    "summary": "inventaire tournant OK",
+    "kind_label": "· Info",
+    "summary": "cycle count OK",
     "payload": {
-     "note": "inventaire tournant OK"
+     "note": "cycle count OK"
     },
     "origin": "recorded"
    },
@@ -1091,7 +1345,8 @@
     "event_id": "EV-004",
     "ts": "2026-09-22T14:00:00",
     "event_type": "supplier_delay",
-    "summary": "Verrerie Lumière pushes PO-0065 back 5 days",
+    "kind_label": "🚚 Supplier delay",
+    "summary": "Verrerie Lumière pushes PO-0065 back by 5 d",
     "payload": {
      "po_id": "PO-0065",
      "supplier_id": "SUP-FLA",
@@ -1105,10 +1360,11 @@
     "event_id": "EV-009",
     "ts": "2026-09-19T09:00:00",
     "event_type": "sellout_spike",
-    "summary": "Crème Hydra 50 ml: sales x1.2 vs forecast",
+    "kind_label": "📈 Sell-out spike",
+    "summary": "Crème Hydra 50 ml: sales ×1.2",
     "payload": {
      "product_id": "PRD-CRE-HYD",
-     "channel": "distributeur_selectif",
+     "channel": "selective_retail",
      "observed_vs_forecast": 1.2,
      "weeks_affected": [
       "2026-10-12",
@@ -1122,7 +1378,8 @@
     "event_id": "EV-003",
     "ts": "2026-09-18T14:00:00",
     "event_type": "supplier_delay",
-    "summary": "Coffrets Prestige pushes PO-0067 back 12 days",
+    "kind_label": "🚚 Supplier delay",
+    "summary": "Coffrets Prestige pushes PO-0067 back by 12 d",
     "payload": {
      "po_id": "PO-0067",
      "supplier_id": "SUP-COF",
@@ -1136,9 +1393,10 @@
     "event_id": "EV-025",
     "ts": "2026-09-18T12:00:00",
     "event_type": "noise",
-    "summary": "visite façonnier",
+    "kind_label": "· Info",
+    "summary": "contract manufacturer visit",
     "payload": {
-     "note": "visite façonnier"
+     "note": "contract manufacturer visit"
     },
     "origin": "recorded"
    },
@@ -1146,9 +1404,10 @@
     "event_id": "EV-033",
     "ts": "2026-09-18T11:00:00",
     "event_type": "noise",
-    "summary": "inventaire tournant OK",
+    "kind_label": "· Info",
+    "summary": "cycle count OK",
     "payload": {
-     "note": "inventaire tournant OK"
+     "note": "cycle count OK"
     },
     "origin": "recorded"
    },
@@ -1156,7 +1415,8 @@
     "event_id": "EV-014",
     "ts": "2026-09-18T08:00:00",
     "event_type": "capacity_drop",
-    "summary": "FAC-02: capacity -50%",
+    "kind_label": "🏭 Contract-manufacturer capacity",
+    "summary": "FAC-02: capacity −50%",
     "payload": {
      "subcontractor_id": "FAC-02",
      "capacity_drop_rate": 0.5,
@@ -1170,6 +1430,7 @@
     "event_id": "EV-017",
     "ts": "2026-09-17T14:00:00",
     "event_type": "po_confirmed",
+    "kind_label": "✅ Order confirmation",
     "summary": "PO-0066 confirmed: 20000 units",
     "payload": {
      "po_id": "PO-0066",
@@ -1183,13 +1444,14 @@
     "event_id": "EV-002",
     "ts": "2026-09-14T17:00:00",
     "event_type": "supplier_delay",
-    "summary": "Pompes Atlas pushes PO-0064 back 7 days",
+    "kind_label": "🚚 Supplier delay",
+    "summary": "Pompes Atlas pushes PO-0064 back by 14 d",
     "payload": {
      "po_id": "PO-0064",
      "supplier_id": "SUP-POM",
      "component_id": "CMP-POM-01",
-     "new_promised_date": "2026-10-19",
-     "announced_delay_days": 7
+     "new_promised_date": "2026-10-30",
+     "announced_delay_days": 14
     },
     "origin": "recorded"
    },
@@ -1197,10 +1459,11 @@
     "event_id": "EV-008",
     "ts": "2026-09-14T11:00:00",
     "event_type": "sellout_spike",
-    "summary": "Coffret Rituel Noël: sales x1.3 vs forecast",
+    "kind_label": "📈 Sell-out spike",
+    "summary": "Coffret Rituel Noël: sales ×1.3",
     "payload": {
      "product_id": "PRD-COF-NOEL",
-     "channel": "distributeur_selectif",
+     "channel": "selective_retail",
      "observed_vs_forecast": 1.3,
      "weeks_affected": [
       "2026-11-02",
@@ -1214,7 +1477,8 @@
     "event_id": "EV-013",
     "ts": "2026-09-12T17:00:00",
     "event_type": "capacity_drop",
-    "summary": "FAC-01: capacity -40%",
+    "kind_label": "🏭 Contract-manufacturer capacity",
+    "summary": "FAC-01: capacity −40%",
     "payload": {
      "subcontractor_id": "FAC-01",
      "capacity_drop_rate": 0.4,
@@ -1229,9 +1493,10 @@
     "event_id": "EV-029",
     "ts": "2026-09-12T15:00:00",
     "event_type": "noise",
-    "summary": "relance qualité",
+    "kind_label": "· Info",
+    "summary": "quality follow-up",
     "payload": {
-     "note": "relance qualité"
+     "note": "quality follow-up"
     },
     "origin": "recorded"
    },
@@ -1239,7 +1504,8 @@
     "event_id": "EV-001",
     "ts": "2026-09-10T12:00:00",
     "event_type": "supplier_delay",
-    "summary": "Pompes Atlas pushes PO-0063 back 10 days",
+    "kind_label": "🚚 Supplier delay",
+    "summary": "Pompes Atlas pushes PO-0063 back by 10 d",
     "payload": {
      "po_id": "PO-0063",
      "supplier_id": "SUP-POM",
@@ -1253,10 +1519,11 @@
     "event_id": "EV-007",
     "ts": "2026-09-09T17:00:00",
     "event_type": "sellout_spike",
-    "summary": "Sérum Éclat 30 ml: sales x1.4 vs forecast",
+    "kind_label": "📈 Sell-out spike",
+    "summary": "Sérum Éclat 30 ml: sales ×1.4",
     "payload": {
      "product_id": "PRD-SER-ECL",
-     "channel": "distributeur_selectif",
+     "channel": "selective_retail",
      "observed_vs_forecast": 1.4,
      "weeks_affected": [
       "2026-10-19",
@@ -1271,19 +1538,20 @@
     "event_id": "EV-032",
     "ts": "2026-09-08T13:00:00",
     "event_type": "noise",
-    "summary": "inventaire tournant OK",
+    "kind_label": "· Info",
+    "summary": "cycle count OK",
     "payload": {
-     "note": "inventaire tournant OK"
+     "note": "cycle count OK"
     },
     "origin": "recorded"
    }
   ],
   "runs": [
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "live",
-    "input": "Date simulée : 2026-10-01.\nÉvénement : {\"event_id\": \"EV-019\", \"ts\": \"2026-10-01T09:00:00\", \"event_type\": \"po_confirmed\", \"payload\": {\"po_id\": \"PO-0063\", \"component_id\": \"CMP-POM-01\", \"confirmed_date\": \"2026-09-14\", \"confirmed_qty\": 12000}}\nAlertes déjà ouvertes : [{\"component\": \"CMP-COF-NOEL\", \"stockout_week\": \"2026-12-21\", \"severity\": \"medium\"}, {\"component\": \"CMP-POM-01\", \"stockout_week\": \"2026-12-21\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-50\", \"stockout_week\": \"2026-12-14\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-30\", \"stockout_week\": \"2026-12-28\", \"severity\": \"medium\"}, {\"component\": \"CMP-POM-01\", \"stockout_week\": \"2026-12-28\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-50\", \"stockout_week\": \"2026-12-21\", \"severity\": \"medium\"}]",
-    "output": "J'ai créé une alerte de gravité haute pour CMP-POM-01. La rupture est projetée la semaine du 2026-11-09, soit une semaine après le lancement. Elle tombe bien avant les alertes ouvertes du 2026-12-21 et du 2026-12-28. La livraison confirmée de PO-0063 est partielle (12000 sur 20000), et SUP-POM livre en réel en 60,3 j contre 42 j annoncés. La vue Excel naïve ne voit aucune rupture. Pour les autres composants (CMP-FLA-30, CMP-FLA-50 et CMP-COF-NOEL), les ruptures projetées correspondent à des alertes déjà ouvertes, donc je n'ai créé aucune nouvelle alerte.",
+    "input": "Simulated date: 2026-10-01.\nEvent: {\"event_id\": \"EV-019\", \"ts\": \"2026-10-01T09:00:00\", \"event_type\": \"po_confirmed\", \"payload\": {\"po_id\": \"PO-0063\", \"component_id\": \"CMP-POM-01\", \"confirmed_date\": \"2026-09-14\", \"confirmed_qty\": 12000}}\nAlerts already open: [{\"component\": \"CMP-COF-NOEL\", \"stockout_week\": \"2026-12-21\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-50\", \"stockout_week\": \"2026-12-14\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-30\", \"stockout_week\": \"2026-12-28\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-50\", \"stockout_week\": \"2026-12-21\", \"severity\": \"medium\"}]",
+    "output": "I created a high-severity alert for CMP-POM-01 (30 ml airless pump). The median stockout week is 2026-11-09, with a confidence of 0.82.\n\n- **Why the date is early:** EV-019 confirmed only 12,000 of the 20,000 units on PO-0063. SUP-POM has actually delivered in 60.3 ± 7.1 days against 42 announced, so PO-0064, promised for 2026-10-16, will probably arrive late.\n- **Gap with the no-memory view:** A planner who believes the announced lead times would see a stockout in the week of 2026-12-28. That is seven weeks later than the supplier-memory projection.\n- **No new alerts elsewhere:** CMP-COF-NOEL, CMP-FLA-50 and CMP-FLA-30 are medium, and their stockout weeks match the alerts already open. CMP-ETU-01 and CMP-ETU-02 show no stockout.\n\nSummary: The partial delivery on PO-0063, combined with SUP-POM's history of late deliveries, moves the pump stockout to the week of 2026-11-09, so I raised a high-severity alert.",
     "tool_calls": [
      {
       "tool": "run_projection",
@@ -1291,12 +1559,15 @@
       "output": [
        {
         "component_id": "CMP-FLA-30",
-        "name": "Flacon verre 30 ml",
+        "name": "30 ml glass bottle",
         "supplier_id": "SUP-FLA",
         "stockout_week_launchpilot": "2026-12-28",
-        "stockout_week_naive_excel": null,
-        "min_projected_stock": -2050,
+        "p_stockout_by_launch_plus_1wk": 0.0,
+        "p_stockout_before_end_of_year": 1.0,
+        "stockout_week_without_memory": "2026-12-28",
+        "min_projected_stock_p50": -2050,
         "suggested_severity": "medium",
+        "confidence": 1.0,
         "evidence": [
          "events:EV-004",
          "events:sellout_spike PRD-COF-NOEL x1.30",
@@ -1304,88 +1575,103 @@
          "events:sellout_spike PRD-SER-NUI x1.50",
          "inventory:CMP-FLA-30",
          "purchase_orders:PO-0065",
-         "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+         "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
         ]
        },
        {
         "component_id": "CMP-FLA-50",
-        "name": "Pot verre 50 ml",
+        "name": "50 ml glass jar",
         "supplier_id": "SUP-FLA",
         "stockout_week_launchpilot": "2026-12-14",
-        "stockout_week_naive_excel": "2026-12-21",
-        "min_projected_stock": -8440,
+        "p_stockout_by_launch_plus_1wk": 0.0,
+        "p_stockout_before_end_of_year": 1.0,
+        "stockout_week_without_memory": "2026-12-14",
+        "min_projected_stock_p50": -8440,
         "suggested_severity": "medium",
+        "confidence": 1.0,
         "evidence": [
          "events:sellout_spike PRD-COF-NOEL x1.30",
          "events:sellout_spike PRD-CRE-HYD x1.20",
          "events:sellout_spike PRD-CRE-RIC x1.10",
          "inventory:CMP-FLA-50",
          "purchase_orders:PO-0066",
-         "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+         "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
         ]
        },
        {
         "component_id": "CMP-POM-01",
-        "name": "Pompe airless 30 ml",
+        "name": "30 ml airless pump",
         "supplier_id": "SUP-POM",
         "stockout_week_launchpilot": "2026-11-09",
-        "stockout_week_naive_excel": null,
-        "min_projected_stock": -11050,
+        "p_stockout_by_launch_plus_1wk": 0.82,
+        "p_stockout_before_end_of_year": 1.0,
+        "stockout_week_without_memory": "2026-12-28",
+        "min_projected_stock_p50": -3765,
         "suggested_severity": "high",
+        "confidence": 0.82,
         "evidence": [
          "events:EV-001",
          "events:EV-002",
-         "events:EV-019 (livraison partielle 12000/20000)",
+         "events:EV-019 (partial delivery 12000/20000)",
          "events:sellout_spike PRD-COF-NOEL x1.30",
          "events:sellout_spike PRD-SER-ECL x1.40",
          "events:sellout_spike PRD-SER-NUI x1.50",
          "inventory:CMP-POM-01",
          "purchase_orders:PO-0063",
          "purchase_orders:PO-0064",
-         "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)"
+         "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)"
         ]
        },
        {
         "component_id": "CMP-ETU-01",
-        "name": "Étui carton sérum",
+        "name": "Serum folding carton",
         "supplier_id": "SUP-ETU",
         "stockout_week_launchpilot": null,
-        "stockout_week_naive_excel": null,
-        "min_projected_stock": 2830,
+        "p_stockout_by_launch_plus_1wk": 0.0,
+        "p_stockout_before_end_of_year": 0.0,
+        "stockout_week_without_memory": null,
+        "min_projected_stock_p50": 2830,
         "suggested_severity": null,
+        "confidence": 0.0,
         "evidence": [
          "events:EV-005",
          "events:sellout_spike PRD-SER-ECL x1.40",
          "events:sellout_spike PRD-SER-NUI x1.50",
          "inventory:CMP-ETU-01",
          "purchase_orders:PO-0069",
-         "supplier_reliability:SUP-ETU (annoncé 28 j, réel 29.1 ± 3.1 j sur 14 livraisons, délai prudent 32 j)"
+         "supplier_reliability:SUP-ETU (announced 28 d, actual 29.1 ± 3.1 d over 14 deliveries, lead time used 30 d)"
         ]
        },
        {
         "component_id": "CMP-ETU-02",
-        "name": "Étui carton crème",
+        "name": "Cream folding carton",
         "supplier_id": "SUP-ETU",
         "stockout_week_launchpilot": null,
-        "stockout_week_naive_excel": null,
-        "min_projected_stock": 440,
+        "p_stockout_by_launch_plus_1wk": 0.0,
+        "p_stockout_before_end_of_year": 0.0,
+        "stockout_week_without_memory": null,
+        "min_projected_stock_p50": 440,
         "suggested_severity": null,
+        "confidence": 0.0,
         "evidence": [
          "events:sellout_spike PRD-CRE-HYD x1.20",
          "events:sellout_spike PRD-CRE-RIC x1.10",
          "inventory:CMP-ETU-02",
          "purchase_orders:PO-0070",
-         "supplier_reliability:SUP-ETU (annoncé 28 j, réel 29.1 ± 3.1 j sur 14 livraisons, délai prudent 32 j)"
+         "supplier_reliability:SUP-ETU (announced 28 d, actual 29.1 ± 3.1 d over 14 deliveries, lead time used 30 d)"
         ]
        },
        {
         "component_id": "CMP-COF-NOEL",
-        "name": "Coffret Noël 2026",
+        "name": "Christmas 2026 gift box",
         "supplier_id": "SUP-COF",
         "stockout_week_launchpilot": "2026-12-21",
-        "stockout_week_naive_excel": null,
-        "min_projected_stock": -1880,
+        "p_stockout_by_launch_plus_1wk": 0.1,
+        "p_stockout_before_end_of_year": 1.0,
+        "stockout_week_without_memory": "2026-12-21",
+        "min_projected_stock_p50": -1880,
         "suggested_severity": "medium",
+        "confidence": 1.0,
         "evidence": [
          "events:EV-003",
          "events:EV-006",
@@ -1393,7 +1679,7 @@
          "inventory:CMP-COF-NOEL",
          "purchase_orders:PO-0067",
          "purchase_orders:PO-0068",
-         "supplier_reliability:SUP-COF (annoncé 35 j, réel 47.0 ± 4.2 j sur 14 livraisons, délai prudent 51 j)"
+         "supplier_reliability:SUP-COF (announced 35 d, actual 47.0 ± 4.2 d over 14 deliveries, lead time used 47 d)"
         ]
        }
       ]
@@ -1414,9 +1700,9 @@
        {
         "po_id": "PO-0064",
         "supplier_id": "SUP-POM",
-        "qty": "20000",
-        "order_date": "2026-08-31",
-        "promised_date": "2026-10-12"
+        "qty": "30000",
+        "order_date": "2026-09-04",
+        "promised_date": "2026-10-16"
        }
       ]
      },
@@ -1426,8 +1712,8 @@
        "component_id": "CMP-POM-01",
        "stockout_week": "2026-11-09",
        "severity": "high",
-       "confidence": 0.85,
-       "explanation": "La livraison confirmée de PO-0063 est partielle (12000 sur 20000), et SUP-POM livre en réel 60,3 j en moyenne contre 42 j annoncés, donc PO-0064 (promise le 2026-10-12) arrivera plus tard que prévu. LaunchPilot projette une rupture la semaine du 2026-11-09, soit une semaine après le lancement, alors que la vue Excel naïve ne voit aucune rupture.",
+       "confidence": 0.82,
+       "explanation": "PO-0063 was only partially confirmed (12,000 of 20,000), and SUP-POM actually delivers in 60.3 ± 7.1 days against 42 announced, so PO-0064 is likely to arrive too late. This gives an 82% probability of a stockout by launch + 1 week, with a median in the week of 2026-11-09. A planner who believes the announced lead times would see 2026-12-28.",
        "evidence": [
         "events:EV-019",
         "purchase_orders:PO-0063",
@@ -1437,23 +1723,23 @@
        ]
       },
       "output": {
-       "status": "créée",
-       "alert_id": 7
+       "status": "created",
+       "alert_id": 5
       }
      }
     ],
-    "latency_ms": 10755,
-    "tokens_in": 10677,
-    "tokens_out": 1126,
+    "latency_ms": 8711,
+    "tokens_in": 10590,
+    "tokens_out": 903,
     "alerts_created": [
-     7
+     5
     ]
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-016",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1461,10 +1747,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-006",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1472,10 +1758,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-011",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1483,10 +1769,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-034",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1494,10 +1780,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-005",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1505,10 +1791,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-018",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1516,10 +1802,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-015",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1527,10 +1813,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-035",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1538,10 +1824,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-010",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1549,10 +1835,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-028",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1560,10 +1846,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-030",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1571,10 +1857,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-004",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1582,10 +1868,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-009",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1593,10 +1879,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-003",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1604,10 +1890,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-025",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1615,10 +1901,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-033",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1626,10 +1912,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-014",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1637,10 +1923,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-017",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1648,10 +1934,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-002",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1659,26 +1945,25 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-008",
-    "output": "4 alerte(s)",
+    "output": "3 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
     "tokens_out": 0,
     "alerts_created": [
+     2,
      3,
-     4,
-     5,
-     6
+     4
     ]
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-013",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1686,10 +1971,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-029",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1697,10 +1982,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-001",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1708,24 +1993,23 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-007",
-    "output": "2 alerte(s)",
+    "output": "1 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
     "tokens_out": 0,
     "alerts_created": [
-     1,
-     2
+     1
     ]
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-032",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -1737,553 +2021,757 @@
   "projections": {
    "CMP-FLA-30": {
     "component_id": "CMP-FLA-30",
-    "name": "Flacon verre 30 ml",
+    "name": "30 ml glass bottle",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 30500,
-      "baseline": 30500
+      "p10": 30500,
+      "p50": 30500,
+      "p90": 30500,
+      "without_memory": 30500
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 29000,
-      "baseline": 29000
+      "p10": 29000,
+      "p50": 29000,
+      "p90": 29000,
+      "without_memory": 29000
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 27500,
-      "baseline": 47500
+      "p10": 27500,
+      "p50": 27500,
+      "p90": 47500,
+      "without_memory": 47500
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 46000,
-      "baseline": 46000
+      "p10": 26000,
+      "p50": 46000,
+      "p90": 46000,
+      "without_memory": 46000
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 44500,
-      "baseline": 44500
+      "p10": 44500,
+      "p50": 44500,
+      "p90": 44500,
+      "without_memory": 44500
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 43000,
-      "baseline": 43000
+      "p10": 43000,
+      "p50": 43000,
+      "p90": 43000,
+      "without_memory": 43000
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 41140,
-      "baseline": 41500
+      "p10": 41140,
+      "p50": 41140,
+      "p90": 41140,
+      "without_memory": 41140
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 35980,
-      "baseline": 37000
+      "p10": 35980,
+      "p50": 35980,
+      "p90": 35980,
+      "without_memory": 35980
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 30420,
-      "baseline": 32925
+      "p10": 30420,
+      "p50": 30420,
+      "p90": 30420,
+      "without_memory": 30420
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 25235,
-      "baseline": 28850
+      "p10": 25235,
+      "p50": 25235,
+      "p90": 25235,
+      "without_memory": 25235
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 20500,
-      "baseline": 24775
+      "p10": 20500,
+      "p50": 20500,
+      "p90": 20500,
+      "without_memory": 20500
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 16425,
-      "baseline": 20700
+      "p10": 16425,
+      "p50": 16425,
+      "p90": 16425,
+      "without_memory": 16425
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 12350,
-      "baseline": 16625
+      "p10": 12350,
+      "p50": 12350,
+      "p90": 12350,
+      "without_memory": 12350
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 8275,
-      "baseline": 12550
+      "p10": 8275,
+      "p50": 8275,
+      "p90": 8275,
+      "without_memory": 8275
      },
      {
       "week": "2026-12-14",
-      "launchpilot": 4200,
-      "baseline": 8475
+      "p10": 4200,
+      "p50": 4200,
+      "p90": 4200,
+      "without_memory": 4200
      },
      {
       "week": "2026-12-21",
-      "launchpilot": 125,
-      "baseline": 4400
+      "p10": 125,
+      "p50": 125,
+      "p90": 125,
+      "without_memory": 125
      },
      {
       "week": "2026-12-28",
-      "launchpilot": -2050,
-      "baseline": 2225
+      "p10": -2050,
+      "p50": -2050,
+      "p90": -2050,
+      "without_memory": -2050
      }
     ]
    },
    "CMP-FLA-50": {
     "component_id": "CMP-FLA-50",
-    "name": "Pot verre 50 ml",
+    "name": "50 ml glass jar",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 24400,
-      "baseline": 24400
+      "p10": 24400,
+      "p50": 24400,
+      "p90": 24400,
+      "without_memory": 24400
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 22800,
-      "baseline": 22800
+      "p10": 22800,
+      "p50": 22800,
+      "p90": 22800,
+      "without_memory": 22800
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 21200,
-      "baseline": 21200
+      "p10": 21200,
+      "p50": 21200,
+      "p90": 41200,
+      "without_memory": 21200
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 19600,
-      "baseline": 39600
+      "p10": 19600,
+      "p50": 39600,
+      "p90": 39600,
+      "without_memory": 39600
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 37950,
-      "baseline": 38000
+      "p10": 37950,
+      "p50": 37950,
+      "p90": 37950,
+      "without_memory": 37950
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 36080,
-      "baseline": 36400
+      "p10": 36080,
+      "p50": 36080,
+      "p90": 36080,
+      "without_memory": 36080
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 34260,
-      "baseline": 34800
+      "p10": 34260,
+      "p50": 34260,
+      "p90": 34260,
+      "without_memory": 34260
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 29440,
-      "baseline": 30200
+      "p10": 29440,
+      "p50": 29440,
+      "p90": 29440,
+      "without_memory": 29440
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 24580,
-      "baseline": 26000
+      "p10": 24580,
+      "p50": 24580,
+      "p90": 24580,
+      "without_memory": 24580
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 19720,
-      "baseline": 21800
+      "p10": 19720,
+      "p50": 19720,
+      "p90": 19720,
+      "without_memory": 19720
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 14860,
-      "baseline": 17600
+      "p10": 14860,
+      "p50": 14860,
+      "p90": 14860,
+      "without_memory": 14860
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 10660,
-      "baseline": 13400
+      "p10": 10660,
+      "p50": 10660,
+      "p90": 10660,
+      "without_memory": 10660
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 6460,
-      "baseline": 9200
+      "p10": 6460,
+      "p50": 6460,
+      "p90": 6460,
+      "without_memory": 6460
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 2260,
-      "baseline": 5000
+      "p10": 2260,
+      "p50": 2260,
+      "p90": 2260,
+      "without_memory": 2260
      },
      {
       "week": "2026-12-14",
-      "launchpilot": -1940,
-      "baseline": 800
+      "p10": -1940,
+      "p50": -1940,
+      "p90": -1940,
+      "without_memory": -1940
      },
      {
       "week": "2026-12-21",
-      "launchpilot": -6140,
-      "baseline": -3400
+      "p10": -6140,
+      "p50": -6140,
+      "p90": -6140,
+      "without_memory": -6140
      },
      {
       "week": "2026-12-28",
-      "launchpilot": -8440,
-      "baseline": -5700
+      "p10": -8440,
+      "p50": -8440,
+      "p90": -8440,
+      "without_memory": -8440
      }
     ]
    },
    "CMP-POM-01": {
     "component_id": "CMP-POM-01",
-    "name": "Pompe airless 30 ml",
+    "name": "30 ml airless pump",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 9500,
-      "baseline": 9500
+      "p10": 9500,
+      "p50": 9500,
+      "p90": 9500,
+      "without_memory": 9500
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 8000,
-      "baseline": 8000
+      "p10": 8000,
+      "p50": 8000,
+      "p90": 8000,
+      "without_memory": 8000
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 6500,
-      "baseline": 26500
+      "p10": 6500,
+      "p50": 6500,
+      "p90": 6500,
+      "without_memory": 18500
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 5000,
-      "baseline": 25000
+      "p10": 5000,
+      "p50": 5000,
+      "p90": 5000,
+      "without_memory": 17000
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 3500,
-      "baseline": 23500
+      "p10": 3500,
+      "p50": 3500,
+      "p90": 15500,
+      "without_memory": 15500
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 2000,
-      "baseline": 22000
+      "p10": 2000,
+      "p50": 14000,
+      "p90": 14000,
+      "without_memory": 14000
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 12140,
-      "baseline": 40500
+      "p10": 12140,
+      "p50": 12140,
+      "p90": 12140,
+      "without_memory": 12140
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 6980,
-      "baseline": 36000
+      "p10": 6980,
+      "p50": 6980,
+      "p90": 6980,
+      "without_memory": 36980
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 1420,
-      "baseline": 31925
+      "p10": 1420,
+      "p50": 1420,
+      "p90": 1420,
+      "without_memory": 31420
      },
      {
       "week": "2026-11-09",
-      "launchpilot": -3765,
-      "baseline": 27850
+      "p10": -3765,
+      "p50": -3765,
+      "p90": 26235,
+      "without_memory": 26235
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 11500,
-      "baseline": 23775
+      "p10": -8500,
+      "p50": 21500,
+      "p90": 21500,
+      "without_memory": 21500
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 7425,
-      "baseline": 19700
+      "p10": -12575,
+      "p50": 17425,
+      "p90": 17425,
+      "without_memory": 17425
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 3350,
-      "baseline": 15625
+      "p10": 13350,
+      "p50": 13350,
+      "p90": 13350,
+      "without_memory": 13350
      },
      {
       "week": "2026-12-07",
-      "launchpilot": -725,
-      "baseline": 11550
+      "p10": 9275,
+      "p50": 9275,
+      "p90": 9275,
+      "without_memory": 9275
      },
      {
       "week": "2026-12-14",
-      "launchpilot": -4800,
-      "baseline": 7475
+      "p10": 5200,
+      "p50": 5200,
+      "p90": 5200,
+      "without_memory": 5200
      },
      {
       "week": "2026-12-21",
-      "launchpilot": -8875,
-      "baseline": 3400
+      "p10": 1125,
+      "p50": 1125,
+      "p90": 1125,
+      "without_memory": 1125
      },
      {
       "week": "2026-12-28",
-      "launchpilot": -11050,
-      "baseline": 1225
+      "p10": -1050,
+      "p50": -1050,
+      "p90": -1050,
+      "without_memory": -1050
      }
     ]
    },
    "CMP-ETU-01": {
     "component_id": "CMP-ETU-01",
-    "name": "Étui carton sérum",
+    "name": "Serum folding carton",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 22500,
-      "baseline": 22500
+      "p10": 22500,
+      "p50": 22500,
+      "p90": 22500,
+      "without_memory": 22500
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 21000,
-      "baseline": 21000
+      "p10": 21000,
+      "p50": 21000,
+      "p90": 31000,
+      "without_memory": 21000
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 19500,
-      "baseline": 29500
+      "p10": 19500,
+      "p50": 29500,
+      "p90": 29500,
+      "without_memory": 29500
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 28000,
-      "baseline": 28000
+      "p10": 28000,
+      "p50": 28000,
+      "p90": 28000,
+      "without_memory": 28000
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 26500,
-      "baseline": 26500
+      "p10": 26500,
+      "p50": 26500,
+      "p90": 26500,
+      "without_memory": 26500
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 25000,
-      "baseline": 25000
+      "p10": 25000,
+      "p50": 25000,
+      "p90": 25000,
+      "without_memory": 25000
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 23140,
-      "baseline": 23500
+      "p10": 23140,
+      "p50": 23140,
+      "p90": 23140,
+      "without_memory": 23140
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 20980,
-      "baseline": 22000
+      "p10": 20980,
+      "p50": 20980,
+      "p90": 20980,
+      "without_memory": 20980
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 18280,
-      "baseline": 20125
+      "p10": 18280,
+      "p50": 18280,
+      "p90": 18280,
+      "without_memory": 18280
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 15955,
-      "baseline": 18250
+      "p10": 15955,
+      "p50": 15955,
+      "p90": 15955,
+      "without_memory": 15955
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 14080,
-      "baseline": 16375
+      "p10": 14080,
+      "p50": 14080,
+      "p90": 14080,
+      "without_memory": 14080
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 12205,
-      "baseline": 14500
+      "p10": 12205,
+      "p50": 12205,
+      "p90": 12205,
+      "without_memory": 12205
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 10330,
-      "baseline": 12625
+      "p10": 10330,
+      "p50": 10330,
+      "p90": 10330,
+      "without_memory": 10330
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 8455,
-      "baseline": 10750
+      "p10": 8455,
+      "p50": 8455,
+      "p90": 8455,
+      "without_memory": 8455
      },
      {
       "week": "2026-12-14",
-      "launchpilot": 6580,
-      "baseline": 8875
+      "p10": 6580,
+      "p50": 6580,
+      "p90": 6580,
+      "without_memory": 6580
      },
      {
       "week": "2026-12-21",
-      "launchpilot": 4705,
-      "baseline": 7000
+      "p10": 4705,
+      "p50": 4705,
+      "p90": 4705,
+      "without_memory": 4705
      },
      {
       "week": "2026-12-28",
-      "launchpilot": 2830,
-      "baseline": 5125
+      "p10": 2830,
+      "p50": 2830,
+      "p90": 2830,
+      "without_memory": 2830
      }
     ]
    },
    "CMP-ETU-02": {
     "component_id": "CMP-ETU-02",
-    "name": "Étui carton crème",
+    "name": "Cream folding carton",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 20400,
-      "baseline": 20400
+      "p10": 20400,
+      "p50": 20400,
+      "p90": 20400,
+      "without_memory": 20400
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 18800,
-      "baseline": 18800
+      "p10": 18800,
+      "p50": 18800,
+      "p90": 28800,
+      "without_memory": 18800
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 27200,
-      "baseline": 27200
+      "p10": 27200,
+      "p50": 27200,
+      "p90": 27200,
+      "without_memory": 27200
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 25600,
-      "baseline": 25600
+      "p10": 25600,
+      "p50": 25600,
+      "p90": 25600,
+      "without_memory": 25600
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 23950,
-      "baseline": 24000
+      "p10": 23950,
+      "p50": 23950,
+      "p90": 23950,
+      "without_memory": 23950
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 22080,
-      "baseline": 22400
+      "p10": 22080,
+      "p50": 22080,
+      "p90": 22080,
+      "without_memory": 22080
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 20260,
-      "baseline": 20800
+      "p10": 20260,
+      "p50": 20260,
+      "p90": 20260,
+      "without_memory": 20260
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 18440,
-      "baseline": 19200
+      "p10": 18440,
+      "p50": 18440,
+      "p90": 18440,
+      "without_memory": 18440
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 16440,
-      "baseline": 17200
+      "p10": 16440,
+      "p50": 16440,
+      "p90": 16440,
+      "without_memory": 16440
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 14440,
-      "baseline": 15200
+      "p10": 14440,
+      "p50": 14440,
+      "p90": 14440,
+      "without_memory": 14440
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 12440,
-      "baseline": 13200
+      "p10": 12440,
+      "p50": 12440,
+      "p90": 12440,
+      "without_memory": 12440
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 10440,
-      "baseline": 11200
+      "p10": 10440,
+      "p50": 10440,
+      "p90": 10440,
+      "without_memory": 10440
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 8440,
-      "baseline": 9200
+      "p10": 8440,
+      "p50": 8440,
+      "p90": 8440,
+      "without_memory": 8440
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 6440,
-      "baseline": 7200
+      "p10": 6440,
+      "p50": 6440,
+      "p90": 6440,
+      "without_memory": 6440
      },
      {
       "week": "2026-12-14",
-      "launchpilot": 4440,
-      "baseline": 5200
+      "p10": 4440,
+      "p50": 4440,
+      "p90": 4440,
+      "without_memory": 4440
      },
      {
       "week": "2026-12-21",
-      "launchpilot": 2440,
-      "baseline": 3200
+      "p10": 2440,
+      "p50": 2440,
+      "p90": 2440,
+      "without_memory": 2440
      },
      {
       "week": "2026-12-28",
-      "launchpilot": 440,
-      "baseline": 1200
+      "p10": 440,
+      "p50": 440,
+      "p90": 440,
+      "without_memory": 440
      }
     ]
    },
    "CMP-COF-NOEL": {
     "component_id": "CMP-COF-NOEL",
-    "name": "Coffret Noël 2026",
+    "name": "Christmas 2026 gift box",
     "launch_week": "2026-11-02",
     "series": [
      {
       "week": "2026-09-07",
-      "launchpilot": 0,
-      "baseline": 0
+      "p10": 0,
+      "p50": 0,
+      "p90": 0,
+      "without_memory": 0
      },
      {
       "week": "2026-09-14",
-      "launchpilot": 0,
-      "baseline": 0
+      "p10": 0,
+      "p50": 0,
+      "p90": 0,
+      "without_memory": 0
      },
      {
       "week": "2026-09-21",
-      "launchpilot": 0,
-      "baseline": 0
+      "p10": 0,
+      "p50": 0,
+      "p90": 0,
+      "without_memory": 0
      },
      {
       "week": "2026-09-28",
-      "launchpilot": 0,
-      "baseline": 0
+      "p10": 0,
+      "p50": 0,
+      "p90": 0,
+      "without_memory": 0
      },
      {
       "week": "2026-10-05",
-      "launchpilot": 0,
-      "baseline": 12000
+      "p10": 0,
+      "p50": 0,
+      "p90": 0,
+      "without_memory": 12000
      },
      {
       "week": "2026-10-12",
-      "launchpilot": 0,
-      "baseline": 21000
+      "p10": 0,
+      "p50": 0,
+      "p90": 0,
+      "without_memory": 21000
      },
      {
       "week": "2026-10-19",
-      "launchpilot": 0,
-      "baseline": 21000
+      "p10": 0,
+      "p50": 0,
+      "p90": 21000,
+      "without_memory": 21000
      },
      {
       "week": "2026-10-26",
-      "launchpilot": 18000,
-      "baseline": 18000
+      "p10": -3000,
+      "p50": 18000,
+      "p90": 18000,
+      "without_memory": 18000
      },
      {
       "week": "2026-11-02",
-      "launchpilot": 15140,
-      "baseline": 15800
+      "p10": 15140,
+      "p50": 15140,
+      "p90": 15140,
+      "without_memory": 15140
      },
      {
       "week": "2026-11-09",
-      "launchpilot": 12280,
-      "baseline": 13600
+      "p10": 12280,
+      "p50": 12280,
+      "p90": 12280,
+      "without_memory": 12280
      },
      {
       "week": "2026-11-16",
-      "launchpilot": 9420,
-      "baseline": 11400
+      "p10": 9420,
+      "p50": 9420,
+      "p90": 9420,
+      "without_memory": 9420
      },
      {
       "week": "2026-11-23",
-      "launchpilot": 7220,
-      "baseline": 9200
+      "p10": 7220,
+      "p50": 7220,
+      "p90": 7220,
+      "without_memory": 7220
      },
      {
       "week": "2026-11-30",
-      "launchpilot": 5020,
-      "baseline": 7000
+      "p10": 5020,
+      "p50": 5020,
+      "p90": 5020,
+      "without_memory": 5020
      },
      {
       "week": "2026-12-07",
-      "launchpilot": 2820,
-      "baseline": 4800
+      "p10": 2820,
+      "p50": 2820,
+      "p90": 2820,
+      "without_memory": 2820
      },
      {
       "week": "2026-12-14",
-      "launchpilot": 620,
-      "baseline": 2600
+      "p10": 620,
+      "p50": 620,
+      "p90": 620,
+      "without_memory": 620
      },
      {
       "week": "2026-12-21",
-      "launchpilot": -1580,
-      "baseline": 400
+      "p10": -1580,
+      "p50": -1580,
+      "p90": -1580,
+      "without_memory": -1580
      },
      {
       "week": "2026-12-28",
-      "launchpilot": -1880,
-      "baseline": 100
+      "p10": -1880,
+      "p50": -1880,
+      "p90": -1880,
+      "without_memory": -1880
      }
     ]
    }
@@ -2292,13 +2780,13 @@
  "arbitrated": {
   "alerts": [
    {
-    "alert_id": 7,
+    "alert_id": 5,
     "component_id": "CMP-POM-01",
-    "component_name": "Pompe airless 30 ml",
+    "component_name": "30 ml airless pump",
     "severity": "high",
     "predicted_stockout_week": "2026-11-09",
-    "confidence": 0.85,
-    "explanation": "La livraison confirmée de PO-0063 est partielle (12000 sur 20000), et SUP-POM livre en réel 60,3 j en moyenne contre 42 j annoncés, donc PO-0064 (promise le 2026-10-12) arrivera plus tard que prévu. LaunchPilot projette une rupture la semaine du 2026-11-09, soit une semaine après le lancement, alors que la vue Excel naïve ne voit aucune rupture.",
+    "confidence": 0.82,
+    "explanation": "PO-0063 was only partially confirmed (12,000 of 20,000), and SUP-POM actually delivers in 60.3 ± 7.1 days against 42 announced, so PO-0064 is likely to arrive too late. This gives an 82% probability of a stockout by launch + 1 week, with a median in the week of 2026-11-09. A planner who believes the announced lead times would see 2026-12-28.",
     "evidence": [
      "events:EV-019",
      "purchase_orders:PO-0063",
@@ -2307,133 +2795,133 @@
      "inventory:CMP-POM-01"
     ],
     "trigger_event_id": "EV-019",
-    "created_at": "2026-10-22T10:47:54",
-    "source": "agent Claude (live)",
+    "created_at": "2026-10-22T11:48:57",
+    "source": "Claude agent (live)",
     "mode": "live",
     "can_arbitrate": false,
-    "recommendation": "**Valeur à risque si on ne fait rien :** 742 426 €. Il manquerait 11 050 pompes.\n\n| Scénario | Impact total | Marge de sécurité |\n|---|---|---|\n| **1. Commande Dosage Riviera + coffret prioritaire** | **194 405 €** | 11 j |\n| 2. Commande Dosage Riviera seule | 253 846 € | 11 j |\n| 3. Coffret prioritaire seul | 567 970 € | sans objet |\n\nJ'ai écarté deux autres options :\n- **Commande chez Pompes Atlas (SUP-POM) :** 252 962 €, mais la marge est de 0 j. Elle arriverait le 07/12 selon les délais réels (60,3 j au lieu de 42 j annoncés, en retard 14 fois sur 14).\n- **Réduire le lancement de 20 % :** 806 994 €. C'est pire que ne rien faire.\n\n**Recommandation :** je commanderais 11 050 pompes chez Dosage Riviera (884 € de surcoût). Le coffret serait servi en priorité en attendant l'arrivée prévue le 26/11. Les 3 765 pompes manquantes avant cette date seraient prises sur les sérums.\n\n**Question pour Claire :** acceptez-vous de sacrifier environ 3 765 sérums (51 €) pour sauver le lancement du coffret (89 €) ?\n\n**Confiance :** bonne, environ 75 %. Dosage Riviera n'a que 6 livraisons d'historique et 4 ont été en retard.",
+    "recommendation": "I saved three scenarios, best first. Doing nothing puts €571,097 of revenue at risk, because 8,500 units go unserved.\n\n| # | Scenario | Extra cost | Lost revenue | Total impact |\n|---|---|---|---|---|\n| 1 | Rush order from Dosage Riviera (SUP-POM-B) plus gift set first | €680 | €193,521 | **€194,201** |\n| 2 | Rush order from Dosage Riviera only | €680 | €252,962 | €253,642 |\n| 3 | Prioritise the gift set only | €0 | €436,900 | €436,900 |\n\n**Scenario 1:**\n- It orders 8,500 pumps at €0.26 each. The realistic arrival is 2026-11-22, based on a 52-day median lead time.\n- The safety margin is 0 days. The pumps land about 13 days after the stockout week of 2026-11-09. A 3,765-unit gap remains, taken from the serums at €51 so the gift set (€89) ships on time.\n- Dosage Riviera was late on 4 of its 6 deliveries (±4.4 days), so a slip is possible.\n\n**Scenarios I rejected:**\n- **Order from the main supplier, Pompes Atlas (SUP-POM):** The order is 20,000 units at €0.18 each, with a realistic arrival of 2026-11-30. It does not cover the gap, so the impact stays at €571,097. Atlas was late on 14 of 14 deliveries, averaging 60.3 days against 42 announced.\n- **Cut the launch by 20%:** The impact is €787,510 and 6,184 units are still missing. This is the worst option.\n\n**Recommendation:** I would do scenario 1. Place the rush order with Dosage Riviera now and allocate pumps to the gift set first. This cuts the impact from €571,097 to €194,201 for €680 of extra cost. Claire has to decide whether to accept serum shortages in the weeks of 2026-11-09 to 11-22 to protect the launch. Confidence is medium-high on the ranking and medium on the exact amounts, because the 0-day margin leaves no room for a delay.",
     "scenarios": [
      {
       "scenario_id": 1,
-      "label": "Commande urgente Dosage Riviera + coffret prioritaire",
-      "cost_eur": 884,
+      "label": "Rush order Dosage Riviera + gift set first",
+      "cost_eur": 680,
       "lost_revenue_eur": 193521,
-      "stock_value_eur": 2873,
-      "total_impact_eur": 194405,
-      "description": "Commande de 11 050 pompes chez Dosage Riviera (884 €), arrivée réaliste le 26/11 avec 11 j de marge ; le trou de 3 765 unités avant l'arrivée est pris sur les sérums (51 €), le coffret sort à l'heure. Impact total 194 405 € contre 742 426 € si on ne fait rien.",
+      "stock_value_eur": 2210,
+      "total_impact_eur": 194201,
+      "description": "Order 8,500 pumps from SUP-POM-B (extra cost €680, realistic arrival 2026-11-22) and allocate pumps to the gift set first. Total impact is €194,201 against €571,097 for doing nothing, but the safety margin is 0 days and 3,765 units are still missing, taken from the serums.",
       "evidence_rows": [
        "inventory:CMP-POM-01",
        "events:EV-001",
        "events:EV-002",
-       "events:EV-019 (livraison partielle 12000/20000)",
+       "events:EV-019 (partial delivery 12000/20000)",
        "purchase_orders:PO-0063",
        "purchase_orders:PO-0064",
-       "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)",
+       "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)",
        "supplier_reliability:SUP-POM-B"
       ]
      },
      {
       "scenario_id": 2,
-      "label": "Commande urgente Dosage Riviera seule",
-      "cost_eur": 884,
+      "label": "Rush order Dosage Riviera only",
+      "cost_eur": 680,
       "lost_revenue_eur": 252962,
-      "stock_value_eur": 2873,
-      "total_impact_eur": 253846,
-      "description": "Commande de 11 050 pompes à 0,26 € (884 € de surcoût, 2 873 € de stock immobilisé), arrivée réaliste le 26/11, marge 11 j. Elle ne couvre pas le trou de 3 765 unités : CA perdu 252 962 €, impact total 253 846 €.",
+      "stock_value_eur": 2210,
+      "total_impact_eur": 253642,
+      "description": "Order 8,500 pumps from SUP-POM-B at €0.26 each (cost €680), arriving about 2026-11-22. Total impact is €253,642 (lost revenue €252,962), with a 0-day margin and 3,765 units still short.",
       "evidence_rows": [
        "inventory:CMP-POM-01",
        "events:EV-001",
        "events:EV-002",
-       "events:EV-019 (livraison partielle 12000/20000)",
+       "events:EV-019 (partial delivery 12000/20000)",
        "purchase_orders:PO-0063",
        "purchase_orders:PO-0064",
-       "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)",
+       "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)",
        "supplier_reliability:SUP-POM-B"
       ]
      },
      {
       "scenario_id": 3,
-      "label": "Allocation prioritaire au coffret, sans commande",
+      "label": "Prioritise the launch gift set",
       "cost_eur": 0.0,
-      "lost_revenue_eur": 567970,
+      "lost_revenue_eur": 436900,
       "stock_value_eur": 0.0,
-      "total_impact_eur": 567970.0,
-      "description": "Les 11 050 unités manquantes sont prises sur les sérums (51 €) au lieu du coffret (89 €), donc le lancement est protégé. Aucun surcoût, mais 567 970 € de CA perdu : impact total 567 970 €, et la rupture reste entière.",
+      "total_impact_eur": 436900.0,
+      "description": "Take the 8,500 missing pumps from Sérum Éclat and Sérum Nuit (average €51) instead of the gift set (€89). Cost €0 and total impact €436,900, but it does not fix the supply problem.",
       "evidence_rows": [
        "inventory:CMP-POM-01",
        "events:EV-001",
        "events:EV-002",
-       "events:EV-019 (livraison partielle 12000/20000)",
+       "events:EV-019 (partial delivery 12000/20000)",
        "purchase_orders:PO-0063",
        "purchase_orders:PO-0064",
-       "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)"
+       "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)"
       ]
      }
     ]
    },
    {
-    "alert_id": 4,
+    "alert_id": 3,
     "component_id": "CMP-FLA-50",
-    "component_name": "Pot verre 50 ml",
+    "component_name": "50 ml glass jar",
     "severity": "medium",
     "predicted_stockout_week": "2026-12-14",
-    "confidence": 0.7,
-    "explanation": "Rupture de Pot verre 50 ml prévue semaine du 2026-12-14 (l'Excel naïf la voit le 2026-12-21). Verrerie Lumière annonce 42 j mais livre en 45.9 j en moyenne sur 14 livraisons.",
+    "confidence": 1.0,
+    "explanation": "50 ml glass jar is likely to run out in the week of 2026-12-14 (0% probability by launch + 1 week, 100% before year end); a planner without memory sees it too, memory changes nothing here. Verrerie Lumière announces 42 days but delivers in 45.9 days on average over 14 deliveries (lead time used: 46 days).",
     "evidence": [
      "events:sellout_spike PRD-COF-NOEL x1.30",
      "inventory:CMP-FLA-50",
      "purchase_orders:PO-0066",
-     "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+     "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
     ],
     "trigger_event_id": "EV-008",
-    "created_at": "2026-10-22T10:47:45",
-    "source": "règles (avance rapide)",
+    "created_at": "2026-10-22T11:48:49",
+    "source": "rules (fast-forward)",
     "mode": "rules",
     "can_arbitrate": false,
     "recommendation": null,
     "scenarios": []
    },
    {
-    "alert_id": 6,
+    "alert_id": 4,
     "component_id": "CMP-COF-NOEL",
-    "component_name": "Coffret Noël 2026",
+    "component_name": "Christmas 2026 gift box",
     "severity": "medium",
     "predicted_stockout_week": "2026-12-21",
-    "confidence": 0.7,
-    "explanation": "Rupture de Coffret Noël 2026 prévue semaine du 2026-12-21 (l'Excel naïf ne la voit pas). Coffrets Prestige annonce 35 j mais livre en 47.0 j en moyenne sur 14 livraisons.",
+    "confidence": 1.0,
+    "explanation": "Christmas 2026 gift box is likely to run out in the week of 2026-12-21 (0% probability by launch + 1 week, 100% before year end); a planner without memory sees it too, memory changes nothing here. Coffrets Prestige announces 35 days but delivers in 47.0 days on average over 14 deliveries (lead time used: 47 days).",
     "evidence": [
      "events:sellout_spike PRD-COF-NOEL x1.30",
      "inventory:CMP-COF-NOEL",
      "purchase_orders:PO-0067",
      "purchase_orders:PO-0068",
-     "supplier_reliability:SUP-COF (annoncé 35 j, réel 47.0 ± 4.2 j sur 14 livraisons, délai prudent 51 j)"
+     "supplier_reliability:SUP-COF (announced 35 d, actual 47.0 ± 4.2 d over 14 deliveries, lead time used 47 d)"
     ],
     "trigger_event_id": "EV-008",
-    "created_at": "2026-10-22T10:47:45",
-    "source": "règles (avance rapide)",
+    "created_at": "2026-10-22T11:48:49",
+    "source": "rules (fast-forward)",
     "mode": "rules",
     "can_arbitrate": false,
     "recommendation": null,
     "scenarios": []
    },
    {
-    "alert_id": 3,
+    "alert_id": 2,
     "component_id": "CMP-FLA-30",
-    "component_name": "Flacon verre 30 ml",
+    "component_name": "30 ml glass bottle",
     "severity": "medium",
     "predicted_stockout_week": "2026-12-28",
-    "confidence": 0.7,
-    "explanation": "Rupture de Flacon verre 30 ml prévue semaine du 2026-12-28 (l'Excel naïf ne la voit pas). Verrerie Lumière annonce 42 j mais livre en 45.9 j en moyenne sur 14 livraisons.",
+    "confidence": 1.0,
+    "explanation": "30 ml glass bottle is likely to run out in the week of 2026-12-28 (0% probability by launch + 1 week, 100% before year end); a planner without memory sees it too, memory changes nothing here. Verrerie Lumière announces 42 days but delivers in 45.9 days on average over 14 deliveries (lead time used: 46 days).",
     "evidence": [
      "events:sellout_spike PRD-COF-NOEL x1.30",
      "events:sellout_spike PRD-SER-ECL x1.40",
      "inventory:CMP-FLA-30",
      "purchase_orders:PO-0065",
-     "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+     "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
     ],
     "trigger_event_id": "EV-008",
-    "created_at": "2026-10-22T10:47:45",
-    "source": "règles (avance rapide)",
+    "created_at": "2026-10-22T11:48:49",
+    "source": "rules (fast-forward)",
     "mode": "rules",
     "can_arbitrate": false,
     "recommendation": null,
@@ -2442,10 +2930,10 @@
   ],
   "runs": [
    {
-    "agent": "arbitrage",
+    "agent": "arbitration",
     "mode": "live",
-    "input": "Date simulée : 2026-10-01. Alerte : {\"alert_id\": 7, \"item_id\": \"CMP-POM-01\", \"predicted_stockout_week\": \"2026-11-09\", \"severity\": \"high\", \"explanation\": \"La livraison confirmée de PO-0063 est partielle (12000 sur 20000), et SUP-POM livre en réel 60,3 j en moyenne contre 42 j annoncés, donc PO-0064 (promise le 2026-10-12) arrivera plus tard que prévu. LaunchPilot projette une rupture la semaine du 2026-11-09, soit une semaine après le lancement, alors que la vue Excel naïve ne voit aucune rupture.\"}\nComposant : Pompe airless 30 ml, fournisseur principal SUP-POM, alternatif SUP-POM-B.",
-    "output": "**Valeur à risque si on ne fait rien :** 742 426 €. Il manquerait 11 050 pompes.\n\n| Scénario | Impact total | Marge de sécurité |\n|---|---|---|\n| **1. Commande Dosage Riviera + coffret prioritaire** | **194 405 €** | 11 j |\n| 2. Commande Dosage Riviera seule | 253 846 € | 11 j |\n| 3. Coffret prioritaire seul | 567 970 € | sans objet |\n\nJ'ai écarté deux autres options :\n- **Commande chez Pompes Atlas (SUP-POM) :** 252 962 €, mais la marge est de 0 j. Elle arriverait le 07/12 selon les délais réels (60,3 j au lieu de 42 j annoncés, en retard 14 fois sur 14).\n- **Réduire le lancement de 20 % :** 806 994 €. C'est pire que ne rien faire.\n\n**Recommandation :** je commanderais 11 050 pompes chez Dosage Riviera (884 € de surcoût). Le coffret serait servi en priorité en attendant l'arrivée prévue le 26/11. Les 3 765 pompes manquantes avant cette date seraient prises sur les sérums.\n\n**Question pour Claire :** acceptez-vous de sacrifier environ 3 765 sérums (51 €) pour sauver le lancement du coffret (89 €) ?\n\n**Confiance :** bonne, environ 75 %. Dosage Riviera n'a que 6 livraisons d'historique et 4 ont été en retard.",
+    "input": "Simulated date: 2026-10-01. Alert: {\"alert_id\": 5, \"item_id\": \"CMP-POM-01\", \"predicted_stockout_week\": \"2026-11-09\", \"severity\": \"high\", \"explanation\": \"PO-0063 was only partially confirmed (12,000 of 20,000), and SUP-POM actually delivers in 60.3 ± 7.1 days against 42 announced, so PO-0064 is likely to arrive too late. This gives an 82% probability of a stockout by launch + 1 week, with a median in the week of 2026-11-09. A planner who believes the announced lead times would see 2026-12-28.\"}\nComponent: 30 ml airless pump, main supplier SUP-POM, alternative SUP-POM-B.",
+    "output": "I saved three scenarios, best first. Doing nothing puts €571,097 of revenue at risk, because 8,500 units go unserved.\n\n| # | Scenario | Extra cost | Lost revenue | Total impact |\n|---|---|---|---|---|\n| 1 | Rush order from Dosage Riviera (SUP-POM-B) plus gift set first | €680 | €193,521 | **€194,201** |\n| 2 | Rush order from Dosage Riviera only | €680 | €252,962 | €253,642 |\n| 3 | Prioritise the gift set only | €0 | €436,900 | €436,900 |\n\n**Scenario 1:**\n- It orders 8,500 pumps at €0.26 each. The realistic arrival is 2026-11-22, based on a 52-day median lead time.\n- The safety margin is 0 days. The pumps land about 13 days after the stockout week of 2026-11-09. A 3,765-unit gap remains, taken from the serums at €51 so the gift set (€89) ships on time.\n- Dosage Riviera was late on 4 of its 6 deliveries (±4.4 days), so a slip is possible.\n\n**Scenarios I rejected:**\n- **Order from the main supplier, Pompes Atlas (SUP-POM):** The order is 20,000 units at €0.18 each, with a realistic arrival of 2026-11-30. It does not cover the gap, so the impact stays at €571,097. Atlas was late on 14 of 14 deliveries, averaging 60.3 days against 42 announced.\n- **Cut the launch by 20%:** The impact is €787,510 and 6,184 units are still missing. This is the worst option.\n\n**Recommendation:** I would do scenario 1. Place the rush order with Dosage Riviera now and allocate pumps to the gift set first. This cuts the impact from €571,097 to €194,201 for €680 of extra cost. Claire has to decide whether to accept serum shortages in the weeks of 2026-11-09 to 11-22 to protect the launch. Confidence is medium-high on the ranking and medium on the exact amounts, because the 0-day margin leaves no room for a delay.",
     "tool_calls": [
      {
       "tool": "cost_scenario",
@@ -2456,22 +2944,22 @@
       "output": {
        "component_id": "CMP-POM-01",
        "kind": "do_nothing",
-       "shortage_units_before": 11050,
+       "shortage_units_before": 8500,
        "cost_eur": 0.0,
-       "lost_revenue_eur": 742426,
+       "lost_revenue_eur": 571097,
        "stock_value_eur": 0.0,
        "evidence_rows": [
         "inventory:CMP-POM-01",
         "events:EV-001",
         "events:EV-002",
-        "events:EV-019 (livraison partielle 12000/20000)",
+        "events:EV-019 (partial delivery 12000/20000)",
         "purchase_orders:PO-0063",
         "purchase_orders:PO-0064",
-        "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)"
+        "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)"
        ],
-       "label": "Ne rien faire",
-       "detail": "11050 unités non servies valorisées au prix moyen 67 €",
-       "total_impact_eur": 742426
+       "label": "Do nothing",
+       "detail": "8500 units not served, valued at the average price of 67 €",
+       "total_impact_eur": 571097
       }
      },
      {
@@ -2483,30 +2971,30 @@
       "output": {
        "component_id": "CMP-POM-01",
        "kind": "order_alt_supplier",
-       "shortage_units_before": 11050,
-       "cost_eur": 884,
+       "shortage_units_before": 8500,
+       "cost_eur": 680,
        "lost_revenue_eur": 252962,
-       "stock_value_eur": 2873,
+       "stock_value_eur": 2210,
        "evidence_rows": [
         "inventory:CMP-POM-01",
         "events:EV-001",
         "events:EV-002",
-        "events:EV-019 (livraison partielle 12000/20000)",
+        "events:EV-019 (partial delivery 12000/20000)",
         "purchase_orders:PO-0063",
         "purchase_orders:PO-0064",
-        "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)",
+        "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)",
         "supplier_reliability:SUP-POM-B"
        ],
-       "label": "Commande urgente chez Dosage Riviera",
+       "label": "Rush order from Dosage Riviera",
        "supplier_id": "SUP-POM-B",
-       "qty": 11050,
-       "safety_margin_days": 11,
-       "arrival_realistic": "2026-11-26",
+       "qty": 8500,
+       "safety_margin_days": 0,
+       "arrival_realistic": "2026-11-22",
        "announced_arrival": "2026-11-19",
        "shortage_units_after": 3765,
        "new_stockout_week": "2026-11-09",
-       "detail": "11050 u. × 0.26 € (MOQ 5000), arrivée réaliste 2026-11-26 (délai prudent 56 j, annoncé 49 j), marge avant la rupture suivante : 11 j. Ne couvre pas le trou de 3765 unités avant l'arrivée.",
-       "total_impact_eur": 253846
+       "detail": "8500 units × 0.26 € (MOQ 5000), realistic arrival 2026-11-22 (lead time used 52 d = median actual, announced 49 d), safety margin before the next stockout: 0 d. Does not cover the gap of 3765 units before it arrives.",
+       "total_impact_eur": 253642
       }
      },
      {
@@ -2518,30 +3006,30 @@
       "output": {
        "component_id": "CMP-POM-01",
        "kind": "order_main_supplier",
-       "shortage_units_before": 11050,
+       "shortage_units_before": 8500,
        "cost_eur": 0,
-       "lost_revenue_eur": 252962,
+       "lost_revenue_eur": 571097,
        "stock_value_eur": 3600,
        "evidence_rows": [
         "inventory:CMP-POM-01",
         "events:EV-001",
         "events:EV-002",
-        "events:EV-019 (livraison partielle 12000/20000)",
+        "events:EV-019 (partial delivery 12000/20000)",
         "purchase_orders:PO-0063",
         "purchase_orders:PO-0064",
-        "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)",
+        "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)",
         "supplier_reliability:SUP-POM"
        ],
-       "label": "Commande urgente chez Pompes Atlas",
+       "label": "Rush order from Pompes Atlas",
        "supplier_id": "SUP-POM",
        "qty": 20000,
-       "safety_margin_days": 0,
-       "arrival_realistic": "2026-12-07",
+       "safety_margin_days": 28,
+       "arrival_realistic": "2026-11-30",
        "announced_arrival": "2026-11-12",
-       "shortage_units_after": 3765,
+       "shortage_units_after": 8500,
        "new_stockout_week": "2026-11-09",
-       "detail": "20000 u. × 0.18 € (MOQ 20000), arrivée réaliste 2026-12-07 (délai prudent 67 j, annoncé 42 j), marge avant la rupture suivante : 0 j. Ne couvre pas le trou de 3765 unités avant l'arrivée.",
-       "total_impact_eur": 252962
+       "detail": "20000 units × 0.18 € (MOQ 20000), realistic arrival 2026-11-30 (lead time used 60 d = median actual, announced 42 d), safety margin before the next stockout: 28 d. Does not cover the gap of 8500 units before it arrives.",
+       "total_impact_eur": 571097
       }
      },
      {
@@ -2553,22 +3041,22 @@
       "output": {
        "component_id": "CMP-POM-01",
        "kind": "prioritize_launch",
-       "shortage_units_before": 11050,
+       "shortage_units_before": 8500,
        "cost_eur": 0.0,
-       "lost_revenue_eur": 567970,
+       "lost_revenue_eur": 436900,
        "stock_value_eur": 0.0,
        "evidence_rows": [
         "inventory:CMP-POM-01",
         "events:EV-001",
         "events:EV-002",
-        "events:EV-019 (livraison partielle 12000/20000)",
+        "events:EV-019 (partial delivery 12000/20000)",
         "purchase_orders:PO-0063",
         "purchase_orders:PO-0064",
-        "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)"
+        "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)"
        ],
-       "label": "Allouer en priorité au coffret de lancement",
-       "detail": "Les 11050 unités manquantes sont prises sur Sérum Éclat 30 ml, Sérum Nuit 30 ml (prix moyen 51 €) au lieu du coffret (89 €). Le lancement est protégé.",
-       "total_impact_eur": 567970
+       "label": "Prioritise the launch gift set",
+       "detail": "The 8500 missing units are taken from Sérum Éclat 30 ml, Sérum Nuit 30 ml (average price 51 €) instead of the gift set (89 €). The launch is protected.",
+       "total_impact_eur": 436900
       }
      },
      {
@@ -2580,27 +3068,27 @@
       "output": {
        "component_id": "CMP-POM-01",
        "kind": "order_alt_and_prioritize",
-       "shortage_units_before": 11050,
-       "cost_eur": 884,
+       "shortage_units_before": 8500,
+       "cost_eur": 680,
        "lost_revenue_eur": 193521,
-       "stock_value_eur": 2873,
+       "stock_value_eur": 2210,
        "evidence_rows": [
         "inventory:CMP-POM-01",
         "events:EV-001",
         "events:EV-002",
-        "events:EV-019 (livraison partielle 12000/20000)",
+        "events:EV-019 (partial delivery 12000/20000)",
         "purchase_orders:PO-0063",
         "purchase_orders:PO-0064",
-        "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)",
+        "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)",
         "supplier_reliability:SUP-POM-B"
        ],
-       "label": "Commande urgente Dosage Riviera + coffret prioritaire en attendant",
+       "label": "Rush order from Dosage Riviera + gift set first meanwhile",
        "supplier_id": "SUP-POM-B",
-       "qty": 11050,
+       "qty": 8500,
        "shortage_units_after": 3765,
-       "safety_margin_days": 11,
-       "detail": "La commande (arrivée réaliste 2026-11-26) sécurise décembre. Le trou de 3765 unités avant son arrivée est pris sur les sérums (51 €) : le coffret sort à l'heure.",
-       "total_impact_eur": 194405
+       "safety_margin_days": 0,
+       "detail": "The order (realistic arrival 2026-11-22) secures December. The gap of 3765 units before it arrives is taken from the serums (51 €): the gift set ships on time.",
+       "total_impact_eur": 194201
       }
      },
      {
@@ -2612,24 +3100,24 @@
       "output": {
        "component_id": "CMP-POM-01",
        "kind": "reduce_launch",
-       "shortage_units_before": 11050,
+       "shortage_units_before": 8500,
        "cost_eur": 0.0,
-       "lost_revenue_eur": 806994,
+       "lost_revenue_eur": 787510,
        "stock_value_eur": 0.0,
        "evidence_rows": [
         "inventory:CMP-POM-01",
         "events:EV-001",
         "events:EV-002",
-        "events:EV-019 (livraison partielle 12000/20000)",
+        "events:EV-019 (partial delivery 12000/20000)",
         "purchase_orders:PO-0063",
         "purchase_orders:PO-0064",
-        "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)"
+        "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)"
        ],
-       "label": "Réduire le lancement de 20 %",
-       "shortage_units_after": 6474,
+       "label": "Scale the launch down by 20%",
+       "shortage_units_after": 6184,
        "new_stockout_week": "2026-11-09",
-       "detail": "4180 coffrets en moins (89 €), reste 6474 unités manquantes",
-       "total_impact_eur": 806994
+       "detail": "4180 fewer gift sets (89 €), 6184 units still missing",
+       "total_impact_eur": 787510
       }
      },
      {
@@ -2644,7 +3132,7 @@
         "announced_days": 42,
         "real_mean_days": 60.3,
         "std_days": 7.1,
-        "prudent_days": 67,
+        "typical_days": 60,
         "deliveries": 14,
         "late_deliveries": 14,
         "evidence": "supplier_reliability:SUP-POM"
@@ -2663,7 +3151,7 @@
         "announced_days": 49,
         "real_mean_days": 51.7,
         "std_days": 4.4,
-        "prudent_days": 56,
+        "typical_days": 52,
         "deliveries": 6,
         "late_deliveries": 4,
         "evidence": "supplier_reliability:SUP-POM-B"
@@ -2673,52 +3161,52 @@
      {
       "tool": "save_scenario",
       "input": {
-       "label": "Commande urgente Dosage Riviera + coffret prioritaire",
+       "label": "Rush order Dosage Riviera + gift set first",
        "kind": "order_alt_and_prioritize",
-       "description": "Commande de 11 050 pompes chez Dosage Riviera (884 €), arrivée réaliste le 26/11 avec 11 j de marge ; le trou de 3 765 unités avant l'arrivée est pris sur les sérums (51 €), le coffret sort à l'heure. Impact total 194 405 € contre 742 426 € si on ne fait rien.",
-       "qty": 11050
+       "qty": 8500,
+       "description": "Order 8,500 pumps from SUP-POM-B (extra cost €680, realistic arrival 2026-11-22) and allocate pumps to the gift set first. Total impact is €194,201 against €571,097 for doing nothing, but the safety margin is 0 days and 3,765 units are still missing, taken from the serums."
       },
       "output": {
-       "status": "enregistré",
+       "status": "saved",
        "scenario_id": 1
       }
      },
      {
       "tool": "save_scenario",
       "input": {
-       "label": "Commande urgente Dosage Riviera seule",
+       "label": "Rush order Dosage Riviera only",
        "kind": "order_alt_supplier",
-       "description": "Commande de 11 050 pompes à 0,26 € (884 € de surcoût, 2 873 € de stock immobilisé), arrivée réaliste le 26/11, marge 11 j. Elle ne couvre pas le trou de 3 765 unités : CA perdu 252 962 €, impact total 253 846 €.",
-       "qty": 11050
+       "qty": 8500,
+       "description": "Order 8,500 pumps from SUP-POM-B at €0.26 each (cost €680), arriving about 2026-11-22. Total impact is €253,642 (lost revenue €252,962), with a 0-day margin and 3,765 units still short."
       },
       "output": {
-       "status": "enregistré",
+       "status": "saved",
        "scenario_id": 2
       }
      },
      {
       "tool": "save_scenario",
       "input": {
-       "label": "Allocation prioritaire au coffret, sans commande",
+       "label": "Prioritise the launch gift set",
        "kind": "prioritize_launch",
-       "description": "Les 11 050 unités manquantes sont prises sur les sérums (51 €) au lieu du coffret (89 €), donc le lancement est protégé. Aucun surcoût, mais 567 970 € de CA perdu : impact total 567 970 €, et la rupture reste entière."
+       "description": "Take the 8,500 missing pumps from Sérum Éclat and Sérum Nuit (average €51) instead of the gift set (€89). Cost €0 and total impact €436,900, but it does not fix the supply problem."
       },
       "output": {
-       "status": "enregistré",
+       "status": "saved",
        "scenario_id": 3
       }
      }
     ],
-    "latency_ms": 13840,
-    "tokens_in": 12456,
-    "tokens_out": 1884,
+    "latency_ms": 13748,
+    "tokens_in": 11726,
+    "tokens_out": 1989,
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "live",
-    "input": "Date simulée : 2026-10-01.\nÉvénement : {\"event_id\": \"EV-019\", \"ts\": \"2026-10-01T09:00:00\", \"event_type\": \"po_confirmed\", \"payload\": {\"po_id\": \"PO-0063\", \"component_id\": \"CMP-POM-01\", \"confirmed_date\": \"2026-09-14\", \"confirmed_qty\": 12000}}\nAlertes déjà ouvertes : [{\"component\": \"CMP-COF-NOEL\", \"stockout_week\": \"2026-12-21\", \"severity\": \"medium\"}, {\"component\": \"CMP-POM-01\", \"stockout_week\": \"2026-12-21\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-50\", \"stockout_week\": \"2026-12-14\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-30\", \"stockout_week\": \"2026-12-28\", \"severity\": \"medium\"}, {\"component\": \"CMP-POM-01\", \"stockout_week\": \"2026-12-28\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-50\", \"stockout_week\": \"2026-12-21\", \"severity\": \"medium\"}]",
-    "output": "J'ai créé une alerte de gravité haute pour CMP-POM-01. La rupture est projetée la semaine du 2026-11-09, soit une semaine après le lancement. Elle tombe bien avant les alertes ouvertes du 2026-12-21 et du 2026-12-28. La livraison confirmée de PO-0063 est partielle (12000 sur 20000), et SUP-POM livre en réel en 60,3 j contre 42 j annoncés. La vue Excel naïve ne voit aucune rupture. Pour les autres composants (CMP-FLA-30, CMP-FLA-50 et CMP-COF-NOEL), les ruptures projetées correspondent à des alertes déjà ouvertes, donc je n'ai créé aucune nouvelle alerte.",
+    "input": "Simulated date: 2026-10-01.\nEvent: {\"event_id\": \"EV-019\", \"ts\": \"2026-10-01T09:00:00\", \"event_type\": \"po_confirmed\", \"payload\": {\"po_id\": \"PO-0063\", \"component_id\": \"CMP-POM-01\", \"confirmed_date\": \"2026-09-14\", \"confirmed_qty\": 12000}}\nAlerts already open: [{\"component\": \"CMP-COF-NOEL\", \"stockout_week\": \"2026-12-21\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-50\", \"stockout_week\": \"2026-12-14\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-30\", \"stockout_week\": \"2026-12-28\", \"severity\": \"medium\"}, {\"component\": \"CMP-FLA-50\", \"stockout_week\": \"2026-12-21\", \"severity\": \"medium\"}]",
+    "output": "I created a high-severity alert for CMP-POM-01 (30 ml airless pump). The median stockout week is 2026-11-09, with a confidence of 0.82.\n\n- **Why the date is early:** EV-019 confirmed only 12,000 of the 20,000 units on PO-0063. SUP-POM has actually delivered in 60.3 ± 7.1 days against 42 announced, so PO-0064, promised for 2026-10-16, will probably arrive late.\n- **Gap with the no-memory view:** A planner who believes the announced lead times would see a stockout in the week of 2026-12-28. That is seven weeks later than the supplier-memory projection.\n- **No new alerts elsewhere:** CMP-COF-NOEL, CMP-FLA-50 and CMP-FLA-30 are medium, and their stockout weeks match the alerts already open. CMP-ETU-01 and CMP-ETU-02 show no stockout.\n\nSummary: The partial delivery on PO-0063, combined with SUP-POM's history of late deliveries, moves the pump stockout to the week of 2026-11-09, so I raised a high-severity alert.",
     "tool_calls": [
      {
       "tool": "run_projection",
@@ -2726,12 +3214,15 @@
       "output": [
        {
         "component_id": "CMP-FLA-30",
-        "name": "Flacon verre 30 ml",
+        "name": "30 ml glass bottle",
         "supplier_id": "SUP-FLA",
         "stockout_week_launchpilot": "2026-12-28",
-        "stockout_week_naive_excel": null,
-        "min_projected_stock": -2050,
+        "p_stockout_by_launch_plus_1wk": 0.0,
+        "p_stockout_before_end_of_year": 1.0,
+        "stockout_week_without_memory": "2026-12-28",
+        "min_projected_stock_p50": -2050,
         "suggested_severity": "medium",
+        "confidence": 1.0,
         "evidence": [
          "events:EV-004",
          "events:sellout_spike PRD-COF-NOEL x1.30",
@@ -2739,88 +3230,103 @@
          "events:sellout_spike PRD-SER-NUI x1.50",
          "inventory:CMP-FLA-30",
          "purchase_orders:PO-0065",
-         "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+         "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
         ]
        },
        {
         "component_id": "CMP-FLA-50",
-        "name": "Pot verre 50 ml",
+        "name": "50 ml glass jar",
         "supplier_id": "SUP-FLA",
         "stockout_week_launchpilot": "2026-12-14",
-        "stockout_week_naive_excel": "2026-12-21",
-        "min_projected_stock": -8440,
+        "p_stockout_by_launch_plus_1wk": 0.0,
+        "p_stockout_before_end_of_year": 1.0,
+        "stockout_week_without_memory": "2026-12-14",
+        "min_projected_stock_p50": -8440,
         "suggested_severity": "medium",
+        "confidence": 1.0,
         "evidence": [
          "events:sellout_spike PRD-COF-NOEL x1.30",
          "events:sellout_spike PRD-CRE-HYD x1.20",
          "events:sellout_spike PRD-CRE-RIC x1.10",
          "inventory:CMP-FLA-50",
          "purchase_orders:PO-0066",
-         "supplier_reliability:SUP-FLA (annoncé 42 j, réel 45.9 ± 4.3 j sur 14 livraisons, délai prudent 50 j)"
+         "supplier_reliability:SUP-FLA (announced 42 d, actual 45.9 ± 4.3 d over 14 deliveries, lead time used 46 d)"
         ]
        },
        {
         "component_id": "CMP-POM-01",
-        "name": "Pompe airless 30 ml",
+        "name": "30 ml airless pump",
         "supplier_id": "SUP-POM",
         "stockout_week_launchpilot": "2026-11-09",
-        "stockout_week_naive_excel": null,
-        "min_projected_stock": -11050,
+        "p_stockout_by_launch_plus_1wk": 0.82,
+        "p_stockout_before_end_of_year": 1.0,
+        "stockout_week_without_memory": "2026-12-28",
+        "min_projected_stock_p50": -3765,
         "suggested_severity": "high",
+        "confidence": 0.82,
         "evidence": [
          "events:EV-001",
          "events:EV-002",
-         "events:EV-019 (livraison partielle 12000/20000)",
+         "events:EV-019 (partial delivery 12000/20000)",
          "events:sellout_spike PRD-COF-NOEL x1.30",
          "events:sellout_spike PRD-SER-ECL x1.40",
          "events:sellout_spike PRD-SER-NUI x1.50",
          "inventory:CMP-POM-01",
          "purchase_orders:PO-0063",
          "purchase_orders:PO-0064",
-         "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)"
+         "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)"
         ]
        },
        {
         "component_id": "CMP-ETU-01",
-        "name": "Étui carton sérum",
+        "name": "Serum folding carton",
         "supplier_id": "SUP-ETU",
         "stockout_week_launchpilot": null,
-        "stockout_week_naive_excel": null,
-        "min_projected_stock": 2830,
+        "p_stockout_by_launch_plus_1wk": 0.0,
+        "p_stockout_before_end_of_year": 0.0,
+        "stockout_week_without_memory": null,
+        "min_projected_stock_p50": 2830,
         "suggested_severity": null,
+        "confidence": 0.0,
         "evidence": [
          "events:EV-005",
          "events:sellout_spike PRD-SER-ECL x1.40",
          "events:sellout_spike PRD-SER-NUI x1.50",
          "inventory:CMP-ETU-01",
          "purchase_orders:PO-0069",
-         "supplier_reliability:SUP-ETU (annoncé 28 j, réel 29.1 ± 3.1 j sur 14 livraisons, délai prudent 32 j)"
+         "supplier_reliability:SUP-ETU (announced 28 d, actual 29.1 ± 3.1 d over 14 deliveries, lead time used 30 d)"
         ]
        },
        {
         "component_id": "CMP-ETU-02",
-        "name": "Étui carton crème",
+        "name": "Cream folding carton",
         "supplier_id": "SUP-ETU",
         "stockout_week_launchpilot": null,
-        "stockout_week_naive_excel": null,
-        "min_projected_stock": 440,
+        "p_stockout_by_launch_plus_1wk": 0.0,
+        "p_stockout_before_end_of_year": 0.0,
+        "stockout_week_without_memory": null,
+        "min_projected_stock_p50": 440,
         "suggested_severity": null,
+        "confidence": 0.0,
         "evidence": [
          "events:sellout_spike PRD-CRE-HYD x1.20",
          "events:sellout_spike PRD-CRE-RIC x1.10",
          "inventory:CMP-ETU-02",
          "purchase_orders:PO-0070",
-         "supplier_reliability:SUP-ETU (annoncé 28 j, réel 29.1 ± 3.1 j sur 14 livraisons, délai prudent 32 j)"
+         "supplier_reliability:SUP-ETU (announced 28 d, actual 29.1 ± 3.1 d over 14 deliveries, lead time used 30 d)"
         ]
        },
        {
         "component_id": "CMP-COF-NOEL",
-        "name": "Coffret Noël 2026",
+        "name": "Christmas 2026 gift box",
         "supplier_id": "SUP-COF",
         "stockout_week_launchpilot": "2026-12-21",
-        "stockout_week_naive_excel": null,
-        "min_projected_stock": -1880,
+        "p_stockout_by_launch_plus_1wk": 0.1,
+        "p_stockout_before_end_of_year": 1.0,
+        "stockout_week_without_memory": "2026-12-21",
+        "min_projected_stock_p50": -1880,
         "suggested_severity": "medium",
+        "confidence": 1.0,
         "evidence": [
          "events:EV-003",
          "events:EV-006",
@@ -2828,7 +3334,7 @@
          "inventory:CMP-COF-NOEL",
          "purchase_orders:PO-0067",
          "purchase_orders:PO-0068",
-         "supplier_reliability:SUP-COF (annoncé 35 j, réel 47.0 ± 4.2 j sur 14 livraisons, délai prudent 51 j)"
+         "supplier_reliability:SUP-COF (announced 35 d, actual 47.0 ± 4.2 d over 14 deliveries, lead time used 47 d)"
         ]
        }
       ]
@@ -2849,9 +3355,9 @@
        {
         "po_id": "PO-0064",
         "supplier_id": "SUP-POM",
-        "qty": "20000",
-        "order_date": "2026-08-31",
-        "promised_date": "2026-10-12"
+        "qty": "30000",
+        "order_date": "2026-09-04",
+        "promised_date": "2026-10-16"
        }
       ]
      },
@@ -2861,8 +3367,8 @@
        "component_id": "CMP-POM-01",
        "stockout_week": "2026-11-09",
        "severity": "high",
-       "confidence": 0.85,
-       "explanation": "La livraison confirmée de PO-0063 est partielle (12000 sur 20000), et SUP-POM livre en réel 60,3 j en moyenne contre 42 j annoncés, donc PO-0064 (promise le 2026-10-12) arrivera plus tard que prévu. LaunchPilot projette une rupture la semaine du 2026-11-09, soit une semaine après le lancement, alors que la vue Excel naïve ne voit aucune rupture.",
+       "confidence": 0.82,
+       "explanation": "PO-0063 was only partially confirmed (12,000 of 20,000), and SUP-POM actually delivers in 60.3 ± 7.1 days against 42 announced, so PO-0064 is likely to arrive too late. This gives an 82% probability of a stockout by launch + 1 week, with a median in the week of 2026-11-09. A planner who believes the announced lead times would see 2026-12-28.",
        "evidence": [
         "events:EV-019",
         "purchase_orders:PO-0063",
@@ -2872,23 +3378,23 @@
        ]
       },
       "output": {
-       "status": "créée",
-       "alert_id": 7
+       "status": "created",
+       "alert_id": 5
       }
      }
     ],
-    "latency_ms": 10755,
-    "tokens_in": 10677,
-    "tokens_out": 1126,
+    "latency_ms": 8711,
+    "tokens_in": 10590,
+    "tokens_out": 903,
     "alerts_created": [
-     7
+     5
     ]
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-016",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -2896,10 +3402,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-006",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -2907,10 +3413,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-011",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -2918,10 +3424,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-034",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -2929,10 +3435,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-005",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -2940,10 +3446,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-018",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -2951,10 +3457,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-015",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -2962,10 +3468,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-035",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -2973,10 +3479,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-010",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -2984,10 +3490,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-028",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -2995,10 +3501,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-030",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3006,10 +3512,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-004",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3017,10 +3523,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-009",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3028,10 +3534,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-003",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3039,10 +3545,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-025",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3050,10 +3556,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-033",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3061,10 +3567,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-014",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3072,10 +3578,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-017",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3083,10 +3589,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-002",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3094,26 +3600,25 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-008",
-    "output": "4 alerte(s)",
+    "output": "3 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
     "tokens_out": 0,
     "alerts_created": [
+     2,
      3,
-     4,
-     5,
-     6
+     4
     ]
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-013",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3121,10 +3626,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-029",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3132,10 +3637,10 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-001",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3143,24 +3648,23 @@
     "alerts_created": []
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-007",
-    "output": "2 alerte(s)",
+    "output": "1 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
     "tokens_out": 0,
     "alerts_created": [
-     1,
-     2
+     1
     ]
    },
    {
-    "agent": "veille",
+    "agent": "watch",
     "mode": "rules",
     "input": "EV-032",
-    "output": "0 alerte(s)",
+    "output": "0 alert(s)",
     "tool_calls": [],
     "latency_ms": 0,
     "tokens_in": 0,
@@ -3172,11 +3676,11 @@
  "decided": {
   "decisions": [
    {
-    "alert_id": 7,
+    "alert_id": 5,
     "scenario_id": 1,
-    "label": "Commande urgente Dosage Riviera + coffret prioritaire en attendant",
+    "label": "Rush order Dosage Riviera + gift set first",
     "decided_by": "Claire (demo)",
-    "decided_at": "2026-10-22T10:46:46"
+    "decided_at": "2026-10-22T11:49:15"
    }
   ]
  },
@@ -3189,7 +3693,7 @@
     "announced_days": 42,
     "real_mean_days": 45.9,
     "std_days": 4.3,
-    "prudent_days": 50,
+    "typical_days": 46,
     "deliveries": 14,
     "late_deliveries": 11,
     "evidence": "supplier_reliability:SUP-FLA"
@@ -3200,7 +3704,7 @@
     "announced_days": 42,
     "real_mean_days": 60.3,
     "std_days": 7.1,
-    "prudent_days": 67,
+    "typical_days": 60,
     "deliveries": 14,
     "late_deliveries": 14,
     "evidence": "supplier_reliability:SUP-POM"
@@ -3211,7 +3715,7 @@
     "announced_days": 49,
     "real_mean_days": 51.7,
     "std_days": 4.4,
-    "prudent_days": 56,
+    "typical_days": 52,
     "deliveries": 6,
     "late_deliveries": 4,
     "evidence": "supplier_reliability:SUP-POM-B"
@@ -3222,7 +3726,7 @@
     "announced_days": 28,
     "real_mean_days": 29.1,
     "std_days": 3.1,
-    "prudent_days": 32,
+    "typical_days": 30,
     "deliveries": 14,
     "late_deliveries": 9,
     "evidence": "supplier_reliability:SUP-ETU"
@@ -3233,7 +3737,7 @@
     "announced_days": 35,
     "real_mean_days": 47.0,
     "std_days": 4.2,
-    "prudent_days": 51,
+    "typical_days": 47,
     "deliveries": 14,
     "late_deliveries": 14,
     "evidence": "supplier_reliability:SUP-COF"
@@ -3243,40 +3747,88 @@
  },
  "proof": {
   "evaluation": {
-   "real_stockouts": {
-    "CMP-COF-NOEL": "2026-12-14",
-    "CMP-FLA-30": "2026-12-21",
-    "CMP-FLA-50": "2026-12-14",
-    "CMP-POM-01": "2026-11-09"
+   "protocol": "Replay of the 35 events over N synthetic worlds; a stockout is dated when it is announced within one week of its true date; baseline = attentive planner without memory (reads every message, believes announced lead times); LaunchPilot = the same reading plus the supplier memory (lead times drawn from delivered history; announces the median week when a stockout is at least 50% likely).",
+   "seeds": 30,
+   "recorded_not_live": true,
+   "without_memory": {
+    "detected": 97,
+    "total": 120,
+    "mean_lead_days": 95,
+    "false_alarms": 0,
+    "wrong_by_more_than_1wk": 23,
+    "median_abs_error_weeks": 0.0
    },
-   "naive": {
-    "detected": 1,
-    "total": 4,
-    "avg_anticipation_days": 98,
-    "per_component": {
-     "CMP-COF-NOEL": null,
-     "CMP-FLA-30": null,
-     "CMP-FLA-50": 98,
-     "CMP-POM-01": null
-    },
-    "false_alarms": []
+   "launchpilot": {
+    "detected": 112,
+    "total": 120,
+    "mean_lead_days": 86,
+    "false_alarms": 0,
+    "wrong_by_more_than_1wk": 8,
+    "median_abs_error_weeks": 0.0
    },
-   "learned": {
-    "detected": 4,
-    "total": 4,
-    "avg_anticipation_days": 82,
+   "demo_seed": {
+    "seed": 42,
     "per_component": {
-     "CMP-COF-NOEL": 91,
-     "CMP-FLA-30": 98,
-     "CMP-FLA-50": 98,
-     "CMP-POM-01": 39
-    },
-    "false_alarms": []
+     "CMP-FLA-30": {
+      "truth": "2026-12-21",
+      "without_memory": "2026-12-21",
+      "launchpilot": "2026-12-21",
+      "lead_days_without_memory": 98,
+      "lead_days_launchpilot": 98,
+      "p_by_launch_plus_1wk": 0.0,
+      "p_before_end_of_year": 1.0
+     },
+     "CMP-FLA-50": {
+      "truth": "2026-12-14",
+      "without_memory": "2026-12-14",
+      "launchpilot": "2026-12-14",
+      "lead_days_without_memory": 98,
+      "lead_days_launchpilot": 98,
+      "p_by_launch_plus_1wk": 0.0,
+      "p_before_end_of_year": 1.0
+     },
+     "CMP-POM-01": {
+      "truth": "2026-11-09",
+      "without_memory": "2026-12-21",
+      "launchpilot": "2026-11-09",
+      "lead_days_without_memory": null,
+      "lead_days_launchpilot": 39,
+      "p_by_launch_plus_1wk": 0.82,
+      "p_before_end_of_year": 1.0
+     },
+     "CMP-ETU-01": {
+      "truth": null,
+      "without_memory": null,
+      "launchpilot": null,
+      "lead_days_without_memory": null,
+      "lead_days_launchpilot": null,
+      "p_by_launch_plus_1wk": 0.0,
+      "p_before_end_of_year": 0.0
+     },
+     "CMP-ETU-02": {
+      "truth": null,
+      "without_memory": null,
+      "launchpilot": null,
+      "lead_days_without_memory": null,
+      "lead_days_launchpilot": null,
+      "p_by_launch_plus_1wk": 0.0,
+      "p_before_end_of_year": 0.0
+     },
+     "CMP-COF-NOEL": {
+      "truth": "2026-12-14",
+      "without_memory": "2026-12-14",
+      "launchpilot": "2026-12-14",
+      "lead_days_without_memory": 91,
+      "lead_days_launchpilot": 91,
+      "p_by_launch_plus_1wk": 0.1,
+      "p_before_end_of_year": 1.0
+     }
+    }
    },
    "demo_focus_pump_evidence": [
     "events:EV-001",
     "events:EV-002",
-    "events:EV-019 (livraison partielle 12000/20000)",
+    "events:EV-019 (partial delivery 12000/20000)",
     "events:sellout_spike PRD-COF-NOEL x1.25",
     "events:sellout_spike PRD-COF-NOEL x1.30",
     "events:sellout_spike PRD-COF-NOEL x1.62",
@@ -3285,14 +3837,16 @@
     "inventory:CMP-POM-01",
     "purchase_orders:PO-0063",
     "purchase_orders:PO-0064",
-    "supplier_reliability:SUP-POM (annoncé 42 j, réel 60.3 ± 7.1 j sur 14 livraisons, délai prudent 67 j)"
+    "supplier_reliability:SUP-POM (announced 42 d, actual 60.3 ± 7.1 d over 14 deliveries, lead time used 60 d)"
    ]
   },
   "component_names": {
-   "CMP-COF-NOEL": "Coffret Noël 2026",
-   "CMP-FLA-30": "Flacon verre 30 ml",
-   "CMP-FLA-50": "Pot verre 50 ml",
-   "CMP-POM-01": "Pompe airless 30 ml"
+   "CMP-FLA-30": "30 ml glass bottle",
+   "CMP-FLA-50": "50 ml glass jar",
+   "CMP-POM-01": "30 ml airless pump",
+   "CMP-ETU-01": "Serum folding carton",
+   "CMP-ETU-02": "Cream folding carton",
+   "CMP-COF-NOEL": "Christmas 2026 gift box"
   }
  }
 }

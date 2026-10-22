@@ -18,6 +18,7 @@ export interface LaunchEvent {
   event_id: string;
   ts: string; // ISO 8601, Paris local time, no timezone
   event_type: string; // supplier_delay | sellout_spike | capacity_drop | po_confirmed | noise | po_delivered | supplier_email | supplier_insolvency | holiday_closure
+  kind_label: string; // display label with an emoji, e.g. "🚚 Supplier delay"
   summary: string;
   payload: Record<string, unknown>;
   origin: EventOrigin;
@@ -28,10 +29,13 @@ export interface ComponentRisk {
   name: string;
   supplier_id: string;
   supplier_name: string;
-  stockout_week_launchpilot: string | null; // Monday of the projected stockout week, real lead times
-  stockout_week_baseline: string | null; // the same, as the spreadsheet baseline sees it
-  min_projected_stock: number;
-  severity: ComponentStatus;
+  stockout_week_launchpilot: string | null; // Monday of the median stockout week, lead times drawn from delivery history
+  stockout_week_without_memory: string | null; // the same for an attentive planner who believes announced lead times
+  p_stockout_by_launch_plus_1wk: number; // 0 to 1
+  p_stockout_before_end_of_year: number; // 0 to 1
+  confidence: number; // the probability behind the severity
+  min_projected_stock_p50: number;
+  severity: ComponentStatus; // high: >= 50% stockout by launch + 1 week; medium: likely before year end
   evidence: string[]; // "table:id" rows the projection used
 }
 
@@ -66,7 +70,7 @@ export interface Alert {
   component_name: string;
   severity: Severity;
   predicted_stockout_week: string | null;
-  confidence: number | null; // 0 to 1
+  confidence: number | null; // a probability, 0 to 1
   explanation: string;
   evidence: string[];
   trigger_event_id: string | null;
@@ -85,7 +89,7 @@ export interface ToolCall {
 }
 
 export interface AgentRun {
-  agent: string; // "veille" = watch agent, "arbitrage" = arbitration agent
+  agent: string; // "watch" or "arbitration"
   mode: RunMode;
   input: unknown;
   output: string; // markdown in live mode
@@ -98,8 +102,10 @@ export interface AgentRun {
 
 export interface ProjectionPoint {
   week: string;
-  launchpilot: number | null;
-  baseline: number | null;
+  p10: number | null; // LaunchPilot band over 200 lead-time draws: pessimistic edge
+  p50: number | null; // LaunchPilot median: the line to draw
+  p90: number | null; // optimistic edge
+  without_memory: number | null; // the planner who believes announced lead times
 }
 
 export interface Projection {
@@ -115,7 +121,7 @@ export interface SupplierMemory {
   announced_days: number;
   real_mean_days: number;
   std_days: number;
-  prudent_days: number;
+  typical_days: number; // median delivered lead time
   deliveries: number;
   late_deliveries: number;
   evidence: string;
@@ -136,18 +142,32 @@ export interface Decision {
 }
 
 export interface PlannerScore {
-  detected: number;
+  detected: number; // stockouts dated within one week of the truth, over all seeds
   total: number;
-  avg_anticipation_days: number | null;
-  per_component: Record<string, number | null>; // days of warning, null when missed
-  false_alarms: unknown[];
+  mean_lead_days: number; // mean warning on the dated ones
+  false_alarms: number;
+  wrong_by_more_than_1wk: number;
+  median_abs_error_weeks: number;
+}
+
+export interface DemoComponentScore {
+  truth: string | null; // true stockout week, null when it never runs out
+  without_memory: string | null;
+  launchpilot: string | null;
+  lead_days_without_memory: number | null; // days of warning, null when missed
+  lead_days_launchpilot: number | null;
+  p_by_launch_plus_1wk: number;
+  p_before_end_of_year: number;
 }
 
 export interface Proof {
   evaluation: {
-    real_stockouts: Record<string, string>; // component_id -> true stockout week
-    naive: PlannerScore; // the spreadsheet baseline
-    learned: PlannerScore; // LaunchPilot
+    protocol: string;
+    seeds: number;
+    recorded_not_live: boolean;
+    without_memory: PlannerScore; // baseline: reads every message, believes announced lead times
+    launchpilot: PlannerScore;
+    demo_seed: { seed: number; per_component: Record<string, DemoComponentScore> };
     demo_focus_pump_evidence?: string[];
   };
   component_names: Record<string, string>;
