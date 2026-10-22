@@ -1,8 +1,56 @@
+import { useState } from "react";
 import { ExternalLink } from "lucide-react";
-import type { CompanyCard, SupplierHealthNotice } from "@/lib/api";
+import type { BodaccHistoryItem, CompanyCard, SupplierHealthNotice } from "@/lib/api";
 import { date, eur } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import { Markdown, SeverityBadge, Tag } from "@/components/lp/bits";
+
+const INSOLVENCY_LABEL = "Insolvency proceedings";
+const HISTORY_PREVIEW = 5;
+
+function WarningSigns({ signs }: { signs: string[] }) {
+  if (signs.length === 0) return null;
+  return (
+    <div className="space-y-2" data-help="warning-signs">
+      <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground">Warning signs</h3>
+      <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed">
+        {signs.map((sign) => <li key={sign} className="break-words">{sign}</li>)}
+      </ul>
+    </div>
+  );
+}
+
+function BodaccHistory({ items }: { items: BodaccHistoryItem[] }) {
+  const [showAll, setShowAll] = useState(false);
+  const visible = showAll ? items : items.slice(0, HISTORY_PREVIEW);
+  return (
+    <div className="space-y-2" data-help="bodacc-history">
+      <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground">BODACC history</h3>
+      <ol className="space-y-1 text-sm">
+        {visible.map((item, i) => (
+          <li key={`${item.date}-${item.label}-${i}`} className="leading-relaxed">
+            <a
+              href={item.notice_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex flex-wrap items-baseline gap-x-1.5 underline-offset-4 hover:underline ${item.label === INSOLVENCY_LABEL ? "font-medium text-sev-high" : ""}`}
+            >
+              <span>{date(item.date)} · {item.label}</span>
+              {item.label === "Accounts filed" && item.accounts_period_end && (
+                <span className="text-muted-foreground">accounts to {date(item.accounts_period_end)}</span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ol>
+      {items.length > HISTORY_PREVIEW && (
+        <Button variant="ghost" size="sm" className="h-7 px-2 text-xs" onClick={() => setShowAll((v) => !v)}>
+          {showAll ? "Show less" : `Show all ${items.length}`}
+        </Button>
+      )}
+    </div>
+  );
+}
 
 function CompanyDetails({ company }: { company: CompanyCard }) {
   const accounts = company.accounts_year ? ` (${company.accounts_year})` : "";
