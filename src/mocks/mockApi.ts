@@ -24,7 +24,7 @@ interface Recorded {
   decided: { decisions: Decision[] };
   suppliers: SuppliersResponse;
   proof: Proof;
-  supplier_health?: SupplierHealthResponse; // recorded from the live view; absent until a snapshot is taken
+  supplier_health?: SupplierHealthResponse; // read from the live supplier_health view on 22 October, about 13:05
 }
 
 const rec = recordedJson as unknown as Recorded;
@@ -54,10 +54,9 @@ export const mockApi: LaunchPilotApi = {
   suppliers: () => wait(rec.suppliers),
   proof: () => wait(rec.proof),
   runs: () => wait(stage === "start" ? [] : stage === "ev019" ? rec.ev019.runs : rec.arbitrated.runs),
-  supplierHealth: (includeUnreached = false) => {
-    const sh = rec.supplier_health ?? { source: "unavailable" as const, error: "not recorded yet", notices: [] };
-    return wait({ ...sh, notices: sh.notices.filter((n) => includeUnreached || n.reached_by_demo) });
-  },
+  // Recorded before the demo clock reached these notices, so recorded mode lists them all, whatever the switch says
+  supplierHealth: () =>
+    wait(rec.supplier_health ?? { source: "unavailable" as const, error: "not recorded yet", notices: [] }),
   nextEvent: () => mockApi.fastForward(),
   fastForward: () => {
     if (stage !== "start") return Promise.reject(new ApiError(409, "EV-019 is already processed"));
