@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AgentTracesRouteImport } from './routes/agent-traces'
+import { Route as ProofRouteImport } from './routes/proof'
+import { Route as SupplierMemoryRouteImport } from './routes/supplier-memory'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgentTracesRoute = AgentTracesRouteImport.update({
+  id: '/agent-traces',
+  path: '/agent-traces',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProofRoute = ProofRouteImport.update({
+  id: '/proof',
+  path: '/proof',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupplierMemoryRoute = SupplierMemoryRouteImport.update({
+  id: '/supplier-memory',
+  path: '/supplier-memory',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agent-traces': typeof AgentTracesRoute
+  '/proof': typeof ProofRoute
+  '/supplier-memory': typeof SupplierMemoryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agent-traces': typeof AgentTracesRoute
+  '/proof': typeof ProofRoute
+  '/supplier-memory': typeof SupplierMemoryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/agent-traces': typeof AgentTracesRoute
+  '/proof': typeof ProofRoute
+  '/supplier-memory': typeof SupplierMemoryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/agent-traces' | '/proof' | '/supplier-memory'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/agent-traces' | '/proof' | '/supplier-memory'
+  id: '__root__' | '/' | '/agent-traces' | '/proof' | '/supplier-memory'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgentTracesRoute: typeof AgentTracesRoute
+  ProofRoute: typeof ProofRoute
+  SupplierMemoryRoute: typeof SupplierMemoryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/agent-traces': {
+      id: '/agent-traces'
+      path: '/agent-traces'
+      fullPath: '/agent-traces'
+      preLoaderRoute: typeof AgentTracesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proof': {
+      id: '/proof'
+      path: '/proof'
+      fullPath: '/proof'
+      preLoaderRoute: typeof ProofRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/supplier-memory': {
+      id: '/supplier-memory'
+      path: '/supplier-memory'
+      fullPath: '/supplier-memory'
+      preLoaderRoute: typeof SupplierMemoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgentTracesRoute: AgentTracesRoute,
+  ProofRoute: ProofRoute,
+  SupplierMemoryRoute: SupplierMemoryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
