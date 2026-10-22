@@ -60,6 +60,7 @@ const notice = (over: Partial<SupplierHealthNotice> = {}): SupplierHealthNotice 
   alert_id: null,
   alert_severity: null,
   alert_explanation: null,
+  agent_verdict: null,
   ...over,
 });
 
