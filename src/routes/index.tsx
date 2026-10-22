@@ -116,14 +116,15 @@ function LaunchPage() {
       <div className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <div className="space-y-8">
           <Section title={`Components · ${s.launch_product.name}`}>
+            <p className="mb-2 text-xs text-muted-foreground">Compare projected stockout dates using supplier-promised lead times versus actual historical supplier performance.</p>
             <div className="rounded-lg border bg-card">
               <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead className="h-9 px-1.5 text-xs">Component</TableHead>
                     <TableHead className="h-9 px-1.5 text-xs">Supplier</TableHead>
-                    <TableHead className="h-9 px-1.5 text-xs whitespace-nowrap">W/o memory</TableHead>
-                    <TableHead className="h-9 px-1.5 text-xs">LaunchPilot</TableHead>
+                    <TableHead className="h-9 px-1.5 text-xs">Stockout date<span className="block text-[10px] font-normal text-muted-foreground">Standard planning</span></TableHead>
+                    <TableHead className="h-9 px-1.5 text-xs">Stockout date<span className="block text-[10px] font-normal text-muted-foreground">LaunchPilot AI</span></TableHead>
                     <TableHead className="h-9 px-1.5 text-xs text-right whitespace-nowrap">P(l+1w)</TableHead>
                     <TableHead className="h-9 px-1.5 text-xs">Status</TableHead>
                   </TableRow>
