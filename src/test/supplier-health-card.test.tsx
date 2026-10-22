@@ -9,7 +9,7 @@ const company = (over: Partial<CompanyCard> = {}): CompanyCard => ({
   legal_name: "Coffrets Prestige",
   siren: "123456789",
   activity_code: "2229A",
-  activity_label: null,
+  activity_label: "Fabrication de coffrets",
   size: "SME",
   headcount: "20-49",
   headcount_year: "2024",
