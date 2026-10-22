@@ -12,6 +12,8 @@ export const Route = createFileRoute("/proof")({
       { name: "description", content: "Evidence behind every LaunchPilot stockout warning." },
       { property: "og:title", content: "Proof — LaunchPilot" },
       { property: "og:description", content: "Evidence behind every LaunchPilot stockout warning." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ProofPage,

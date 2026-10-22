@@ -22,6 +22,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Track launch readiness and spot stockouts before they happen." },
       { property: "og:title", content: "Launch — LaunchPilot" },
       { property: "og:description", content: "Track launch readiness and spot stockouts before they happen." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: LaunchPage,
