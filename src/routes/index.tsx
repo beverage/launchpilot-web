@@ -130,16 +130,22 @@ function LaunchPage() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {s.components.map((c) => (
+                  {s.components.map((c) => {
+                    const earlier = Boolean(c.stockout_week_launchpilot && c.stockout_week_without_memory && c.stockout_week_launchpilot < c.stockout_week_without_memory);
+                    return (
                     <TableRow key={c.component_id} className={cn("cursor-pointer", c.component_id === component && "bg-muted/50")} onClick={() => setComponent(c.component_id)}>
                       <TableCell className="px-1.5 py-1.5"><div className="text-[11px] font-medium whitespace-nowrap">{c.name}</div><div className="font-mono text-[10px] text-muted-foreground">{c.component_id}</div></TableCell>
                       <TableCell className="px-1.5 py-1.5 text-[11px] whitespace-nowrap">{c.supplier_name}</TableCell>
                       <TableCell className="px-1.5 py-1.5 text-[11px] whitespace-nowrap text-muted-foreground">{week(c.stockout_week_without_memory)}</TableCell>
-                      <TableCell className={cn("px-1.5 py-1.5 text-[11px] font-medium whitespace-nowrap", c.severity === "high" && "text-sev-high")}>{week(c.stockout_week_launchpilot)}</TableCell>
+                      <TableCell className={cn("px-1.5 py-1.5", (c.severity === "high" || earlier) && "text-sev-high")}>
+                        <div className="text-[11px] font-medium whitespace-nowrap">{week(c.stockout_week_launchpilot)}</div>
+                        {earlier && <div className="mt-0.5 inline-flex rounded border border-sev-high/40 bg-sev-high/10 px-1 text-[9px] font-medium leading-4">Earlier risk detected</div>}
+                      </TableCell>
                       <TableCell className="px-1.5 py-1.5 text-[11px] text-right tabular-nums whitespace-nowrap">{pct(c.p_stockout_by_launch_plus_1wk)}</TableCell>
                       <TableCell className="px-1.5 py-1.5"><SeverityBadge status={c.severity} className="px-1 text-[9px]" /></TableCell>
                     </TableRow>
-                  ))}
+                    );
+                  })}
                 </TableBody>
               </Table>
             </div>
