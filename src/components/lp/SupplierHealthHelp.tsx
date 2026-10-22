@@ -12,7 +12,7 @@ export function SupplierHealthHelp({ requested }: { requested: boolean }) {
   useEffect(() => {
     if (!requested) return;
     onOpenChange(true);
-    void navigate({ to: "/supplier-health", search: (previous) => ({ ...previous, help: false }), replace: true });
+    void navigate({ to: "/supplier-health", search: (previous) => ({ includeUnreached: previous.includeUnreached ?? false, help: false }), replace: true });
   }, [requested, navigate, onOpenChange]);
 
   useEffect(() => {
@@ -41,6 +41,7 @@ export function SupplierHealthHelp({ requested }: { requested: boolean }) {
         onPopoverRender: (popover) => {
           popover.wrapper.setAttribute("role", "dialog");
           popover.wrapper.setAttribute("aria-label", "Supplier health walkthrough");
+          popover.wrapper.removeAttribute("aria-labelledby");
           popover.footer.style.display = "block";
           popover.footer.replaceChildren();
           const root = createRoot(popover.footer);

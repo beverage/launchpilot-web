@@ -38,7 +38,7 @@ function SupplierHealthPage() {
           <SupplierHealthHelp requested={help} />
         </div>
         <div className="flex items-center gap-2">
-          <Switch id="include-unreached" checked={includeUnreached} onCheckedChange={(checked) => navigate({ search: { includeUnreached: checked } })} />
+          <Switch id="include-unreached" checked={includeUnreached} onCheckedChange={(checked) => navigate({ search: { includeUnreached: checked, help: false } })} />
           <Label htmlFor="include-unreached" className="text-sm leading-relaxed">Show notices the demo hasn't reached yet</Label>
         </div>
       </div>
