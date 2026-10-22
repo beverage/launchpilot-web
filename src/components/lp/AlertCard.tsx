@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChartLine, ChevronDown, Truck } from "lucide-react";
 import type { Alert } from "@/lib/api";
-import { alertAnchor } from "@/lib/alerts";
+import { alertAnchor, alertKind } from "@/lib/alerts";
 import { eur, pct, week } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -10,13 +10,6 @@ import { cn } from "@/lib/utils";
 import { Markdown, ModeTag, SeverityBadge } from "./bits";
 
 const border = { high: "border-l-sev-high", medium: "border-l-sev-medium", low: "border-l-border" } as const;
-
-/** What the alert is about: a component running out, a product the contract manufacturer can't fill, a supplier in trouble. */
-const KIND: Record<string, { badge: string; date: string }> = {
-  capacity: { badge: "Capacity", date: "Short from" },
-  supplier_continuity: { badge: "Supplier continuity", date: "Exposed from" },
-};
-const kindOf = (riskType: string | undefined) => KIND[riskType ?? ""] ?? { badge: "Stockout", date: "Stockout" };
 
 /** Where the stockout week falls against the launch week: "launch week", "1 wk after launch", "2 wk before launch". */
 function fromLaunch(stockoutWeek: string | null, launchWeek: string): string | null {
@@ -40,7 +33,7 @@ export function AlertCard({
   const [open, setOpen] = useState(false);
   const high = alert.severity === "high";
   const rel = fromLaunch(alert.predicted_stockout_week, launchWeek);
-  const kind = kindOf(alert.risk_type);
+  const kind = alertKind(alert.risk_type);
   return (
     <article
       id={alertAnchor(alert.alert_id)}

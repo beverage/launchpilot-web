@@ -8,5 +8,13 @@ export const SEVERITY: Record<ComponentStatus, { label: string; rule: string }> 
   covered: { label: "Covered", rule: "Less than a 50% chance of a stockout before year end" },
 };
 
-/** DOM id of an alert card, so the Critical alerts tile can scroll to it. */
+/** What an alert is about, and how its date reads: card header (date) and KPI tiles (short). */
+const ALERT_KIND: Record<string, { badge: string; date: string; short: string }> = {
+  capacity: { badge: "Capacity", date: "Short from", short: "short from" },
+  supplier_continuity: { badge: "Supplier continuity", date: "Exposed from", short: "exposed from" },
+};
+export const alertKind = (riskType: string | undefined) =>
+  ALERT_KIND[riskType ?? ""] ?? { badge: "Stockout", date: "Stockout", short: "out" };
+
+/** DOM id of an alert card, so the Critical and Watch alerts tiles can scroll to it. */
 export const alertAnchor = (alertId: number) => `alert-${alertId}`;

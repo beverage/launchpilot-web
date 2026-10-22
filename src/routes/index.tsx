@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Loader2, SlidersHorizontal } from "lucide-react";
 import { toast } from "sonner";
 import { API_MODE, api } from "@/lib/api";
-import { alertAnchor, SEVERITY } from "@/lib/alerts";
+import { alertAnchor, alertKind, SEVERITY } from "@/lib/alerts";
 import { agentName, date, eur, pct, week } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -70,6 +70,12 @@ function LaunchPage() {
   // api.py lists alerts critical first, earliest stockout first, so the first one is the most urgent.
   const critical = (alerts.data ?? []).filter((a) => a.severity === "high");
   const top = critical[0];
+  // Watch alerts: the earliest week first, a supplier-continuity alert first when weeks tie.
+  const watch = (alerts.data ?? [])
+    .filter((a) => a.severity === "medium")
+    .sort((a, b) => (a.predicted_stockout_week ?? "9999").localeCompare(b.predicted_stockout_week ?? "9999")
+      || Number(b.risk_type === "supplier_continuity") - Number(a.risk_type === "supplier_continuity"));
+  const topWatch = watch[0];
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     el?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -78,7 +84,7 @@ function LaunchPage() {
 
   return (
     <Page>
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
         <StatTile label="Simulated date" value={date(s.sim_date)} sub={`Launch ${week(s.launch_week)}`} />
         <StatTile label="Events processed" value={`${s.events_processed} / ${s.events_total}`} sub={nextId ? `Next ${nextId}` : "All processed"} />
         <StatTile
@@ -89,6 +95,15 @@ function LaunchPage() {
             : "None at risk by launch + 1 wk"}
           title={`Critical: ${SEVERITY.high.rule.toLowerCase()}`}
           onClick={top ? () => scrollTo(alertAnchor(top.alert_id)) : undefined}
+        />
+        <StatTile
+          label="Watch alerts"
+          value={<span className={cn(watch.length > 0 && "text-sev-medium")}>{watch.length}</span>}
+          sub={topWatch
+            ? <>{topWatch.component_name}{watch.length > 1 && ` +${watch.length - 1}`} · {alertKind(topWatch.risk_type).short} {week(topWatch.predicted_stockout_week)} →</>
+            : "None before year end"}
+          title={`Watch: ${SEVERITY.medium.rule.toLowerCase()}`}
+          onClick={topWatch ? () => scrollTo(alertAnchor(topWatch.alert_id)) : undefined}
         />
         <StatTile label="Revenue at risk" value={eur(s.kpis.revenue_at_risk_eur)} sub={s.launch_product.name} />
       </div>
