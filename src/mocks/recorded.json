@@ -3909,7 +3909,79 @@
      "registry_url": "https://annuaire-entreprises.data.gouv.fr/entreprise/842355620",
      "accounts_year": null,
      "activity_code": "23.13Z",
+     "warning_signs": [
+      "Business sale or transfer on 2018-12-19",
+      "Last accounts filed on 2025-01-26, for the financial year ending 2024-09-30 (4 months after the year end); no accounts published for any later financial year"
+     ],
      "activity_label": "Hollow glass",
+     "bodacc_history": [
+      {
+       "date": "2026-10-22",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202602035103"
+      },
+      {
+       "date": "2025-01-26",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202500183662",
+       "accounts_period_end": "2024-09-30"
+      },
+      {
+       "date": "2024-01-23",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202400153901",
+       "accounts_period_end": "2023-09-30"
+      },
+      {
+       "date": "2022-12-20",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202202465903",
+       "accounts_period_end": "2022-09-30"
+      },
+      {
+       "date": "2021-12-21",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2021024712506",
+       "accounts_period_end": "2021-09-30"
+      },
+      {
+       "date": "2021-01-21",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202100149831",
+       "accounts_period_end": "2020-09-30"
+      },
+      {
+       "date": "2019-12-22",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201902465644",
+       "accounts_period_end": "2019-09-30"
+      },
+      {
+       "date": "2019-01-29",
+       "label": "Registration",
+       "family": "immatriculation",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A201900202214"
+      },
+      {
+       "date": "2018-12-19",
+       "label": "Business sale or transfer",
+       "family": "vente",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A201802421708"
+      },
+      {
+       "date": "2018-10-09",
+       "label": "Creation",
+       "family": "creation",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A201801921936"
+      }
+     ],
      "headcount_year": null,
      "net_result_eur": null,
      "head_office_city": "FONTAINE-DE-VAUCLUSE",
@@ -3953,7 +4025,195 @@
      "registry_url": "https://annuaire-entreprises.data.gouv.fr/entreprise/552022824",
      "accounts_year": "2021",
      "activity_code": "20.42Z",
+     "warning_signs": [
+      "Latest published accounts (2021) show a net loss of €0.4M on €13.3M revenue",
+      "Last accounts filed on 2022-11-08, for the financial year ending 2021-08-31 (15 months after the year end); no accounts published for any later financial year",
+      "3 earlier insolvency notice(s), the first on 2023-04-23"
+     ],
      "activity_label": "Perfumes and toiletries",
+     "bodacc_history": [
+      {
+       "date": "2026-10-20",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202602018509"
+      },
+      {
+       "date": "2025-06-24",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202501195768"
+      },
+      {
+       "date": "2024-08-08",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202401533537"
+      },
+      {
+       "date": "2024-05-21",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202400972965"
+      },
+      {
+       "date": "2024-04-21",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202400792432"
+      },
+      {
+       "date": "2023-07-13",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202301344370"
+      },
+      {
+       "date": "2023-04-23",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202300802205"
+      },
+      {
+       "date": "2023-03-02",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202300434928"
+      },
+      {
+       "date": "2022-11-08",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202202175287",
+       "accounts_period_end": "2021-08-31"
+      },
+      {
+       "date": "2022-02-22",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202200376868",
+       "accounts_period_end": "2020-08-31"
+      },
+      {
+       "date": "2018-02-27",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201800364011",
+       "accounts_period_end": "2017-08-31"
+      },
+      {
+       "date": "2017-02-17",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2017001413877",
+       "accounts_period_end": "2016-08-31"
+      },
+      {
+       "date": "2016-09-30",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201601922611"
+      },
+      {
+       "date": "2016-02-12",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201600199981",
+       "accounts_period_end": "2015-08-31"
+      },
+      {
+       "date": "2015-11-22",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201502251680"
+      },
+      {
+       "date": "2015-02-04",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201500242870"
+      },
+      {
+       "date": "2015-02-04",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201500242874"
+      },
+      {
+       "date": "2014-09-22",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2014007111892",
+       "accounts_period_end": "2013-08-31"
+      },
+      {
+       "date": "2014-09-22",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2014007111891",
+       "accounts_period_end": "2012-08-31"
+      },
+      {
+       "date": "2014-07-22",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201401382131"
+      },
+      {
+       "date": "2014-03-23",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201400581274"
+      },
+      {
+       "date": "2012-10-16",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201202002687"
+      },
+      {
+       "date": "2012-09-07",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201200628436",
+       "accounts_period_end": "2011-08-31"
+      },
+      {
+       "date": "2011-06-09",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201100309589",
+       "accounts_period_end": "2010-08-31"
+      },
+      {
+       "date": "2011-06-09",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201100309588",
+       "accounts_period_end": "2009-08-31"
+      },
+      {
+       "date": "2010-11-02",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2010008011639",
+       "accounts_period_end": "2008-08-31"
+      },
+      {
+       "date": "2010-11-02",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2010008011638",
+       "accounts_period_end": "2007-08-31"
+      },
+      {
+       "date": "2008-01-23",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2008000310762",
+       "accounts_period_end": "2006-08-31"
+      }
+     ],
      "headcount_year": "2024",
      "net_result_eur": -426697,
      "head_office_city": "COLOMBES",
@@ -3997,7 +4257,198 @@
      "registry_url": "https://annuaire-entreprises.data.gouv.fr/entreprise/706820123",
      "accounts_year": "2023",
      "activity_code": "17.21B",
+     "warning_signs": [
+      "Latest published accounts (2023) show a net loss of €3.6M on €8.4M revenue",
+      "Business sale or transfer on 2025-05-23",
+      "Last accounts filed on 2025-05-21, for the financial year ending 2023-12-31 (17 months after the year end); no accounts published for any later financial year"
+     ],
      "activity_label": "Cardboard boxes",
+     "bodacc_history": [
+      {
+       "date": "2026-10-13",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601965665"
+      },
+      {
+       "date": "2025-12-11",
+       "label": "Registration",
+       "family": "immatriculation",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20250238226"
+      },
+      {
+       "date": "2025-05-23",
+       "label": "Business sale or transfer",
+       "family": "vente",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202500992525"
+      },
+      {
+       "date": "2025-05-21",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202500972136",
+       "accounts_period_end": "2023-12-31"
+      },
+      {
+       "date": "2024-09-10",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202401756382",
+       "accounts_period_end": "2022-12-31"
+      },
+      {
+       "date": "2024-09-10",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202401752267"
+      },
+      {
+       "date": "2024-03-07",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202400474628"
+      },
+      {
+       "date": "2023-02-10",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202300291031"
+      },
+      {
+       "date": "2022-12-22",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2022024815216",
+       "accounts_period_end": "2021-12-31"
+      },
+      {
+       "date": "2022-03-24",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202200597519",
+       "accounts_period_end": "2020-12-31"
+      },
+      {
+       "date": "2020-11-08",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202002186415",
+       "accounts_period_end": "2019-12-31"
+      },
+      {
+       "date": "2020-09-01",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202001691741"
+      },
+      {
+       "date": "2019-11-24",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201902262802"
+      },
+      {
+       "date": "2019-08-14",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201901565319",
+       "accounts_period_end": "2017-12-31"
+      },
+      {
+       "date": "2017-07-25",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201700668285",
+       "accounts_period_end": "2016-12-31"
+      },
+      {
+       "date": "2016-08-09",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201600788585",
+       "accounts_period_end": "2015-12-31"
+      },
+      {
+       "date": "2015-07-29",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201500688603",
+       "accounts_period_end": "2014-12-31"
+      },
+      {
+       "date": "2014-08-24",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201401613342"
+      },
+      {
+       "date": "2014-08-01",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2014004713354",
+       "accounts_period_end": "2013-12-31"
+      },
+      {
+       "date": "2013-07-28",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201301441371"
+      },
+      {
+       "date": "2013-06-03",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2013002711653",
+       "accounts_period_end": "2012-12-31"
+      },
+      {
+       "date": "2012-07-02",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2012003312176",
+       "accounts_period_end": "2011-12-31"
+      },
+      {
+       "date": "2011-09-13",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2011005911684",
+       "accounts_period_end": "2010-12-31"
+      },
+      {
+       "date": "2010-06-23",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201001201837"
+      },
+      {
+       "date": "2010-06-07",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2010003310498",
+       "accounts_period_end": "2009-12-31"
+      },
+      {
+       "date": "2009-07-09",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2009004211036",
+       "accounts_period_end": "2008-12-31"
+      },
+      {
+       "date": "2009-01-22",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C200900063868",
+       "accounts_period_end": "2007-12-31"
+      },
+      {
+       "date": "2008-10-08",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B200801821484"
+      }
+     ],
      "headcount_year": "2024",
      "net_result_eur": -3634085,
      "head_office_city": "AIX-EN-PROVENCE",
@@ -4041,7 +4492,125 @@
      "registry_url": "https://annuaire-entreprises.data.gouv.fr/entreprise/804924819",
      "accounts_year": "2022",
      "activity_code": "82.92Z",
+     "warning_signs": [
+      "Last accounts filed on 2025-10-19, for the financial year ending 2025-03-31 (7 months after the year end)"
+     ],
      "activity_label": "Contract packing",
+     "bodacc_history": [
+      {
+       "date": "2026-10-09",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601943399"
+      },
+      {
+       "date": "2025-10-19",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202502014891",
+       "accounts_period_end": "2025-03-31"
+      },
+      {
+       "date": "2024-10-20",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202402044236",
+       "accounts_period_end": "2024-03-31"
+      },
+      {
+       "date": "2023-11-19",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202302234302",
+       "accounts_period_end": "2023-03-31"
+      },
+      {
+       "date": "2022-10-20",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C2022020411763",
+       "accounts_period_end": "2022-03-31"
+      },
+      {
+       "date": "2021-12-16",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202102442784"
+      },
+      {
+       "date": "2021-10-21",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202102069278",
+       "accounts_period_end": "2021-03-31"
+      },
+      {
+       "date": "2020-11-25",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202002291918"
+      },
+      {
+       "date": "2020-10-11",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202001986378",
+       "accounts_period_end": "2020-03-31"
+      },
+      {
+       "date": "2020-04-05",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202000682799",
+       "accounts_period_end": "2019-03-31"
+      },
+      {
+       "date": "2019-02-21",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201900373813",
+       "accounts_period_end": "2018-03-31"
+      },
+      {
+       "date": "2018-03-22",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201800533463",
+       "accounts_period_end": "2017-03-31"
+      },
+      {
+       "date": "2017-03-31",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201700641673"
+      },
+      {
+       "date": "2017-03-10",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201700207746",
+       "accounts_period_end": "2016-03-31"
+      },
+      {
+       "date": "2016-02-22",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201600237649",
+       "accounts_period_end": "2015-03-31"
+      },
+      {
+       "date": "2015-09-17",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B201501781762"
+      },
+      {
+       "date": "2014-10-19",
+       "label": "Creation",
+       "family": "creation",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20140201415"
+      }
+     ],
      "headcount_year": null,
      "net_result_eur": 104099,
      "head_office_city": "PERPIGNAN",
@@ -4085,7 +4654,98 @@
      "registry_url": "https://annuaire-entreprises.data.gouv.fr/entreprise/884250085",
      "accounts_year": "2023",
      "activity_code": "20.42Z",
+     "warning_signs": [
+      "Latest published accounts (2023) show a net loss of €0.4M on €0.1M revenue",
+      "Deregistration on 2026-10-13",
+      "Business sale or transfer on 2026-06-19",
+      "Business sale or transfer on 2026-05-15",
+      "Last accounts filed on 2024-09-10, for the financial year ending 2023-12-31 (9 months after the year end); no accounts published for any later financial year",
+      "2 earlier insolvency notice(s), the first on 2025-05-16"
+     ],
      "activity_label": "Perfumes and toiletries",
+     "bodacc_history": [
+      {
+       "date": "2026-10-13",
+       "label": "Deregistration",
+       "family": "radiation",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202601961667"
+      },
+      {
+       "date": "2026-10-08",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601933214"
+      },
+      {
+       "date": "2026-06-19",
+       "label": "Business sale or transfer",
+       "family": "vente",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601152053"
+      },
+      {
+       "date": "2026-05-15",
+       "label": "Business sale or transfer",
+       "family": "vente",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20260091363"
+      },
+      {
+       "date": "2026-05-09",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202600884016"
+      },
+      {
+       "date": "2025-05-16",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202500942480"
+      },
+      {
+       "date": "2024-09-10",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202401751473",
+       "accounts_period_end": "2023-12-31"
+      },
+      {
+       "date": "2023-10-24",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202302051281",
+       "accounts_period_end": "2022-12-31"
+      },
+      {
+       "date": "2023-05-09",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202300901189",
+       "accounts_period_end": "2021-12-31"
+      },
+      {
+       "date": "2023-04-20",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B20230078677"
+      },
+      {
+       "date": "2021-11-30",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B20210232708"
+      },
+      {
+       "date": "2021-03-09",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B20210047535"
+      },
+      {
+       "date": "2020-07-01",
+       "label": "Creation",
+       "family": "creation",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20200126454"
+      }
+     ],
      "headcount_year": "2024",
      "net_result_eur": -379516,
      "head_office_city": "ST-PIERRE-DE-FRUGIE",
@@ -4129,7 +4789,169 @@
      "registry_url": "https://annuaire-entreprises.data.gouv.fr/entreprise/332391036",
      "accounts_year": "2024",
      "activity_code": "22.22Z",
+     "warning_signs": [
+      "Latest published accounts (2024) show a net loss of €0.4M on €10.2M revenue",
+      "Last accounts filed on 2026-10-04, for the financial year ending 2025-12-31 (10 months after the year end)"
+     ],
      "activity_label": "Plastic packaging",
+     "bodacc_history": [
+      {
+       "date": "2026-10-06",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601916324"
+      },
+      {
+       "date": "2026-10-04",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202601901570",
+       "accounts_period_end": "2025-12-31"
+      },
+      {
+       "date": "2025-10-21",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202502022528",
+       "accounts_period_end": "2024-12-31"
+      },
+      {
+       "date": "2024-09-12",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202401771254",
+       "accounts_period_end": "2023-12-31"
+      },
+      {
+       "date": "2023-11-22",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202302251146",
+       "accounts_period_end": "2022-12-31"
+      },
+      {
+       "date": "2023-11-22",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202302251145",
+       "accounts_period_end": "2021-12-31"
+      },
+      {
+       "date": "2022-11-11",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C202202191095",
+       "accounts_period_end": "2020-12-31"
+      },
+      {
+       "date": "2022-03-16",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C20220053392",
+       "accounts_period_end": "2019-12-31"
+      },
+      {
+       "date": "2021-01-27",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C20210018624",
+       "accounts_period_end": "2018-12-31"
+      },
+      {
+       "date": "2019-05-07",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201900881711",
+       "accounts_period_end": "2017-12-31"
+      },
+      {
+       "date": "2017-02-17",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201700141601",
+       "accounts_period_end": "2016-09-30"
+      },
+      {
+       "date": "2016-05-03",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B20160088221"
+      },
+      {
+       "date": "2016-04-14",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C20160038738",
+       "accounts_period_end": "2015-09-30"
+      },
+      {
+       "date": "2015-05-05",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201500381717",
+       "accounts_period_end": "2014-09-30"
+      },
+      {
+       "date": "2013-11-22",
+       "label": "Registration",
+       "family": "immatriculation",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20130225226"
+      },
+      {
+       "date": "2013-07-24",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201300412529",
+       "accounts_period_end": "2012-12-31"
+      },
+      {
+       "date": "2013-07-10",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B20130131628"
+      },
+      {
+       "date": "2012-08-10",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B20120154525"
+      },
+      {
+       "date": "2012-07-05",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201200342025",
+       "accounts_period_end": "2011-12-31"
+      },
+      {
+       "date": "2011-08-02",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C201100421829",
+       "accounts_period_end": "2010-12-31"
+      },
+      {
+       "date": "2010-07-12",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C20100040868",
+       "accounts_period_end": "2009-12-31"
+      },
+      {
+       "date": "2009-07-25",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C200900462880",
+       "accounts_period_end": "2008-12-31"
+      },
+      {
+       "date": "2008-08-10",
+       "label": "Accounts filed",
+       "family": "dpc",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:C200800531020",
+       "accounts_period_end": "2007-12-31"
+      }
+     ],
      "headcount_year": "2024",
      "net_result_eur": -441913,
      "head_office_city": "MEDIS",
@@ -4173,7 +4995,30 @@
      "registry_url": "https://annuaire-entreprises.data.gouv.fr/entreprise/883419467",
      "accounts_year": null,
      "activity_code": "20.42Z",
+     "warning_signs": [
+      "1 earlier insolvency notice(s), the first on 2026-07-14"
+     ],
      "activity_label": "Perfumes and toiletries",
+     "bodacc_history": [
+      {
+       "date": "2026-10-04",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601902793"
+      },
+      {
+       "date": "2026-07-14",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601324767"
+      },
+      {
+       "date": "2021-12-16",
+       "label": "Registration",
+       "family": "immatriculation",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20210244172"
+      }
+     ],
      "headcount_year": null,
      "net_result_eur": null,
      "head_office_city": "SAINT-MARC-JAUMEGARDE",
@@ -4217,7 +5062,34 @@
      "registry_url": "https://annuaire-entreprises.data.gouv.fr/entreprise/899596894",
      "accounts_year": null,
      "activity_code": "20.42Z",
+     "warning_signs": [],
      "activity_label": "Perfumes and toiletries",
+     "bodacc_history": [
+      {
+       "date": "2026-10-02",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601894328"
+      },
+      {
+       "date": "2024-02-20",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202400353096"
+      },
+      {
+       "date": "2023-02-03",
+       "label": "Company changes",
+       "family": "modification",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B202300241133"
+      },
+      {
+       "date": "2021-06-24",
+       "label": "Creation",
+       "family": "creation",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202101222168"
+      }
+     ],
      "headcount_year": "2024",
      "net_result_eur": null,
      "head_office_city": "SAINTE ANNE",
@@ -4261,7 +5133,24 @@
      "registry_url": "https://annuaire-entreprises.data.gouv.fr/entreprise/930788047",
      "accounts_year": null,
      "activity_code": "20.42Z",
+     "warning_signs": [
+      "1 earlier insolvency notice(s), the first on 2026-04-30"
+     ],
      "activity_label": "Perfumes and toiletries",
+     "bodacc_history": [
+      {
+       "date": "2026-09-25",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601843511"
+      },
+      {
+       "date": "2026-04-30",
+       "label": "Insolvency proceedings",
+       "family": "collective",
+       "notice_url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202600836764"
+      }
+     ],
      "headcount_year": "2024",
      "net_result_eur": null,
      "head_office_city": "PARIS",

@@ -194,6 +194,17 @@ export interface CompanyCard {
   accounts_year: string | null;
   registry_url: string; // annuaire-entreprises.data.gouv.fr
   source: string;
+  bodacc_history: BodaccHistoryItem[]; // the company's BODACC notices, newest first
+  warning_signs: string[]; // short factual sentences, ready to show as bullets
+}
+
+/** One past BODACC notice of a company. Labels are English; no free text, which would name people. */
+export interface BodaccHistoryItem {
+  date: string;
+  family: string; // BODACC family code, e.g. "collective", "dpc"
+  label: string; // e.g. "Insolvency proceedings", "Accounts filed", "Business sale or transfer"
+  notice_url: string;
+  accounts_period_end?: string; // on "Accounts filed" entries
 }
 
 /** One real BODACC notice from the supplier_health view in Aiven for PostgreSQL. Real public data. */
