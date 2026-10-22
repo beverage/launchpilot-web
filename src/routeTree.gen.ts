@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AgentTracesRouteImport } from './routes/agent-traces'
 import { Route as ProofRouteImport } from './routes/proof'
+import { Route as SupplierHealthRouteImport } from './routes/supplier-health'
 import { Route as SupplierMemoryRouteImport } from './routes/supplier-memory'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,11 @@ const ProofRoute = ProofRouteImport.update({
   path: '/proof',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SupplierHealthRoute = SupplierHealthRouteImport.update({
+  id: '/supplier-health',
+  path: '/supplier-health',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SupplierMemoryRoute = SupplierMemoryRouteImport.update({
   id: '/supplier-memory',
   path: '/supplier-memory',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agent-traces': typeof AgentTracesRoute
   '/proof': typeof ProofRoute
+  '/supplier-health': typeof SupplierHealthRoute
   '/supplier-memory': typeof SupplierMemoryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agent-traces': typeof AgentTracesRoute
   '/proof': typeof ProofRoute
+  '/supplier-health': typeof SupplierHealthRoute
   '/supplier-memory': typeof SupplierMemoryRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,29 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/agent-traces': typeof AgentTracesRoute
   '/proof': typeof ProofRoute
+  '/supplier-health': typeof SupplierHealthRoute
   '/supplier-memory': typeof SupplierMemoryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/agent-traces' | '/proof' | '/supplier-memory'
+  fullPaths:
+    '/' | '/agent-traces' | '/proof' | '/supplier-health' | '/supplier-memory'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/agent-traces' | '/proof' | '/supplier-memory'
-  id: '__root__' | '/' | '/agent-traces' | '/proof' | '/supplier-memory'
+  to: '/' | '/agent-traces' | '/proof' | '/supplier-health' | '/supplier-memory'
+  id:
+    | '__root__'
+    | '/'
+    | '/agent-traces'
+    | '/proof'
+    | '/supplier-health'
+    | '/supplier-memory'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgentTracesRoute: typeof AgentTracesRoute
   ProofRoute: typeof ProofRoute
+  SupplierHealthRoute: typeof SupplierHealthRoute
   SupplierMemoryRoute: typeof SupplierMemoryRoute
 }
 
@@ -92,6 +109,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProofRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/supplier-health': {
+      id: '/supplier-health'
+      path: '/supplier-health'
+      fullPath: '/supplier-health'
+      preLoaderRoute: typeof SupplierHealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/supplier-memory': {
       id: '/supplier-memory'
       path: '/supplier-memory'
@@ -106,6 +130,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgentTracesRoute: AgentTracesRoute,
   ProofRoute: ProofRoute,
+  SupplierHealthRoute: SupplierHealthRoute,
   SupplierMemoryRoute: SupplierMemoryRoute,
 }
 export const routeTree = rootRouteImport
