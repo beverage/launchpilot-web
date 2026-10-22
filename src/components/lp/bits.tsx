@@ -24,8 +24,13 @@ export function ModeTag({ mode }: { mode: RunMode }) {
   );
 }
 
-export function OriginTag({ origin }: { origin: EventOrigin }) {
-  return origin === "live" ? <Tag className="border-primary/40 text-primary">Live</Tag> : <Tag>Recorded</Tag>;
+export function OriginTag({ event }: { event: Pick<LaunchEvent, "origin" | "real_data"> }) {
+  const label = event.origin === "live" ? (event.real_data ? "Live · real data" : "Live · synthetic") : "Recorded";
+  return (
+    <Tag className={cn("normal-case tracking-normal", event.origin === "live" && "border-primary/40 text-primary")}>
+      {label}
+    </Tag>
+  );
 }
 
 const sevStyle: Record<ComponentStatus, string> = {
