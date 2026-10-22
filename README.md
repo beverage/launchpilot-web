@@ -22,3 +22,7 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## LaunchPilot
+
+This is LaunchPilot's web frontend. The backend, agents and data live in [beverage/launchpilot](https://github.com/beverage/launchpilot); this app reaches them only through `src/lib/api.ts`, and runs on recorded data from `src/mocks` while `VITE_API_URL` is empty. How to work on it in Lovable and locally: [LOVABLE.md](LOVABLE.md). `Dockerfile` builds it as a Node server for Aiven Runtime.
