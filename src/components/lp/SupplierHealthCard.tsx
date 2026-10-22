@@ -16,7 +16,7 @@ function CompanyDetails({ company }: { company: CompanyCard }) {
   ];
 
   return (
-    <div className="border-t pt-4">
+    <div className="border-t pt-4" data-help="company">
       <dl className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-3">
         {details.map(([label, value]) => (
           <div key={label} className="min-w-0">
@@ -38,7 +38,7 @@ export function SupplierHealthCard({ notice }: { notice: SupplierHealthNotice })
       <div className="space-y-2">
         <div className="flex flex-wrap items-center gap-2">
           <h2 className="min-w-0 text-base font-semibold">
-            <a className="break-words underline-offset-4 hover:underline" href={notice.notice_url} target="_blank" rel="noopener noreferrer">
+            <a data-help="source" className="break-words underline-offset-4 hover:underline" href={notice.notice_url} target="_blank" rel="noopener noreferrer">
               {notice.company_name} <ExternalLink className="inline h-3.5 w-3.5" aria-hidden="true" />
             </a>
           </h2>
@@ -48,12 +48,12 @@ export function SupplierHealthCard({ notice }: { notice: SupplierHealthNotice })
         <p className="text-sm text-muted-foreground">{[notice.court, notice.city, notice.region].filter(Boolean).join(" · ")}</p>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2" data-help="exposure">
         {notice.exposed ? (
           <Tag className="max-w-full whitespace-normal border-sev-high/50 bg-sev-high/10 text-sev-high normal-case tracking-normal">Exposed: {notice.matched_supplier_name}</Tag>
         ) : <Tag className="normal-case tracking-normal">No exposure</Tag>}
         {notice.mapping_note != null && (
-          <div className="whitespace-pre-wrap break-words border-l-2 border-sev-medium bg-sev-medium/5 px-3 py-2 text-sm leading-relaxed">{notice.mapping_note}</div>
+          <div data-help="mapping" className="whitespace-pre-wrap break-words border-l-2 border-sev-medium bg-sev-medium/5 px-3 py-2 text-sm leading-relaxed">{notice.mapping_note}</div>
         )}
       </div>
 

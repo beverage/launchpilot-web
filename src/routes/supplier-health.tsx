@@ -11,6 +11,7 @@ import { SupplierHealthHelp } from "@/components/lp/SupplierHealthHelp";
 export const Route = createFileRoute("/supplier-health")({
   validateSearch: (search: Record<string, unknown>) => ({
     includeUnreached: search["includeUnreached"] === true || search["includeUnreached"] === "true",
+    help: search["help"] === true || search["help"] === "true",
   }),
   head: () => ({
     meta: [
@@ -27,14 +28,14 @@ export const Route = createFileRoute("/supplier-health")({
 });
 
 function SupplierHealthPage() {
-  const { includeUnreached } = Route.useSearch();
+  const { includeUnreached, help } = Route.useSearch();
   const navigate = Route.useNavigate();
   return (
     <Page>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <h1 className="text-xl font-semibold">Supplier health</h1>
-          <SupplierHealthHelp />
+          <SupplierHealthHelp requested={help} />
         </div>
         <div className="flex items-center gap-2">
           <Switch id="include-unreached" checked={includeUnreached} onCheckedChange={(checked) => navigate({ search: { includeUnreached: checked } })} />
