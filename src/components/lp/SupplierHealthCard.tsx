@@ -105,7 +105,19 @@ export function SupplierHealthCard({ notice }: { notice: SupplierHealthNotice })
         )}
       </div>
 
+      {notice.company && notice.company.warning_signs.length > 0 && (
+        <div className="border-t pt-4">
+          <WarningSigns signs={notice.company.warning_signs} />
+        </div>
+      )}
+
       {notice.company && <CompanyDetails company={notice.company} />}
+
+      {notice.company && notice.company.bodacc_history.length > 0 && (
+        <div className="border-t pt-4">
+          <BodaccHistory items={notice.company.bodacc_history} />
+        </div>
+      )}
 
       {notice.alert_severity && (
         <div className="space-y-2 border-t pt-4">
