@@ -1,4 +1,4 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { ThemeToggle } from "./ThemeToggle";
 import { StatusPills, DataErrorBanner } from "./StatusPills";
 import { CircleHelp } from "lucide-react";
@@ -14,6 +14,7 @@ const tabs = [
 
 export function AppHeader() {
   const location = useLocation();
+  const navigate = useNavigate();
   return (
     <header className="border-b bg-card">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
@@ -51,14 +52,10 @@ export function AppHeader() {
           </Link>
         ))}
       </nav>
-      <Button asChild variant="outline" size="sm" className="shrink-0" id="page-help" title="Supplier health walkthrough (?)">
-        <Link to="/supplier-health" search={{ includeUnreached: false, help: true }} onClick={(event) => {
-          if (location.pathname === "/supplier-health") {
-            event.preventDefault();
-            window.dispatchEvent(new Event("launchpilot:open-help"));
-          }
-        }}><CircleHelp aria-hidden="true" />Help</Link>
-      </Button>
+      <Button variant="outline" size="sm" className="shrink-0" id="page-help" title="Supplier health walkthrough (?)" onClick={() => {
+        if (location.pathname === "/supplier-health") window.dispatchEvent(new Event("launchpilot:open-help"));
+        else void navigate({ to: "/supplier-health", search: { includeUnreached: false, help: true } });
+      }}><CircleHelp aria-hidden="true" />Help</Button>
       </div>
       <DataErrorBanner />
     </header>
