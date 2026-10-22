@@ -98,7 +98,7 @@ describe("BODACC history timeline", () => {
     expect(screen.getByText("30 Sep 2023 · Accounts filed")).toBeInTheDocument();
     expect(screen.queryByText("30 Sep 2022 · Accounts filed")).toBeNull(); // 6th not shown
     const toggle = screen.getByRole("button", { name: "Show all 7" });
-    await userEvent.click(toggle);
+    fireEvent.click(toggle);
     expect(screen.getByText("30 Sep 2022 · Accounts filed")).toBeInTheDocument();
     expect(screen.getByText("30 Sep 2021 · Business sale or transfer")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Show less" })).toBeInTheDocument();
