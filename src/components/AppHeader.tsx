@@ -5,6 +5,7 @@ import { StatusPills, DataErrorBanner } from "./StatusPills";
 const tabs = [
   { to: "/", label: "Launch" },
   { to: "/supplier-memory", label: "Supplier memory" },
+  { to: "/supplier-health", label: "Supplier health" },
   { to: "/proof", label: "Proof" },
   { to: "/agent-traces", label: "Agent traces" },
 ] as const;
