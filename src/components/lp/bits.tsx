@@ -40,8 +40,8 @@ const sevStyle: Record<ComponentStatus, string> = {
   covered: "border-sev-ok/40 text-sev-ok",
 };
 
-export function SeverityBadge({ status }: { status: ComponentStatus }) {
-  return <Tag className={sevStyle[status]}>{status}</Tag>;
+export function SeverityBadge({ status, className }: { status: ComponentStatus; className?: string }) {
+  return <Tag className={cn(sevStyle[status], className)}>{status}</Tag>;
 }
 
 export function Markdown({ children }: { children: string }) {

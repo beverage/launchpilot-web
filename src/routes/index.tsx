@@ -92,23 +92,23 @@ function LaunchPage() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="h-9 px-2 text-xs">Component</TableHead>
-                    <TableHead className="h-9 px-2 text-xs">Supplier</TableHead>
-                    <TableHead className="h-9 px-2 text-xs whitespace-nowrap">W/o memory</TableHead>
-                    <TableHead className="h-9 px-2 text-xs">LaunchPilot</TableHead>
-                    <TableHead className="h-9 px-2 text-xs text-right whitespace-nowrap">P(launch+1w)</TableHead>
-                    <TableHead className="h-9 px-2 text-xs">Status</TableHead>
+                    <TableHead className="h-9 px-1.5 text-xs">Component</TableHead>
+                    <TableHead className="h-9 px-1.5 text-xs">Supplier</TableHead>
+                    <TableHead className="h-9 px-1.5 text-xs whitespace-nowrap">W/o memory</TableHead>
+                    <TableHead className="h-9 px-1.5 text-xs">LaunchPilot</TableHead>
+                    <TableHead className="h-9 px-1.5 text-xs text-right whitespace-nowrap">P(l+1w)</TableHead>
+                    <TableHead className="h-9 px-1.5 text-xs">Status</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {s.components.map((c) => (
                     <TableRow key={c.component_id} className={cn("cursor-pointer", c.component_id === component && "bg-muted/50")} onClick={() => setComponent(c.component_id)}>
-                      <TableCell className="px-2 py-1.5"><div className="text-xs font-medium whitespace-nowrap">{c.name}</div><div className="font-mono text-[10px] text-muted-foreground">{c.component_id}</div></TableCell>
-                      <TableCell className="px-2 py-1.5 text-xs whitespace-nowrap">{c.supplier_name}</TableCell>
-                      <TableCell className="px-2 py-1.5 text-xs whitespace-nowrap text-muted-foreground">{week(c.stockout_week_without_memory)}</TableCell>
-                      <TableCell className={cn("px-2 py-1.5 text-xs font-medium whitespace-nowrap", c.severity === "high" && "text-sev-high")}>{week(c.stockout_week_launchpilot)}</TableCell>
-                      <TableCell className="px-2 py-1.5 text-xs text-right tabular-nums whitespace-nowrap">{pct(c.p_stockout_by_launch_plus_1wk)}</TableCell>
-                      <TableCell className="px-2 py-1.5"><SeverityBadge status={c.severity} /></TableCell>
+                      <TableCell className="px-1.5 py-1.5"><div className="text-[11px] font-medium whitespace-nowrap">{c.name}</div><div className="font-mono text-[10px] text-muted-foreground">{c.component_id}</div></TableCell>
+                      <TableCell className="px-1.5 py-1.5 text-[11px] whitespace-nowrap">{c.supplier_name}</TableCell>
+                      <TableCell className="px-1.5 py-1.5 text-[11px] whitespace-nowrap text-muted-foreground">{week(c.stockout_week_without_memory)}</TableCell>
+                      <TableCell className={cn("px-1.5 py-1.5 text-[11px] font-medium whitespace-nowrap", c.severity === "high" && "text-sev-high")}>{week(c.stockout_week_launchpilot)}</TableCell>
+                      <TableCell className="px-1.5 py-1.5 text-[11px] text-right tabular-nums whitespace-nowrap">{pct(c.p_stockout_by_launch_plus_1wk)}</TableCell>
+                      <TableCell className="px-1.5 py-1.5"><SeverityBadge status={c.severity} className="px-1 text-[9px]" /></TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
