@@ -17,4 +17,4 @@
 - Never put a key in a `VITE_` variable or in `.env`: both end up in the browser.
 - Supplier health uses browser-only suspense queries behind ClientOnly, with the demo-clock filter in URL search parameters, so recorded state stays in the browser and the selected view survives navigation.
 - Page help stores only its dismissal preference in localStorage after hydration; the page-scoped question-mark listener ignores text entry and is removed on unmount to avoid interfering with other pages.
-- Contextual help uses a browser-dynamically-imported Driver.js walkthrough with themed design-system controls; the shared header Help link opens Supplier health and missing notice targets are skipped.
+- Contextual help uses browser-dynamically-imported Driver.js with themed design-system controls; the shared header Help button and shortcut open the current tab's walkthrough, with independent dismissal per tab and unavailable targets skipped.
