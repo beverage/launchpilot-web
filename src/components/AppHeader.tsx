@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ThemeToggle } from "./ThemeToggle";
+import { StatusPills, DataErrorBanner } from "./StatusPills";
 
 const tabs = [
   { to: "/", label: "Launch" },
@@ -25,7 +26,9 @@ export function AppHeader() {
         </div>
         <div className="flex items-center gap-2">
           {/* Status pills slot */}
-          <div id="status-pills" className="flex items-center gap-2" />
+          <div id="status-pills" className="flex items-center gap-2">
+            <StatusPills />
+          </div>
           <ThemeToggle />
         </div>
       </div>
@@ -43,6 +46,7 @@ export function AppHeader() {
           </Link>
         ))}
       </nav>
+      <DataErrorBanner />
     </header>
   );
 }
