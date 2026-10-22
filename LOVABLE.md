@@ -58,6 +58,8 @@ npm run dev
 
 Lovable keeps `bun.lock`; install with Bun so no `package-lock.json` appears.
 
-- With no `.env.local`, the app runs on recorded data (`API_MODE` is `mock`).
-- To use a local backend: in the backend repo run `uvicorn api:app --reload --port 8000`, then put `VITE_API_URL=http://localhost:8000` in `.env.local` here.
-- `.env` (committed, read by Lovable's preview and by production builds) holds the deployed API URL once it exists. It is a public URL, not a secret; never put a key in a `VITE_` variable, because it ends up in the browser.
+- Which data you see depends on the build mode:
+  - `npm run dev` and Lovable's preview: recorded data (`API_MODE` is `mock`), unless `VITE_API_URL` is set in `.env.local`.
+  - Production builds (Aiven Runtime and Lovable's publish): the live API, from `VITE_API_URL` in the committed `.env.production`.
+- To run against a local backend: in the backend repo run `uvicorn api:app --reload --port 8000`, then put `VITE_API_URL=http://localhost:8000` in `.env.local` here. To try the live API in dev, put the URL from `.env.production` there instead.
+- `.env.production` holds a public URL, not a secret. Never put a key in a `VITE_` variable: it ends up in the browser.
