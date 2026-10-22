@@ -4,6 +4,7 @@
 - [x] Test ordering and switch request values; verify the page in the browser.
 
 # Supplier health help
+- [ ] Give every tab its own Help button behavior and contextual walkthrough.
 
 - [ ] Replace the explanation screen with contextual steps and put Help in the shared header.
 - [ ] Verify Help from Launch, step navigation, dismissal and the hotkey.
