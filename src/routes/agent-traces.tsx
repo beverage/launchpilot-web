@@ -27,7 +27,7 @@ function AgentTracesPage() {
   const q = useQuery({ queryKey: ["runs"], queryFn: () => api.runs() });
   if (q.isPending) return <Page><Loading /></Page>;
   if (q.error) return <Page><ErrorNote error={q.error} /></Page>;
-  const runs = [...q.data].reverse();
+  const runs = q.data; // API returns newest first
   const live = runs.filter((r) => r.mode === "live");
   const avg = live.length ? live.reduce((a, r) => a + r.latency_ms, 0) / live.length : 0;
   const tokens = runs.reduce((a, r) => a + r.tokens_in + r.tokens_out, 0);

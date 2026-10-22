@@ -16,7 +16,7 @@ export function AlertCard({
   busy: boolean;
   onArbitrate: () => void;
   onDecide: (scenarioId: number) => void;
-  decidedScenario?: number;
+  decidedScenario?: number | undefined;
 }) {
   const [open, setOpen] = useState(false);
   const high = alert.severity === "high";
