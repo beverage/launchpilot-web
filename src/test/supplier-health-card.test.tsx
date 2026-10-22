@@ -1,5 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { SupplierHealthCard } from "@/components/lp/SupplierHealthCard";
 import type { CompanyCard, SupplierHealthNotice } from "@/lib/api";
