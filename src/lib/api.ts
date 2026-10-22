@@ -22,6 +22,7 @@ export interface LaunchEvent {
   summary: string;
   payload: Record<string, unknown>;
   origin: EventOrigin;
+  real_data: boolean; // true for public data (BODACC, holidays); recorded events, emails and deliveries are synthetic
 }
 
 export interface ComponentRisk {

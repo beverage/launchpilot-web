@@ -19,7 +19,8 @@
     "payload": {
      "note": "cycle count OK"
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    "data": {
     "store": "memory",
@@ -931,7 +932,8 @@
     "payload": {
      "note": "cycle count OK"
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    "data": {
     "store": "memory",
@@ -1187,7 +1189,8 @@
      "confirmed_date": "2026-09-14",
      "confirmed_qty": 12000
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-016",
@@ -1202,7 +1205,8 @@
       "2026-11-09"
      ]
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-006",
@@ -1217,7 +1221,8 @@
      "new_promised_date": "2026-10-12",
      "announced_delay_days": 6
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-011",
@@ -1234,7 +1239,8 @@
       "2026-10-12"
      ]
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-034",
@@ -1245,7 +1251,8 @@
     "payload": {
      "note": "quality follow-up"
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-005",
@@ -1260,7 +1267,8 @@
      "new_promised_date": "2026-09-24",
      "announced_delay_days": 3
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-018",
@@ -1274,7 +1282,8 @@
      "confirmed_date": "2026-09-21",
      "confirmed_qty": 10000
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-015",
@@ -1289,7 +1298,8 @@
       "2026-10-05"
      ]
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-035",
@@ -1300,7 +1310,8 @@
     "payload": {
      "note": "contract manufacturer visit"
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-010",
@@ -1317,7 +1328,8 @@
       "2026-11-02"
      ]
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-028",
@@ -1328,7 +1340,8 @@
     "payload": {
      "note": "quality follow-up"
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-030",
@@ -1339,7 +1352,8 @@
     "payload": {
      "note": "cycle count OK"
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-004",
@@ -1354,7 +1368,8 @@
      "new_promised_date": "2026-09-26",
      "announced_delay_days": 5
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-009",
@@ -1372,7 +1387,8 @@
       "2026-10-26"
      ]
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-003",
@@ -1387,7 +1403,8 @@
      "new_promised_date": "2026-10-10",
      "announced_delay_days": 12
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-025",
@@ -1398,7 +1415,8 @@
     "payload": {
      "note": "contract manufacturer visit"
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-033",
@@ -1409,7 +1427,8 @@
     "payload": {
      "note": "cycle count OK"
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-014",
@@ -1424,7 +1443,8 @@
       "2026-09-28"
      ]
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-017",
@@ -1438,7 +1458,8 @@
      "confirmed_date": "2026-09-28",
      "confirmed_qty": 20000
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-002",
@@ -1453,7 +1474,8 @@
      "new_promised_date": "2026-10-30",
      "announced_delay_days": 14
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-008",
@@ -1471,7 +1493,8 @@
       "2026-11-16"
      ]
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-013",
@@ -1487,7 +1510,8 @@
       "2026-11-02"
      ]
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-029",
@@ -1498,7 +1522,8 @@
     "payload": {
      "note": "quality follow-up"
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-001",
@@ -1513,7 +1538,8 @@
      "new_promised_date": "2026-09-24",
      "announced_delay_days": 10
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-007",
@@ -1532,7 +1558,8 @@
       "2026-11-09"
      ]
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    },
    {
     "event_id": "EV-032",
@@ -1543,7 +1570,8 @@
     "payload": {
      "note": "cycle count OK"
     },
-    "origin": "recorded"
+    "origin": "recorded",
+    "real_data": false
    }
   ],
   "runs": [
