@@ -6,4 +6,4 @@
 # Supplier health help
 
 - [x] Add a first-visit overlay and page-level Help button with question-mark shortcut.
-- [ ] Verify dismissal persistence, reopening and keyboard behavior.
+- [x] Verify dismissal persistence, reopening and keyboard behavior.
